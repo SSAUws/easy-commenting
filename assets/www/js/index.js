@@ -7,16 +7,18 @@ function onDeviceReady()
 {
 	document.addEventListener("offline",offlineAlert,false);
 	document.addEventListener("online",onlineAlert,false);
+	var networkState = navigator.connection.type;
+	if (networkState == Connetion.NONE) networkNoteShowup();
 }
 
 function offlineAlert()
 {
-	alert(0);
+	networkNoteShowup();
 }
 
 function onlineAlert()
 {
-	alert(1);
+	networkNoteHideup();
 }
 
 function exitApp()
@@ -24,4 +26,12 @@ function exitApp()
 	navigator.app.exitApp();
 }
 
+function networkNoteShowup()
+{
+	document.getElementById("network-note").style.display = "block" ;
+}
 
+function networkNoteHideup()
+{
+	document.getElementById("network-note").style.display = "none" ;
+}

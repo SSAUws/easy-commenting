@@ -11,21 +11,28 @@
 		<link rel="stylesheet" href="css/index.css" />
 	</head>
 	<body onload="onLoad()">
-		<div data-role="page">
-			<div data-role="header" position="fixed">
+		<!-- login page -->
+		<div data-role="page" id="login">
+			<div data-role="header" data-position="fixed">
 				<h1>Easy-commenting</h1>
 				<a href="#" data-icon="home" data-iconpos="notext" data-shadow="false" data-iconshadow="false">首页</a>
-				<a data-role="button" onclick="exitApp()" data-icon="delete" data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-icon-nodisc">Open right panel</a>
+				<a data-role="button" onclick="exitApp()" data-icon="delete" data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-icon-nodisc">退出</a>
 			</div><!-- /header -->
 			<div data-role="content">
-				<p >网络连接不可用</p>
+				<a href="#badNet" data-role="button" data-icon="info" data-theme="e" id="network-note">网络连接不可用</a>
 				<div data-role="fielcontain">
 					<label for="user_name">账号</label>
-					<input type="text" name="name_user_name" id="user_name" value="" data-mini="true"/>
+					<input type="text" name="name_user_name" id="user_name" value="" data-mini="true" data-clear-btn="true"/>
 					<label for="user_password">密码</label>
-					<input type="password" name="name_user_password" id="user_password" value="" data-mini="true"/>
-					<input type="submit" value="登录" data-inline="true" />
-					<a href="http://weibo.com/signup/signup.php" data-role="button" data-inline="true">注册</a>
+					<input type="password" name="name_user_password" id="user_password" value="" data-mini="true" data-clear-btn="true"/>
+					<div class="ui-grid-a">
+						<div class="ui-block-a">
+							<input type="submit" value="登录"/>
+						</div>
+						<div class="ui-block-b">
+							<a href="#" data-role="button">注册</a>
+						</div>
+					</div>
 				</div>
 			</div>
 			<div data-role="panel" id="right-panel" data-position="right">
@@ -36,6 +43,27 @@
 			</div>
 			<div data-role="footer" data-position="fixed">
 				<h2>您还没有登录</h2>
+			</div>
+		</div>
+
+		<!-- bad network page -->
+		<div data-role="page" id="badNet">
+			<div data-role="header" data-position="fixed">
+				<h1>网络连接不可用</h1>
+				<a href="#login" data-role="button" data-rel="back" data-icon="back" data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-icon-nodisc">返回</a>
+			</div><!-- /header -->
+			<div data-role="content">
+				<h2>未能连接到互联网</h2>
+				<p>您的设备未启动移动网络或者无线局域网</p>
+				<hr />
+				<h3>如需要连接到互联网，请参考以下几点：</h3>
+				<li>检查手机中的无线局域网设置，查看是否有可接入的无线局域网信号。</li>
+				<li>检查手机是否已接入移动网络，并且手机没有被停机。</li>
+				<h3>如果您已接入无线局域网：</h3>
+				<li>请检查您所连接的无线局域网热点是否已接入互联网，或该热点是否已允许您的设备访问互联网。</li>
+			</div>
+			<div data-role="footer" data-position="fixed">
+				<h2> </h2>
 			</div>
 		</div>
 
