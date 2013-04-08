@@ -18,3 +18,10 @@ function onlineAlert()
 {
 	alert(1);
 }
+
+function exitApp()
+{
+	navigator.app.exitApp();
+}
+
+
