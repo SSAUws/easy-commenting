@@ -35,3 +35,9 @@ function networkNoteHideup()
 {
 	document.getElementById("network-note").style.display = "none" ;
 }
+
+
+function weibo()
+{
+	// get access token
+}
