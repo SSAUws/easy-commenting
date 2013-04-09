@@ -9,6 +9,7 @@
 		<script type="text/javascript" src="js/jquery.mobile-1.3.0.min.js"></script>
 		<script type="text/javascript" src="js/index.js"></script>
 		<link rel="stylesheet" href="css/index.css" />
+		<script type="text/javascript" src="js/barcodescanner.js"/></script>
 	</head>
 	<body onload="onLoad()">
 		<!-- login page -->
@@ -41,11 +42,12 @@
 			<div data-role="panel" id="right-panel" data-position="right">
 				<ul data-role="listview">
 					<li data-icon="delete"><a href="#" data-rel="close">关闭</a></li>
-
+					<li data-icon="search"><a href="#" onclick="barcodeScan()">扫二维码</a></li>
 				</ul>
 			</div>
 			<div data-role="footer" data-position="fixed">
 				<h2>您还没有登录</h2>
+				<a href="#right-panel" data-icon="grid" data-iconpos="notext" data-shadow="false" data-iconshadow="false">菜单</a>
 			</div>
 		</div>
 
