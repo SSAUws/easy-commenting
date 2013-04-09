@@ -4,12 +4,17 @@
 多页面跳转成功 （要把全部页面写在一个HTML上面）
 4.9
 二维码扫描部分完成（按钮放置地方未定）
+4.10
+微博登陆完成
+发微博功能完成（暂时只能文字）
 
 未解决：
-账号登陆 （新浪云？）
 机子上按键反应 phonegap
 等待画面 Page Loading Widget
 登录后多页面导航（类微博微信）Navbar Widget
+退出前提醒 phonegap notification
+app icon （找美工吧。。。）
+主题设计 themeroller
 
 使用：
 二维码扫描部分使用需要可能要先用eclipse导入项目中的CaptureActivity，再在项目的library加入CaptureActivity
