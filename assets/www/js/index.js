@@ -1,56 +1,65 @@
 var access_token;
 var uid;
+var user_name;
 
 function testMode()
 {
 	access_token = "2.00bA9bWCI_IoeEa3943643efx8XQ3B" ;
 	uid = "2314034221";
+	getUserName();
 	jumpto("home");
+}
+
+function checkLocalStorage()
+{
+	alert(localStorage.length);
+	if (localStorage.length == 2)
+	{
+		access_token = localStorage.access_token;
+		uid = localStorage.uid;
+		getUserName();
+	}
 }
 
 function onLoad()
 {
 	access_token = null;
+	user_name = null;
+	checkLocalStorage();
 	document.addEventListener("deviceready",onDeviceReady,false);
 }
 
 function onDeviceReady()
 {
-	document.addEventListener("offline",offlineAlert,false);
-	document.addEventListener("online",onlineAlert,false);
+	document.addEventListener("offline",networkNoteShowup,false);
+	document.addEventListener("online",networkNoteHideup,false);
 	var networkState = navigator.connection.type;
 	if (networkState == Connetion.NONE) networkNoteShowup();
 }
 
-function offlineAlert()
+//handle network status change
+function networkNoteShowup()
 {
-	networkNoteShowup();
+	document.getElementById("login-net-note").style.display="block";
+	document.getElementById("home-net-note").style.display="block";
+	document.getElementById("sendWeibo-net-note").style.display="block";
 }
 
-function onlineAlert()
+function networkNoteHideup()
 {
-	networkNoteHideup();
+	document.getElementById("login-net-note").style.display="none";
+	document.getElementById("home-net-note").style.display="none";
+	document.getElementById("sendWeibo-net-note").style.display="none";
+}
+
+function jumpto(s)
+{
+	$.mobile.changePage("#"+s);
 }
 
 function exitApp()
 {
 	navigator.app.exitApp();
-}
-
-function networkNoteShowup()
-{
-	document.getElementById("network-note").style.display = "block" ;
-}
-
-function networkNoteHideup()
-{
-	document.getElementById("network-note").style.display = "none" ;
-}
-
-function jumpto(s)
-{
-	getUserName();
-	$.mobile.changePage("#"+s);
 }
 
 
@@ -71,8 +80,10 @@ function weibo()
 			var remind_in = values[2];
 			var expires_in = values[3];
 			uid = values[4];
+			localStorage.access_token = access_token;
+			localStorage.uid = uid;
 			plugins.childBrowser.close();
-			jumpto("home");
+			getUserName(); 
 		} 
 		else {
 			console.log("other");
@@ -88,11 +99,10 @@ function getUserName()
 		if (xmlhttp.readyState==4 && xmlhttp.status==200) 
 		{
 			var json = json_parse(xmlhttp.responseText);
-			document.getElementById("user-name").innerHTML = json.screen_name;
-		}
-		else 
-		{
-			//error
+			user_name = json.screen_name;
+			document.getElementById("home-uid").innerHTML = user_name;
+			document.getElementById("sendWeibo-uid").innerHTML = user_name;
+			jumpto("home");
 		}
 	}
 	xmlhttp.open("GET", url, true);
@@ -111,10 +121,6 @@ function send_weibo()
 		{
 			alert("Send Successfully!");
 		}
-		else 
-		{
-			//error
-		}
 	}
 	xmlhttp.open("POST", url, true);
 	xmlhttp.setRequestHeader("Content-Type","application/x-www-form-urlencoded;"); 
@@ -127,9 +133,9 @@ function barcodeScan()
 	window.plugins.barcodeScanner.scan( function(result) {
 		document.getElementById("barcode-decode").innerHTML =
 		("We got a barcode\n" +
-			"Result: " + result.text + "\n" +
-			"Format: " + result.format + "\n" +
-			"Cancelled: " + result.cancelled);
+		 "Result: " + result.text + "\n" +
+		 "Format: " + result.format + "\n" +
+		 "Cancelled: " + result.cancelled);
 	}, function(error) {
 		alert("Scanning failed: " + error);
 	}

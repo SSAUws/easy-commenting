@@ -14,14 +14,28 @@
 		<script type="text/javascript" src="js/json_parse.js"></script>
 	</head>
 	<body onload="onLoad()">
+
 		<!-- login page -->
 		<div data-role="page" id="login">
 			<div data-role="header" data-position="fixed">
 				<h1>Easy-commenting</h1>
-				<a data-role="button" onclick="exitApp()" data-icon="delete" data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-btn-right">退出</a>
+				<!--exit part -->
+				<a href="#login-exit" data-role="button" data-icon="delete" data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-icon-nodisc" data-rel="popup" data-position-to="window">退出</a>
+				<div id="login-exit" data-role="popup">
+					<h4>您确定要退出吗?</h4>
+					<div class="ui-grid-a" >
+						<div class="ui-block-a">
+							<a href="#" data-rel="back" data-role="button" data-icon="delete" data-mini="true" data-theme="b">否</a>
+						</div>
+						<div class="ui-block-b">
+							<a href="#" data-icon="check"  data-role="button" onclick="exitApp()" data-mini="true" data-theme="c">是</a>
+						</div>
+					</div>
+				</div>
+				<!--exit part-->
 			</div><!-- /header -->
 			<div data-role="content">
-				<a href="#badNet" data-role="button" data-icon="info" data-theme="e" id="network-note">网络连接不可用</a>
+				<a href="#badNet" data-role="button" data-icon="info" data-theme="e" id="login-net-note">网络连接不可用</a>
 				<a href="#" data-role="button" onclick="weibo()">微博登录</a>
 				<a href="#" data-role="button" onclick="testMode()">测试模式</a>
 			</div>
@@ -34,7 +48,7 @@
 		<div data-role="page" id="badNet">
 			<div data-role="header" data-position="fixed">
 				<h1>网络连接不可用</h1>
-				<a href="#login" data-role="button" data-rel="back" data-icon="back" data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-icon-nodisc">返回</a>
+				<a href="#" data-role="button" data-rel="back" data-icon="back" data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-icon-nodisc">返回</a>
 			</div><!-- /header -->
 			<div data-role="content">
 				<h2>未能连接到互联网</h2>
@@ -50,14 +64,27 @@
 				<h2> </h2>
 			</div>
 		</div>
+		<!-- bad network page -->
 
 		<!-- home page-->
 		<div data-role="page" id="home">
 			<div data-role="header" data-position="fixed">
-				<h1 id="user-name"> </h1>
+				<h1 id="home-uid"> </h1>
 				<a href="#right-panel" data-icon="grid" data-iconpos="notext" data-shadow="false" data-iconshadow="false"></a>
-				<a data-role="button" onclick="exitApp()" data-icon="delete" data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-icon-nodisc">退出</a>
+				<a href="#home-exit" data-role="button" data-icon="delete" data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-icon-nodisc" data-rel="popup" data-position-to="window">退出</a>
+				<div id="home-exit" data-role="popup">
+					<h4>您确定要退出吗?</h4>
+					<div class="ui-grid-a" >
+						<div class="ui-block-a">
+							<a href="#" data-rel="back" data-role="button" data-icon="delete" data-mini="true" data-theme="b">否</a>
+						</div>
+						<div class="ui-block-b">
+							<a href="#" data-icon="check"  data-role="button" onclick="exitApp()" data-mini="true" data-theme="c">是</a>
+						</div>
+					</div>
+				</div>
 			</div>
+
 			<div data-role="panel" id="right-panel" data-position="right">
 				<ul data-role="listview">
 					<li data-icon="delete"><a href="#" data-rel="close">关闭</a></li>
@@ -65,30 +92,37 @@
 					<li data-icon="edit"><a href="#sendWeibo">发微博</a></li>
 				</ul>
 			</div>
+
 			<div data-role="content">
-				<a href="#badNet" data-role="button" data-icon="info" data-theme="e" id="network-note">网络连接不可用</a>
+				<a href="#badNet" data-role="button" data-icon="info" data-theme="e" id="home-net-note">网络连接不可用</a>
 				<p id="barcode-decode"></p>
 			</div>
+
 			<div data-role="footer" data-position="fixed">
 				<h2 id="thing-name">您还没有扫描物品二维码</h2>
 			</div>
 		</div>
+		<!-- home page -->
+
 
 		<!-- write weibo page-->
 		<div data-role="page" id="sendWeibo">
 			<div data-role="header" data-position="fixed">
-				<h1 id="user-name"> </h1>
+				<h1 id="sendWeibo-uid"> </h1>
 				<a href="#home" data-role="button" data-icon="back" data-iconpos="notext" data-shadow="false" data-iconshadow="false" >返回</a>
 				<a href="#" data-role="button" data-icon="edit" data-shadow="false" data-iconshadow="false" onclick="send_weibo()">发送</a>
 			</div>
+
 			<div data-role="content">
-				<a href="#badNet" data-role="button" data-icon="info" data-theme="e" id="network-note">网络连接不可用</a>
+				<a href="#badNet" data-role="button" data-icon="info" data-theme="e" id="sendWeibo-net-note">网络连接不可用</a>
 				<textarea id="weibo-content" rows="10" cols="30"></textarea>
 			</div>
+
 			<div data-role="footer" data-position="fixed">
 				<h2> </h2>
 			</div>
 		</div>
+		<!-- write weibo page-->
 
 	</body>
 </html>
