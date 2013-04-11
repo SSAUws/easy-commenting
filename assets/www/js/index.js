@@ -7,12 +7,10 @@ function testMode()
 	access_token = "2.00bA9bWCI_IoeEa3943643efx8XQ3B" ;
 	uid = "2314034221";
 	getUserName();
-	jumpto("home");
 }
 
 function checkLocalStorage()
 {
-	alert(localStorage.length);
 	if (localStorage.length == 2)
 	{
 		access_token = localStorage.access_token;
@@ -102,7 +100,6 @@ function getUserName()
 			user_name = json.screen_name;
 			document.getElementById("home-uid").innerHTML = user_name;
 			document.getElementById("sendWeibo-uid").innerHTML = user_name;
-			jumpto("home");
 		}
 	}
 	xmlhttp.open("GET", url, true);
@@ -132,12 +129,20 @@ function barcodeScan()
 {
 	window.plugins.barcodeScanner.scan( function(result) {
 		document.getElementById("barcode-decode").innerHTML =
-		("We got a barcode\n" +
-		 "Result: " + result.text + "\n" +
-		 "Format: " + result.format + "\n" +
+		("We got a barcode<br/>" +
+		 "Result: " + result.text + "<br/>" +
+		 "Format: " + result.format + "<br/>" +
 		 "Cancelled: " + result.cancelled);
+		jumpto("view");
 	}, function(error) {
 		alert("Scanning failed: " + error);
 	}
 	);
+}
+
+//select menu handle
+function select(sobj)
+{
+	var goal = sobj.options[sobj.selectedIndex].value;
+	jumpto(goal);
 }

@@ -11,3 +11,35 @@ a#sendWeibo-net-note
 	display : none;
 }
 
+.my-breakpoint-1.ui-grid-b .ui-block-a 
+{ 
+	width: 20%; 
+}
+.my-breakpoint-1.ui-grid-b .ui-block-b
+{
+   	width: 30%; 
+	margin-left : 15%; 
+	margin-right : 15%;
+}
+.my-breakpoint-1.ui-grid-b .ui-block-c 
+{
+   	width: 20%; 
+}
+
+.my-breakpoint-2.ui-grid-a .ui-block-b
+{
+	width : 30%;
+	margin-left : 5%;
+	margin-top : 25%;
+}
+
+a#scan-button
+{
+	margin : 50px 30% 0 30%;
+}
+
+a#view-history
+{
+	margin-top : 20px;
+	float : right;
+}

@@ -17,7 +17,12 @@ chrome下调试会有跨域问题，解决方法：chrome.exe --disable-web-security
 网络连接提示功能增至所有页面
 加入localstorage，在token失效前可以免登陆
 
+4.11
+界面改动
+
 未解决备忘：
+登录后login按钮变成头像+名称
+view page底栏按钮（刷新，评论）
 机子上按键反应 phonegap
 等待画面 Page Loading Widget
 登录后多页面导航（类微博微信）Navbar Widget
