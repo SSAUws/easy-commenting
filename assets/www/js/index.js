@@ -1,12 +1,13 @@
 var access_token;
 var uid;
 var user_name;
+var user_img;
 
 function testMode()
 {
 	access_token = "2.00bA9bWCI_IoeEa3943643efx8XQ3B" ;
 	uid = "2314034221";
-	getUserName();
+	getUserInfo();
 }
 
 function checkLocalStorage()
@@ -15,7 +16,7 @@ function checkLocalStorage()
 	{
 		access_token = localStorage.access_token;
 		uid = localStorage.uid;
-		getUserName();
+		getUserInfo();
 	}
 }
 
@@ -81,7 +82,7 @@ function weibo()
 			localStorage.access_token = access_token;
 			localStorage.uid = uid;
 			plugins.childBrowser.close();
-			getUserName(); 
+			getUserInfo(); 
 		} 
 		else {
 			console.log("other");
@@ -89,7 +90,7 @@ function weibo()
 	};
 }
 
-function getUserName()
+function getUserInfo()
 {
 	var url = "https://api.weibo.com/2/users/show.json?uid="+uid+"&access_token=" + access_token;
 	var xmlhttp = new XMLHttpRequest();
@@ -98,12 +99,31 @@ function getUserName()
 		{
 			var json = json_parse(xmlhttp.responseText);
 			user_name = json.screen_name;
-			document.getElementById("home-uid").innerHTML = user_name;
-			document.getElementById("sendWeibo-uid").innerHTML = user_name;
+			user_img = json.profile_image_url;			
+			changeLoginState("home-login");
+			changeLoginState("view-login");
+			changeLoginState("history-login");
+			changeLoginWidth();
+			jumpto("home");
 		}
 	}
 	xmlhttp.open("GET", url, true);
 	xmlhttp.send();
+}
+
+function changeLoginWidth()
+{
+	$(".my-breakpoint-1.ui-grid-c .ui-block-a").css("width","10%");
+	$(".my-breakpoint-1.ui-grid-c .ui-block-a").css("margin","0");
+	$(".my-breakpoint-1.ui-grid-c .ui-block-b").css("width","20%");
+	$(".my-breakpoint-1.ui-grid-c .ui-block-b").css("margin-left","2.5%");
+	$(".my-breakpoint-1.ui-grid-c .ui-block-b").css("margin-right","2.5%");
+}
+
+function changeLoginState(id)
+{
+	document.getElementById(id+"-1").innerHTML='<img src="'+user_img+'" alt="" width="expression(this.width > 50 ? "50px": "100%")"/>';
+	document.getElementById(id+"-2").innerHTML='<p style="text-overflow:ellipsis; white-space:nowrap;overflow:hidden;">'+user_name+'</p>';
 }
 
 function send_weibo()
@@ -133,7 +153,7 @@ function barcodeScan()
 		 "Result: " + result.text + "<br/>" +
 		 "Format: " + result.format + "<br/>" +
 		 "Cancelled: " + result.cancelled);
-		jumpto("view");
+	jumpto("view");
 	}, function(error) {
 		alert("Scanning failed: " + error);
 	}
@@ -141,8 +161,9 @@ function barcodeScan()
 }
 
 //select menu handle
-function select(sobj)
+function select(sobj,s)
 {
 	var goal = sobj.options[sobj.selectedIndex].value;
-	jumpto(goal);
+	document.getElementById(s+'-select').value = s;
+	if (goal != s) jumpto(goal);
 }

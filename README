@@ -20,8 +20,13 @@ chrome下调试会有跨域问题，解决方法：chrome.exe --disable-web-security
 4.11
 界面改动
 
+4.12
+左上角微博头像和昵称
+view页底部
+自制theme
+jquery mobile 更新至 1.3.1
+
 未解决备忘：
-登录后login按钮变成头像+名称
 view page底栏按钮（刷新，评论）
 机子上按键反应 phonegap
 等待画面 Page Loading Widget
