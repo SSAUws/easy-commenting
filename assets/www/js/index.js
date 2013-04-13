@@ -2,6 +2,7 @@ var access_token;
 var uid;
 var user_name;
 var user_img;
+var last_page = "home";
 
 function testMode()
 {
@@ -24,6 +25,7 @@ function onLoad()
 {
 	access_token = null;
 	user_name = null;
+	networkNoteHideup();
 	checkLocalStorage();
 	document.addEventListener("deviceready",onDeviceReady,false);
 }
@@ -42,6 +44,8 @@ function networkNoteShowup()
 	document.getElementById("login-net-note").style.display="block";
 	document.getElementById("home-net-note").style.display="block";
 	document.getElementById("sendWeibo-net-note").style.display="block";
+	document.getElementById("view-net-note").style.display="block";
+	document.getElementById("history-net-note").style.display="block";
 }
 
 function networkNoteHideup()
@@ -49,6 +53,8 @@ function networkNoteHideup()
 	document.getElementById("login-net-note").style.display="none";
 	document.getElementById("home-net-note").style.display="none";
 	document.getElementById("sendWeibo-net-note").style.display="none";
+	document.getElementById("view-net-note").style.display="none";
+	document.getElementById("history-net-note").style.display="none";
 }
 
 function jumpto(s)
@@ -104,7 +110,7 @@ function getUserInfo()
 			changeLoginState("view-login");
 			changeLoginState("history-login");
 			changeLoginWidth();
-			jumpto("home");
+			jumpto(last_page);
 		}
 	}
 	xmlhttp.open("GET", url, true);
@@ -125,6 +131,22 @@ function changeLoginState(id)
 	document.getElementById(id+"-1").innerHTML='<img src="'+user_img+'" alt="" width="expression(this.width > 50 ? "50px": "100%")"/>';
 	document.getElementById(id+"-2").innerHTML='<p style="text-overflow:ellipsis; white-space:nowrap;overflow:hidden;">'+user_name+'</p>';
 }
+
+function login()
+{
+	if (user_name == null) jumpto("login");
+	else jumpto("sendWeibo");
+}
+
+jQuery( window ).on( "hashchange",function()
+		{
+			var hash = location.hash;
+			if (hash != "#login")
+			{
+				last_page = hash;
+				last_page = last_page.substr(1);
+			}
+		})
 
 function send_weibo()
 {

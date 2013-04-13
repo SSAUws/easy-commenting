@@ -37,7 +37,7 @@
 						</div>						
 					</div>
 					<div class="ui-block-d">
-						<a href="#" data-role="button" data-shadow="false" data-iconshadow="false" data-theme='b'>logo</a>
+						<a href="#" data-role="button" data-shadow="false" data-iconshadow="false" data-theme='b'>Logo</a>
 					</div>
 				</div>
 			</div>		
@@ -48,7 +48,7 @@
 					<div class="ui-block-a">
 						<img src="img/blue-camera-icon.png" width="100%" alt="" />
 					</div>
-					<div class="ui-block-b">
+					<div class="ui-block-b" style="margin-top:25%">
 						<div class="bubble">
 							<span class="bubble-left bubble-cor"></span>
 							Share items<br/>
@@ -94,8 +94,20 @@
 			</div>		
 
 			<div data-role="content">
-				<a href="#badNet" data-role="button" data-icon="info" data-theme="e" id="home-net-note">No available network</a>
+				<a href="#badNet" data-role="button" data-icon="info" data-theme="e" id="view-net-note">No available network</a>
+				<div class="ui-grid-a my-breakpoint-2">
+					<div class="ui-block-a">
+						<img src="img/sample.jpg" alt="" width="100%"/>
+					</div>
+					<div class="ui-block-b">
+						<div class="bubble">
+							<span class="bubble-left bubble-cor"></span>
+						He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!
+						</div>
+					</div>
+				</div>
 				<p id="barcode-decode"></p>
+				<hr />
 			</div>
 
 			<div data-role="footer" data-position="fixed">
@@ -104,10 +116,10 @@
 						<a href="#" data-role="button" data-icon="refresh" data-iconpos="top" data-shadow="false" data-iconshadow="false" data-theme='b'data-mini="true">Refresh</a>
 					</div>
 					<div class="ui-block-b">
-						<a href="#sendWeibo" data-role="button" data-icon="edit" data-iconpos="top" data-shadow="false" data-iconshadow="false" data-theme='b' data-mini="true">Comment</a>	
+						<a href="#" data-role="button" data-icon="edit" data-iconpos="top" data-shadow="false" data-iconshadow="false" data-theme='b' data-mini="true" onclick="login()">Comment</a>	
 					</div>
 					<div class="ui-block-c">
-						<a href="#" data-icon="back" data-role="button" data-iconpos="top" data-shadow="false" data-iconshadow="false" data-theme='b' data-mini="true">Back</a>
+						<a href="#" data-icon="back" data-rel="back" data-role="button" data-iconpos="top" data-shadow="false" data-iconshadow="false" data-theme='b' data-mini="true">Back</a>
 					</div>
 				</div>
 			</div>
@@ -119,7 +131,7 @@
 			<div data-role="header" data-position="fixed">
 				<div class="ui-grid-c my-breakpoint-1">
 					<div class="ui-block-a" id ="history-login-1">
-						<a href="#login" data-role="button" data-shadow="false" data-iconshadow="false" data-theme='b'>login</a>
+						<a href="#login" data-role="button" data-shadow="false" data-iconshadow="false" data-theme='b'>Login</a>
 					</div>
 					<div class="ui-block-b" id="history-login-2">
 					</div>
@@ -134,13 +146,13 @@
 						</div>
 					</div>
 					<div class="ui-block-d">
-						<a href="#" data-role="button" data-shadow="false" data-iconshadow="false" data-theme='b'>logo</a>
+						<a href="#" data-role="button" data-shadow="false" data-iconshadow="false" data-theme='b'>Logo</a>
 					</div>
 				</div>
 			</div>		
 
 			<div data-role="content">
-				<a href="#badNet" data-role="button" data-icon="info" data-theme="e" id="home-net-note">No available network</a>
+				<a href="#badNet" data-role="button" data-icon="info" data-theme="a" id="history-net-note">No available network</a>
 				<p id="barcode-decode"></p>
 			</div>
 
@@ -153,6 +165,9 @@
 		<!-- write weibo page-->
 		<div data-role="page" id="sendWeibo">
 			<div data-role="header" data-position="fixed">
+				<a href="#" data-icon="back" data-rel="back" data-iconpos="notext" data-shadow="false" data-iconshadow="false" data-theme='b'data-mini="true">Back</a>
+				<h3>Comment in Weibo</h3>
+				<a href="#" data-icon="edit" data-rel="back" data-iconpos="notext" data-shadow="false" data-iconshadow="false" data-theme='b'data-mini="true">Comment</a>
 			</div>
 
 			<div data-role="content">
@@ -186,7 +201,7 @@
 		<div data-role="page" id="badNet">
 			<div data-role="header" data-position="fixed">
 				<h1>No available network</h1>
-				<a href="#" data-role="button" data-rel="back" data-icon="back" data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-icon-nodisc">back</a>
+				<a href="#" data-theme="b" data-role="button" data-rel="back" data-icon="back" data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-icon-nodisc">back</a>
 			</div><!-- /header -->
 			<div data-role="content">
 				<h2>Can't connect to internet</h2>

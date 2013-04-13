@@ -23,14 +23,17 @@ chrome下调试会有跨域问题，解决方法：chrome.exe --disable-web-security
 4.12
 左上角微博头像和昵称
 view页底部
-自制theme
+自制theme(渣眼光）
 jquery mobile 更新至 1.3.1
 
-未解决备忘：
+4.13
 view page底栏按钮（刷新，评论）
+提示登录
+
+未解决备忘：
+刷新功能未做
+图片微博（不懂）
+描述过长处理（不懂）
 机子上按键反应 phonegap
-等待画面 Page Loading Widget
-登录后多页面导航（类微博微信）Navbar Widget
 app logo （找美工吧。。。）
-主题设计 themeroller
 修改应用名称
