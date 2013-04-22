@@ -1,25 +1,25 @@
-.my-breakpoint-1.ui-grid-c .ui-block-a 
+.my-breakpoint-1.ui-grid-b .ui-block-a 
 { 
 	width: 20%; 
 	margin-right:15%;
 }
-.my-breakpoint-1.ui-grid-c .ui-block-b
-{
-	width: 0;
-}
-.my-breakpoint-1.ui-grid-c .ui-block-c
+.my-breakpoint-1.ui-grid-b .ui-block-b
 {
    	width: 30%; 
 	margin-right:15%;
 }
-.my-breakpoint-1.ui-grid-c .ui-block-d 
+.my-breakpoint-1.ui-grid-b .ui-block-c 
 {
    	width: 20%; 
 }
 
-.my-breakpoint-2.ui-grid-a .ui-block-b
+.my-breakpoint-2.ui-grid-a .ui-block-a
 {
 	width : 30%;
+}
+.my-breakpoint-2.ui-grid-a .ui-block-b
+{
+	width : 65%;
 	margin-left : 5%;
 }
 
@@ -47,4 +47,10 @@ a#view-history
 {
    	width: 30%; 
 	margin-left:5%;
+}
+
+.sth-content
+{
+	height:200px;
+	overflow:hidden;
 }

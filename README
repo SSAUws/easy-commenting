@@ -30,10 +30,14 @@ jquery mobile 更新至 1.3.1
 view page底栏按钮（刷新，评论）
 提示登录
 
+4.22
+@人功能，localstorage保存最近3个@
+表情
+
 未解决备忘：
+toolbar、icon
 刷新功能未做
 图片微博（不懂）
-描述过长处理（不懂）
 机子上按键反应 phonegap
 app logo （找美工吧。。。）
 修改应用名称

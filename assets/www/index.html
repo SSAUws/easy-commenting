@@ -14,19 +14,19 @@
 		<script type="text/javascript" src="js/childbrowser.js"></script>
 		<script type="text/javascript" src="js/json_parse.js"></script>
 		<link rel="stylesheet" href="css/bubble.css" />
+		<link rel="stylesheet" href="css/jquery.mCustomScrollbar.css" />
+		<script type="text/javascript" src="js/jquery.mCustomScrollbar.min.js"></script>
+		<script type="text/javascript" src="js/emotion.js"></script>
 	</head>
-	<body onload="onLoad()">
-
+	<body>
 		<!-- home page-->
 		<div data-role="page" id="home">
-			<div data-role="header" data-position="fixed">
-				<div class="ui-grid-c my-breakpoint-1">
-					<div class="ui-block-a" id ="home-login-1">
+			<div data-role="header" data-tap-toggle="false" data-position="fixed">
+				<div class="ui-grid-b my-breakpoint-1">
+					<div class="ui-block-a" id ="home-login">
 						<a href="#login" data-theme='b' data-role="button" data-shadow="false" data-iconshadow="false">Login</a>
 					</div>
-					<div class="ui-block-b" id="home-login-2">
-					</div>
-					<div class="ui-block-c">
+					<div class="ui-block-b">
 						<a href="#home-popup" data-rel="popup" data-theme='b' data-role="button" data-shadow="false" data-iconshadow="false">Home</a>
 						<div data-role="popup" id="home-popup">
 							<ul data-role="listview" data-inset="true" data-theme="b">
@@ -36,7 +36,7 @@
 							</ul>
 						</div>						
 					</div>
-					<div class="ui-block-d">
+					<div class="ui-block-c">
 						<a href="#" data-role="button" data-shadow="false" data-iconshadow="false" data-theme='b'>Logo</a>
 					</div>
 				</div>
@@ -44,11 +44,11 @@
 
 			<div data-role="content">
 				<a href="#badNet" data-role="button" data-icon="info" data-theme="e" id="home-net-note">No available network</a>
-				<div class="ui-grid-a my-breakpoint-2">
+				<div class="ui-grid-a">
 					<div class="ui-block-a">
 						<img src="img/blue-camera-icon.png" width="100%" alt="" />
 					</div>
-					<div class="ui-block-b" style="margin-top:25%">
+					<div class="ui-block-b" style="margin-top:15%;" width="45%">
 						<div class="bubble">
 							<span class="bubble-left bubble-cor"></span>
 							Share items<br/>
@@ -62,7 +62,7 @@
 				<a href="#history" id="view-history">View history</a>
 			</div>
 
-			<div data-role="footer" data-position="fixed">
+			<div data-role="footer" data-tap-toggle="false" data-position="fixed">
 				<h2>@Copyright 2013 Easy-commenting</h2>
 			</div>
 		</div>
@@ -70,24 +70,22 @@
 
 		<!-- view page -->
 		<div data-role="page" id="view">
-			<div data-role="header" data-position="fixed">
-				<div class="ui-grid-c my-breakpoint-1">
-					<div class="ui-block-a" id ="view-login-1">
-						<a href="#login" data-role="button" data-shadow="false" data-iconshadow="false" data-theme='b'>Login</a>
+			<div data-role="header" data-tap-toggle="false" data-position="fixed">
+				<div class="ui-grid-b my-breakpoint-1">
+					<div class="ui-block-a" id ="view-login">
+						<a href="#login" data-theme='b' data-role="button" data-shadow="false" data-iconshadow="false">Login</a>
 					</div>
-					<div class="ui-block-b" id="view-login-2">
-					</div>
-					<div class="ui-block-c">
-						<a href="#view-popup" data-rel="popup" data-theme='b' data-role="button" data-shadow="false" data-iconshadow="false">View</a>
-						<div data-role="popup" id="view-popup">
+					<div class="ui-block-b">
+						<a href="#home-popup" data-rel="popup" data-theme='b' data-role="button" data-shadow="false" data-iconshadow="false">View</a>
+						<div data-role="popup" id="home-popup">
 							<ul data-role="listview" data-inset="true" data-theme="b">
 								<li><a href="#home">Home</a></li>
 								<li><a href="#view">View</a></li>
 								<li><a href="#history">History</a></li>
 							</ul>
-						</div>
+						</div>						
 					</div>
-					<div class="ui-block-d">
+					<div class="ui-block-c">
 						<a href="#" data-role="button" data-shadow="false" data-iconshadow="false" data-theme='b'>Logo</a>
 					</div>
 				</div>
@@ -102,7 +100,14 @@
 					<div class="ui-block-b">
 						<div class="bubble">
 							<span class="bubble-left bubble-cor"></span>
-						He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!
+							<div  class="sth-content">
+								<p>
+								He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!!
+								He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!!
+								He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!!
+								He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!!
+								</p>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -110,7 +115,7 @@
 				<hr />
 			</div>
 
-			<div data-role="footer" data-position="fixed">
+			<div data-role="footer" data-tap-toggle="false" data-position="fixed">
 				<div class="ui-grid-b my-breakpoint-3">
 					<div class="ui-block-a">
 						<a href="#" data-role="button" data-icon="refresh" data-iconpos="top" data-shadow="false" data-iconshadow="false" data-theme='b'data-mini="true">Refresh</a>
@@ -128,24 +133,22 @@
 
 		<!-- history page -->
 		<div data-role="page" id="history">
-			<div data-role="header" data-position="fixed">
-				<div class="ui-grid-c my-breakpoint-1">
-					<div class="ui-block-a" id ="history-login-1">
-						<a href="#login" data-role="button" data-shadow="false" data-iconshadow="false" data-theme='b'>Login</a>
+			<div data-role="header" data-tap-toggle="false" data-position="fixed">
+				<div class="ui-grid-b my-breakpoint-1">
+					<div class="ui-block-a" id ="history-login">
+						<a href="#login" data-theme='b' data-role="button" data-shadow="false" data-iconshadow="false">Login</a>
 					</div>
-					<div class="ui-block-b" id="history-login-2">
-					</div>
-					<div class="ui-block-c">
-						<a href="#history-popup" data-rel="popup" data-theme='b' data-role="button" data-shadow="false" data-iconshadow="false">History</a>
-						<div data-role="popup" id="history-popup">
+					<div class="ui-block-b">
+						<a href="#home-popup" data-rel="popup" data-theme='b' data-role="button" data-shadow="false" data-iconshadow="false">History</a>
+						<div data-role="popup" id="home-popup">
 							<ul data-role="listview" data-inset="true" data-theme="b">
-								<li><a href="#home" data-mini="true">Home</a></li>
+								<li><a href="#home">Home</a></li>
 								<li><a href="#view">View</a></li>
 								<li><a href="#history">History</a></li>
 							</ul>
-						</div>
+						</div>						
 					</div>
-					<div class="ui-block-d">
+					<div class="ui-block-c">
 						<a href="#" data-role="button" data-shadow="false" data-iconshadow="false" data-theme='b'>Logo</a>
 					</div>
 				</div>
@@ -156,7 +159,7 @@
 				<p id="barcode-decode"></p>
 			</div>
 
-			<div data-role="footer" data-position="fixed">
+			<div data-role="footer" data-tap-toggle="false" data-position="fixed">
 				<h2>@Copyright 2013 Easy-commenting</h2>
 			</div>
 		</div>
@@ -164,18 +167,21 @@
 
 		<!-- write weibo page-->
 		<div data-role="page" id="sendWeibo">
-			<div data-role="header" data-position="fixed">
-				<a href="#" data-icon="back" data-rel="back" data-iconpos="notext" data-shadow="false" data-iconshadow="false" data-theme='b'data-mini="true">Back</a>
+			<div data-role="header" data-tap-toggle="false" data-position="fixed">
+				<a href="#view" data-icon="back" data-iconpos="notext" data-shadow="false" data-iconshadow="false" data-theme='b'data-mini="true">Back</a>
 				<h3>Comment in Weibo</h3>
-				<a href="#" data-icon="edit" data-rel="back" data-iconpos="notext" data-shadow="false" data-iconshadow="false" data-theme='b'data-mini="true">Comment</a>
+				<a href="#" data-icon="edit" data-rel="back" onclick="send_weibo()" data-iconpos="notext" data-shadow="false" data-iconshadow="false" data-theme='b'data-mini="true">Comment</a>
 			</div>
 
 			<div data-role="content">
 				<a href="#badNet" data-role="button" data-icon="info" data-theme="e" id="sendWeibo-net-note">No available network</a>
-				<textarea id="weibo-content" rows="10" cols="30"></textarea>
+				<textarea id="weibo-content" placeholder="Share something"></textarea>
+				<a href="#atUser" onclick="atUserInit()">@</a>
+				<div id="emotion-container">
+				</div>
 			</div>
 
-			<div data-role="footer" data-position="fixed">
+			<div data-role="footer" data-tap-toggle="false" data-position="fixed">
 				<h2>@Copyright 2013 Easy-commenting</h2>
 			</div>
 		</div>
@@ -183,23 +189,23 @@
 
 		<!-- login page -->
 		<div data-role="page" id="login">
-			<div data-role="header" data-position="fixed">
+			<div data-role="header" data-tap-toggle="false" data-position="fixed">
 				<h1>login</h1>
 				<a href="#" data-role="button" data-rel="back" data-icon="back" data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-icon-nodisc" data-theme='b'>back</a>
 			</div><!-- /header -->
 			<div data-role="content">
 				<a href="#badNet" data-role="button" data-icon="info" data-theme="e" id="login-net-note">No available network</a>
-				<a href="#" data-role="button" onclick="weibo()" data-theme='a'>Weibo login</a>
-				<a href="#" data-role="button" onclick="testMode()" data-theme='a'>Test Mode</a>
+				<a href="#" data-role="button" onclick="weibo()" data-theme='b'>Weibo login</a>
+				<a href="#" data-role="button" onclick="testMode()" data-theme='b'>Test Mode</a>
 			</div>
-			<div data-role="footer" data-position="fixed">
+			<div data-role="footer" data-tap-toggle="false" data-position="fixed">
 				<h2>@Copyright 2013 Easy-commenting</h2>
 			</div>
 		</div>
 
 		<!-- bad network page -->
 		<div data-role="page" id="badNet">
-			<div data-role="header" data-position="fixed">
+			<div data-role="header" data-tap-toggle="false" data-position="fixed">
 				<h1>No available network</h1>
 				<a href="#" data-theme="b" data-role="button" data-rel="back" data-icon="back" data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-icon-nodisc">back</a>
 			</div><!-- /header -->
@@ -213,10 +219,27 @@
 				<h3>If you have access to the wireless LAN：</h3>
 				<li>Please check whether the wireless LAN hotspots have access to the Internet, or the hot spots is to allow your device to access the Internet.</li>
 			</div>
-			<div data-role="footer" data-position="fixed">
+			<div data-role="footer" data-tap-toggle="false" data-position="fixed">
 				<h2>@Copyright 2013 Easy-commenting</h2>
 			</div>
 		</div>
 		<!-- bad network page -->
+
+		<!-- at user page -->
+		<div data-role="page" id="atUser">
+			<div data-role="header" data-tap-toggle="false" data-position="fixed">
+				<h1>Contact</h1>
+				<a href="#" data-theme="b" data-role="button" data-rel="back" data-shadow="false" data-mini="true">Close</a>
+			</div>
+			<div data-role="content">
+				<input type="search" placeholder="Please input username" id="atUser-input" onkeyup="atUser()"/>
+				<div id="user-list">
+				</div>
+			</div>
+			<div data-role="footer" data-tap-toggle="false" data-position="fixed">
+				<h2>@Copyright 2013 Easy-commenting</h2>
+			</div>
+		</div>
+		<!-- at user page -->
 	</body>
 </html>
