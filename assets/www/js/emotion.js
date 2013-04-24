@@ -94,7 +94,7 @@ function emotionContainerInit()
 	for (i = 1 ; i < emotion.length ; i++)
 	{
 		var s = "[" + emotion[i] + "]";
-		inner += '<img src="emotion/' + i + '.gif"' + ' alt="' + emotion[i] + '" onclick="addStrToContent(' + "'" + s + "'" + ')"/>\n';
+		inner += '<img src="emotion/' + i + '.gif"' + ' alt="' + emotion[i] + '" onclick="addStrToContent(' + "'" + s + "'" + ')" class="emotion"/>\n\n';
 	}
 	obj.innerHTML = inner;
 }

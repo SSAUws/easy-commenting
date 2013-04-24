@@ -44,7 +44,7 @@ function checkLocalStorage()
 			user_name = null;
 			networkNoteHideup();
 			checkLocalStorage();
-			testMode();
+			testMode();//PC used
 			document.addEventListener("deviceready",onDeviceReady,false);
 			$(".sth-content").mCustomScrollbar();
 		});
@@ -88,7 +88,7 @@ function exitApp()
 }
 
 //weibo event handle
-function weibo()
+function loginWeibo()
 {
 	var redirect_uri = "https://api.weibo.com/oauth2/default.html";
 	var encode_redirect_uri = encodeURIComponent(redirect_uri);
@@ -96,7 +96,6 @@ function weibo()
 	plugins.childBrowser.showWebPage(url, {showLocationBar: false});
 
 	plugins.childBrowser.onLocationChange = function(location) {
-		console.log("location: " + location);
 		if (location.indexOf(redirect_uri) >= 0) {
 			var values = location.match("access_token=(.*)&remind_in=(.*)&expires_in=(.*)&uid=(.*)");
 			access_token = values[1];
@@ -140,11 +139,10 @@ function changeLoginState(id)
 	document.getElementById(id).innerHTML='<p style="text-overflow:ellipsis; white-space:nowrap;overflow:hidden;">'+user_name+'</p>';
 }
 
-function login()
+function checkLogin()
 {
-	//	if (user_name == null) jumpto("login");
-	//	else jumpto("sendWeibo");
-	jumpto("sendWeibo");
+		if (user_name == null) loginWeibo();
+		else jumpto("sendWeibo");
 }
 
 jQuery( window ).on( "hashchange",function()
@@ -153,7 +151,7 @@ jQuery( window ).on( "hashchange",function()
 			if (hash != "#login") last_page = hash.substr(1);
 		})
 
-function send_weibo()
+function sendWeibo()
 {
 	var s = document.getElementById("weibo-content").value;
 	var encode_s = encodeURIComponent(s);
@@ -299,4 +297,9 @@ function barcodeScan()
 		alert("Scanning failed: " + error);
 	}
 	);
+}
+
+function getFocus(s)
+{
+	document.getElementById(s).focus();
 }

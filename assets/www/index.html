@@ -4,7 +4,7 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<script type="text/javascript" src="js/cordova-2.5.0.js"></script>
-		<link rel="stylesheet" href="css/theme1.min.css" />
+		<link rel="stylesheet" href="css/theme.min.css" />
 		<link rel="stylesheet" href="css/jquery.mobile.structure-1.3.1.min.css" />
 		<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
 		<script type="text/javascript" src="js/jquery.mobile-1.3.1.min.js"></script>
@@ -24,12 +24,12 @@
 			<div data-role="header" data-tap-toggle="false" data-position="fixed">
 				<div class="ui-grid-b my-breakpoint-1">
 					<div class="ui-block-a" id ="home-login">
-						<a href="#login" data-theme='b' data-role="button" data-shadow="false" data-iconshadow="false">Login</a>
+						<a href="#login"  data-role="button" data-shadow="false" data-iconshadow="false">Login</a>
 					</div>
 					<div class="ui-block-b">
-						<a href="#home-popup" data-rel="popup" data-theme='b' data-role="button" data-shadow="false" data-iconshadow="false">Home</a>
+						<a href="#home-popup" data-rel="popup"  data-role="button" data-shadow="false" data-iconshadow="false">Home</a>
 						<div data-role="popup" id="home-popup">
-							<ul data-role="listview" data-inset="true" data-theme="b">
+							<ul data-role="listview" data-inset="true" >
 								<li><a href="#home">Home</a></li>
 								<li><a href="#view">View</a></li>
 								<li><a href="#history">History</a></li>
@@ -37,13 +37,13 @@
 						</div>						
 					</div>
 					<div class="ui-block-c">
-						<a href="#" data-role="button" data-shadow="false" data-iconshadow="false" data-theme='b'>Logo</a>
+						<a href="#" data-role="button" data-shadow="false" data-iconshadow="false" >Logo</a>
 					</div>
 				</div>
 			</div>		
 
 			<div data-role="content">
-				<a href="#badNet" data-role="button" data-icon="info" data-theme="e" id="home-net-note">No available network</a>
+				<a href="#badNet" data-role="button" data-icon="info" id="home-net-note">No available network</a>
 				<div class="ui-grid-a">
 					<div class="ui-block-a">
 						<img src="img/blue-camera-icon.png" width="100%" alt="" />
@@ -58,7 +58,7 @@
 					</div>
 				</div>
 				<hr />
-				<a href="#" onclick="barcodeScan()" data-theme='a' data-role="button" data-icon="search" data-inline="true" id="scan-button">Scan Barcode</a>
+				<a href="#" onclick="barcodeScan()"  data-role="button" data-icon="search" data-inline="true" id="scan-button">Scan Barcode</a>
 				<a href="#history" id="view-history">View history</a>
 			</div>
 
@@ -73,12 +73,12 @@
 			<div data-role="header" data-tap-toggle="false" data-position="fixed">
 				<div class="ui-grid-b my-breakpoint-1">
 					<div class="ui-block-a" id ="view-login">
-						<a href="#login" data-theme='b' data-role="button" data-shadow="false" data-iconshadow="false">Login</a>
+						<a href="#login"  data-role="button" data-shadow="false" data-iconshadow="false">Login</a>
 					</div>
 					<div class="ui-block-b">
-						<a href="#home-popup" data-rel="popup" data-theme='b' data-role="button" data-shadow="false" data-iconshadow="false">View</a>
+						<a href="#home-popup" data-rel="popup"  data-role="button" data-shadow="false" data-iconshadow="false">View</a>
 						<div data-role="popup" id="home-popup">
-							<ul data-role="listview" data-inset="true" data-theme="b">
+							<ul data-role="listview" data-inset="true" >
 								<li><a href="#home">Home</a></li>
 								<li><a href="#view">View</a></li>
 								<li><a href="#history">History</a></li>
@@ -86,13 +86,13 @@
 						</div>						
 					</div>
 					<div class="ui-block-c">
-						<a href="#" data-role="button" data-shadow="false" data-iconshadow="false" data-theme='b'>Logo</a>
+						<a href="#" data-role="button" data-shadow="false" data-iconshadow="false" >Logo</a>
 					</div>
 				</div>
 			</div>		
 
 			<div data-role="content">
-				<a href="#badNet" data-role="button" data-icon="info" data-theme="e" id="view-net-note">No available network</a>
+				<a href="#badNet" data-role="button" data-icon="info" id="view-net-note">No available network</a>
 				<div class="ui-grid-a my-breakpoint-2">
 					<div class="ui-block-a">
 						<img src="img/sample.jpg" alt="" width="100%"/>
@@ -118,13 +118,13 @@
 			<div data-role="footer" data-tap-toggle="false" data-position="fixed">
 				<div class="ui-grid-b my-breakpoint-3">
 					<div class="ui-block-a">
-						<a href="#" data-role="button" data-icon="refresh" data-iconpos="top" data-shadow="false" data-iconshadow="false" data-theme='b'data-mini="true">Refresh</a>
+						<a href="#" data-role="button" data-icon="refresh" data-iconpos="top" data-shadow="false" data-iconshadow="false" data-mini="true">Refresh</a>
 					</div>
 					<div class="ui-block-b">
-						<a href="#" data-role="button" data-icon="edit" data-iconpos="top" data-shadow="false" data-iconshadow="false" data-theme='b' data-mini="true" onclick="login()">Comment</a>	
+						<a href="#" data-role="button" data-icon="edit" data-iconpos="top" data-shadow="false" data-iconshadow="false"  data-mini="true" onclick="checkLogin()">Comment</a>	
 					</div>
 					<div class="ui-block-c">
-						<a href="#" data-icon="back" data-rel="back" data-role="button" data-iconpos="top" data-shadow="false" data-iconshadow="false" data-theme='b' data-mini="true">Back</a>
+						<a href="#" data-icon="back" data-rel="back" data-role="button" data-iconpos="top" data-shadow="false" data-iconshadow="false"  data-mini="true">Back</a>
 					</div>
 				</div>
 			</div>
@@ -136,12 +136,12 @@
 			<div data-role="header" data-tap-toggle="false" data-position="fixed">
 				<div class="ui-grid-b my-breakpoint-1">
 					<div class="ui-block-a" id ="history-login">
-						<a href="#login" data-theme='b' data-role="button" data-shadow="false" data-iconshadow="false">Login</a>
+						<a href="#login"  data-role="button" data-shadow="false" data-iconshadow="false">Login</a>
 					</div>
 					<div class="ui-block-b">
-						<a href="#home-popup" data-rel="popup" data-theme='b' data-role="button" data-shadow="false" data-iconshadow="false">History</a>
+						<a href="#home-popup" data-rel="popup"  data-role="button" data-shadow="false" data-iconshadow="false">History</a>
 						<div data-role="popup" id="home-popup">
-							<ul data-role="listview" data-inset="true" data-theme="b">
+							<ul data-role="listview" data-inset="true" >
 								<li><a href="#home">Home</a></li>
 								<li><a href="#view">View</a></li>
 								<li><a href="#history">History</a></li>
@@ -149,13 +149,13 @@
 						</div>						
 					</div>
 					<div class="ui-block-c">
-						<a href="#" data-role="button" data-shadow="false" data-iconshadow="false" data-theme='b'>Logo</a>
+						<a href="#" data-role="button" data-shadow="false" data-iconshadow="false" >Logo</a>
 					</div>
 				</div>
 			</div>		
 
 			<div data-role="content">
-				<a href="#badNet" data-role="button" data-icon="info" data-theme="a" id="history-net-note">No available network</a>
+				<a href="#badNet" data-role="button" data-icon="info" id="history-net-note">No available network</a>
 				<p id="barcode-decode"></p>
 			</div>
 
@@ -168,14 +168,15 @@
 		<!-- write weibo page-->
 		<div data-role="page" id="sendWeibo">
 			<div data-role="header" data-tap-toggle="false" data-position="fixed">
-				<a href="#view" data-icon="back" data-iconpos="notext" data-shadow="false" data-iconshadow="false" data-theme='b'data-mini="true">Back</a>
+				<a href="#view" data-icon="back" data-iconpos="notext" data-shadow="false" data-iconshadow="false" data-mini="true">Back</a>
 				<h3>Comment in Weibo</h3>
-				<a href="#" data-icon="edit" data-rel="back" onclick="send_weibo()" data-iconpos="notext" data-shadow="false" data-iconshadow="false" data-theme='b'data-mini="true">Comment</a>
+				<a href="#" data-icon="edit" data-rel="back" onclick="sendWeibo()" data-iconpos="notext" data-shadow="false" data-iconshadow="false" data-mini="true">Comment</a>
 			</div>
 
 			<div data-role="content">
-				<a href="#badNet" data-role="button" data-icon="info" data-theme="e" id="sendWeibo-net-note">No available network</a>
-				<textarea id="weibo-content" placeholder="Share something"></textarea>
+				<a href="#badNet" data-role="button" data-icon="info" id="sendWeibo-net-note">No available network</a>
+				<textarea id="weibo-content" placeholder="Share something" data-role="none" onreadystatechange="getFocus('weibo-content')">
+				</textarea>
 				<a href="#atUser" onclick="atUserInit()">@</a>
 				<div id="emotion-container">
 				</div>
@@ -191,12 +192,12 @@
 		<div data-role="page" id="login">
 			<div data-role="header" data-tap-toggle="false" data-position="fixed">
 				<h1>login</h1>
-				<a href="#" data-role="button" data-rel="back" data-icon="back" data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-icon-nodisc" data-theme='b'>back</a>
+				<a href="#" data-role="button" data-rel="back" data-icon="back" data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-icon-nodisc" >back</a>
 			</div><!-- /header -->
 			<div data-role="content">
-				<a href="#badNet" data-role="button" data-icon="info" data-theme="e" id="login-net-note">No available network</a>
-				<a href="#" data-role="button" onclick="weibo()" data-theme='b'>Weibo login</a>
-				<a href="#" data-role="button" onclick="testMode()" data-theme='b'>Test Mode</a>
+				<a href="#badNet" data-role="button" data-icon="info" id="login-net-note">No available network</a>
+				<a href="#" data-role="button" onclick="weibo()" >Weibo login</a>
+				<a href="#" data-role="button" onclick="testMode()" >Test Mode</a>
 			</div>
 			<div data-role="footer" data-tap-toggle="false" data-position="fixed">
 				<h2>@Copyright 2013 Easy-commenting</h2>
@@ -207,7 +208,7 @@
 		<div data-role="page" id="badNet">
 			<div data-role="header" data-tap-toggle="false" data-position="fixed">
 				<h1>No available network</h1>
-				<a href="#" data-theme="b" data-role="button" data-rel="back" data-icon="back" data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-icon-nodisc">back</a>
+				<a href="#"  data-role="button" data-rel="back" data-icon="back" data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-icon-nodisc">back</a>
 			</div><!-- /header -->
 			<div data-role="content">
 				<h2>Can't connect to internet</h2>
@@ -229,7 +230,7 @@
 		<div data-role="page" id="atUser">
 			<div data-role="header" data-tap-toggle="false" data-position="fixed">
 				<h1>Contact</h1>
-				<a href="#" data-theme="b" data-role="button" data-rel="back" data-shadow="false" data-mini="true">Close</a>
+				<a href="#"  data-role="button" data-rel="back" data-shadow="false" data-mini="true">Close</a>
 			</div>
 			<div data-role="content">
 				<input type="search" placeholder="Please input username" id="atUser-input" onkeyup="atUser()"/>
