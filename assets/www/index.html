@@ -16,34 +16,39 @@
 		<link rel="stylesheet" href="css/bubble.css" />
 		<link rel="stylesheet" href="css/jquery.mCustomScrollbar.css" />
 		<script type="text/javascript" src="js/jquery.mCustomScrollbar.min.js"></script>
-		<script type="text/javascript" src="js/emotion.js"></script>
+		<script type="text/javascript" src="js/expression.js"></script>
+		<script type="text/javascript" src="js/jQueryEvent.js"></script>
+		<script type="text/javascript" src="js/phonegapInit.js"></script>
+		<script type="text/javascript" src="js/WeiboLogin.js"></script>
+		<link rel="stylesheet" href="css/sendWeibo.css" />
+		<link rel="stylesheet" href="css/view.css" />
 	</head>
-	<body onload="onLoad()">
+	<body onload="onLoad();jQueryEventInit();phonegapInit()">
 		<!-- home page-->
 		<div data-role="page" id="home">
 			<div data-role="header" data-tap-toggle="false" data-position="fixed">
 				<div class="ui-grid-b my-breakpoint-1">
 					<div class="ui-block-a" id ="home-login">
-						<a href="#login"  data-role="button" data-shadow="false" data-iconshadow="false">Login</a>
+						<a href="#"  data-role="none" class="gotoLogin header myBtn">Login</a>
 					</div>
-					<div class="ui-block-b">
-						<a href="#home-popup" data-rel="popup"  data-role="button" data-shadow="false" data-iconshadow="false">Home</a>
-						<div data-role="popup" id="home-popup">
+					<div class="ui-block-b"logn long long long >
+						<a href="#" data-role="none" class="myBtn header middle navPopupTrigger1">Home</a>
+						<div data-role="popup" class="navPopup1" data-position-to=".navPopupTrigger1">
 							<ul data-role="listview" data-inset="true" >
-								<li><a href="#home">Home</a></li>
-								<li><a href="#view">View</a></li>
-								<li><a href="#history">History</a></li>
+								<li><a href="#" class="jumptohome">Home</a></li>
+								<li><a href="#" class="jumptoview">View</a></li>
+								<li><a href="#" class="jumptohistory">History</a></li>
 							</ul>
 						</div>						
 					</div>
 					<div class="ui-block-c">
-						<a href="#" data-role="button" data-shadow="false" data-iconshadow="false" >Logo</a>
+						<img src="img/logo.jpg" alt="" width="50px" height="50px" class="logo"/>
 					</div>
 				</div>
 			</div>		
 
 			<div data-role="content">
-				<a href="#badNet" data-role="button" data-icon="info" id="home-net-note">No available network</a>
+				<a href="#" class="jumptobadNet" data-role="button" data-icon="info" id="home-net-note">No available network</a>
 				<div class="ui-grid-a">
 					<div class="ui-block-a">
 						<img src="img/blue-camera-icon.png" width="100%" alt="" />
@@ -58,8 +63,8 @@
 					</div>
 				</div>
 				<hr />
-				<a href="#" onclick="barcodeScan()"  data-role="button" data-icon="search" data-inline="true" id="scan-button">Scan Barcode</a>
-				<a href="#history" id="view-history">View history</a>
+				<a href="#" data-role="button" data-icon="search" data-inline="true" id="scanButton" data-theme="a">Scan Barcode</a>
+				<a href="#" class="jumptohistory" id="view-history">View history</a>
 			</div>
 
 			<div data-role="footer" data-tap-toggle="false" data-position="fixed">
@@ -73,46 +78,65 @@
 			<div data-role="header" data-tap-toggle="false" data-position="fixed">
 				<div class="ui-grid-b my-breakpoint-1">
 					<div class="ui-block-a" id ="view-login">
-						<a href="#login"  data-role="button" data-shadow="false" data-iconshadow="false">Login</a>
+						<a href="#"  data-role="none" class="gotoLogin header myBtn">Login</a>
 					</div>
 					<div class="ui-block-b">
-						<a href="#home-popup" data-rel="popup"  data-role="button" data-shadow="false" data-iconshadow="false">View</a>
-						<div data-role="popup" id="home-popup">
+						<a href="#" data-role="none" class="myBtn header middle navPopupTrigger2" >View</a>
+						<div data-role="popup" class="navPopup2" data-position-to=".navPopupTrigger2">
 							<ul data-role="listview" data-inset="true" >
-								<li><a href="#home">Home</a></li>
-								<li><a href="#view">View</a></li>
-								<li><a href="#history">History</a></li>
+								<li><a href="#" class="jumptohome">Home</a></li>
+								<li><a href="#" class="jumptoview">View</a></li>
+								<li><a href="#" class="jumptohistory">History</a></li>
 							</ul>
 						</div>						
 					</div>
 					<div class="ui-block-c">
-						<a href="#" data-role="button" data-shadow="false" data-iconshadow="false" >Logo</a>
+						<img src="img/logo.jpg" alt="" width="50px" height="50px" class="logo"/>
 					</div>
 				</div>
 			</div>		
 
 			<div data-role="content">
-				<a href="#badNet" data-role="button" data-icon="info" id="view-net-note">No available network</a>
-				<div class="ui-grid-a my-breakpoint-2">
+				<a href="#" class="jumptobadNet" data-role="button" data-icon="info" id="view-net-note">No available network</a>
+				<div id="itemInfo" class="ui-grid-a my-breakpoint-2">
 					<div class="ui-block-a">
-						<img src="img/sample.jpg" alt="" width="100%"/>
+						<img src="img/sample.jpg" width="100%" height="200px"/>
 					</div>
 					<div class="ui-block-b">
 						<div class="bubble">
 							<span class="bubble-left bubble-cor"></span>
-							<div  class="sth-content">
-								<p>
-								He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!!
-								He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!!
-								He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!!
-								He is Konan!He is Konan!He is Konan!He is Konan!He is Konan!!
-								</p>
+							<div class="info">
+								<div class="title">
+									I AM <span class="name"></span>
+								</div>
+								<div class="content">
+									<p>This is <span class="name"></span></p>
+									<p class="feat">Features are...</p>
+									<p>Advantages are below</p>
+									<dl class="advantages">
+										<dd>1. ... </dd>
+										<dd>2. ... </dd>
+										<dd>3. ... </dd>
+										<dd>4. ... </dd>
+									</dl>
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-				<p id="barcode-decode"></p>
-				<hr />
+				<div id="commentContainer">
+					<div class="commenter" id="first">
+							<div class="author">
+								<img src="img/self.jpg" />
+							</div>
+							<div class="dialog">
+								<p class="user_name">Jan要开开心心做自己</p>
+								<span class="answer"><img src="img/comment.png" /></span>
+								<p>I think this is good
+								and useful! </p>
+							</div>
+						</div>
+				</div>
 			</div>
 
 			<div data-role="footer" data-tap-toggle="false" data-position="fixed">
@@ -121,7 +145,12 @@
 						<a href="#" data-role="button" data-icon="refresh" data-iconpos="top" data-shadow="false" data-iconshadow="false" data-mini="true">Refresh</a>
 					</div>
 					<div class="ui-block-b">
-						<a href="#" data-role="button" data-icon="edit" data-iconpos="top" data-shadow="false" data-iconshadow="false"  data-mini="true" onclick="checkLogin()">Comment</a>	
+						<div data-role="popup" data-tap-toggle="false" id="popupBasic-screen" data-transition="slidedown" data-theme="a" data-position-to="window" data-icon="delete" class="ui-content">
+							<p>Please login with your weibo first<p>
+							<p>If you don't have a weibo, click 
+							<a href="#" class="gotoLogin">here</a> for sign in</p>
+						</div>
+						<a href="#" class="jumptosendWeibo" data-role="button" data-icon="edit" data-iconpos="top" data-shadow="false" data-iconshadow="false"  data-mini="true">Comment</a>	
 					</div>
 					<div class="ui-block-c">
 						<a href="#" data-icon="back" data-rel="back" data-role="button" data-iconpos="top" data-shadow="false" data-iconshadow="false"  data-mini="true">Back</a>
@@ -136,26 +165,26 @@
 			<div data-role="header" data-tap-toggle="false" data-position="fixed">
 				<div class="ui-grid-b my-breakpoint-1">
 					<div class="ui-block-a" id ="history-login">
-						<a href="#login"  data-role="button" data-shadow="false" data-iconshadow="false">Login</a>
+						<a href="#"  data-role="none" class="gotoLogin header myBtn">Login</a>
 					</div>
 					<div class="ui-block-b">
-						<a href="#home-popup" data-rel="popup"  data-role="button" data-shadow="false" data-iconshadow="false">History</a>
-						<div data-role="popup" id="home-popup">
+						<a href="#" data-role="none" class="myBtn header middle navPopupTrigger3">History</a>
+						<div data-role="popup" class="navPopup3" data-position-to=".navPopupTrigger3">
 							<ul data-role="listview" data-inset="true" >
-								<li><a href="#home">Home</a></li>
-								<li><a href="#view">View</a></li>
-								<li><a href="#history">History</a></li>
+								<li><a href="#" class="jumptohome">Home</a></li>
+								<li><a href="#" class="jumptoview">View</a></li>
+								<li><a href="#" class="jumptohistory">History</a></li>
 							</ul>
 						</div>						
 					</div>
 					<div class="ui-block-c">
-						<a href="#" data-role="button" data-shadow="false" data-iconshadow="false" >Logo</a>
+						<img src="img/logo.jpg" alt="" width="50px" height="50px" class="logo"/>
 					</div>
 				</div>
 			</div>		
 
 			<div data-role="content">
-				<a href="#badNet" data-role="button" data-icon="info" id="history-net-note">No available network</a>
+				<a href="#" class="jumptobadNet" data-role="button" data-icon="info" id="history-net-note">No available network</a>
 				<p id="barcode-decode"></p>
 			</div>
 
@@ -168,16 +197,19 @@
 		<!-- write weibo page-->
 		<div data-role="page" id="sendWeibo">
 			<div data-role="header" data-tap-toggle="false" data-position="fixed">
-				<a href="#view" data-icon="back" data-iconpos="notext" data-shadow="false" data-iconshadow="false" data-mini="true">Back</a>
+				<a href="#" class="jumptoview" data-icon="back" data-iconpos="notext" data-shadow="false" data-iconshadow="false" data-mini="true">Back</a>
 				<h3>Comment in Weibo</h3>
-				<a href="#" data-icon="edit" data-rel="back" onclick="sendWeibo()" data-iconpos="notext" data-shadow="false" data-iconshadow="false" data-mini="true">Comment</a>
+				<a href="#" data-icon="edit" data-rel="back" id="sendWeiboButton" data-iconpos="notext" data-shadow="false" data-iconshadow="false" data-mini="true">Comment</a>
 			</div>
 
 			<div data-role="content">
-				<a href="#badNet" data-role="button" data-icon="info" id="sendWeibo-net-note">No available network</a>
+				<a href="#" class="jumptobadNet" data-role="button" data-icon="info" id="sendWeibo-net-note">No available network</a>
 				<textarea id="weibo-content" placeholder="Share something" data-role="none"></textarea>
-				<a href="#atUser" onclick="atUserInit()">@</a>
-				<div id="emotion-container">
+				<div id="commentBtnContainer">
+					<span class="jumptoatUser">@</span>
+					<span class="facial"><img src="img/expression.png" id="expressionTrigger" /></span>
+				</div>
+				<div id="expressionContainer">
 				</div>
 			</div>
 
@@ -186,22 +218,6 @@
 			</div>
 		</div>
 		<!-- write weibo page-->
-
-		<!-- login page -->
-		<div data-role="page" id="login">
-			<div data-role="header" data-tap-toggle="false" data-position="fixed">
-				<h1>login</h1>
-				<a href="#" data-role="button" data-rel="back" data-icon="back" data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-icon-nodisc" >back</a>
-			</div><!-- /header -->
-			<div data-role="content">
-				<a href="#badNet" data-role="button" data-icon="info" id="login-net-note">No available network</a>
-				<a href="#" data-role="button" onclick="weibo()" >Weibo login</a>
-				<a href="#" data-role="button" onclick="testMode()" >Test Mode</a>
-			</div>
-			<div data-role="footer" data-tap-toggle="false" data-position="fixed">
-				<h2>@Copyright 2013 Easy-commenting</h2>
-			</div>
-		</div>
 
 		<!-- bad network page -->
 		<div data-role="page" id="badNet">
@@ -229,7 +245,7 @@
 		<div data-role="page" id="atUser">
 			<div data-role="header" data-tap-toggle="false" data-position="fixed">
 				<h1>Contact</h1>
-				<a href="#"  data-role="button" data-rel="back" data-shadow="false" data-mini="true">Close</a>
+				<a href="#"  class="jumptosendWeibo" data-role="button" data-shadow="false" data-mini="true">Close</a>
 			</div>
 			<div data-role="content">
 				<input type="search" placeholder="Please input username" id="atUser-input" onkeyup="atUser()"/>

@@ -2,10 +2,9 @@
 {
 	line-height:30px; 
 	padding-left:2em; 
-	background:#87ebee;
+	background:#f3f3f3;
 	font-size:15px; 
 	position:relative; 
-	border-radius: 15px;
 }
 .bubble-cor
 { 
@@ -13,19 +12,18 @@
    	height:0;
    	font-size:0;
 	border-style:solid;
-	overflow:hidden; 
 	position:absolute; 
 }
 .bubble-left
 {
-	border-width:20px;
-	border-color:transparent #87ebee transparent transparent;
+	border-width:15px;
+	border-color:transparent #f3f3f3 transparent transparent;
 	left:-27px;
 	bottom:50%;
 }
 .bubble-right
 {
 	border-width:20px;
-	border-color:transparent transparent transparent #87ebee;
+	border-color:transparent transparent transparent #f3f3f3;
 	right:-25px;
 }

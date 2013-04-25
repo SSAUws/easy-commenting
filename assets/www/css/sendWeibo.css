@@ -1,0 +1,20 @@
+.jumptoatUser
+{
+	position: relative;
+	top: 4%;
+	font-size:25px;
+	color:#434343;
+}
+
+#commentBtnContainer
+{
+	left: 4%;	
+	font-weight: bold;
+}
+
+#commentBtnContainer img
+{
+	position:relative;
+	display: inline-block;
+	width: 25px;
+}

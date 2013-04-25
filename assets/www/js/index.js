@@ -6,14 +6,6 @@ var last_page = "atUser";
 var last_at;
 var inter;
 
-function changeAfterLogin()
-{
-	changeLoginState("home-login");
-	changeLoginState("view-login");
-	changeLoginState("history-login");
-	changeLoginWidth();
-}
-
 function testMode()
 {
 	access_token = "2.00bA9bWCI_IoeEa3943643efx8XQ3B" ;
@@ -38,53 +30,14 @@ function checkLocalStorage()
 	else last_at = new Array;
 }
 
-function checkShow()
-{
-	var s = $(".sth-content").is(":visible");
-	if (s == true)
-	{
-		$(".sth-content").mCustomScrollbar();
-		clearInterval(inter);
-	}
-}
-
 function onLoad()
 {
-	emotionInit();
+	expressionInit();
 	access_token = null;
 	user_name = null;
 	networkNoteHideup();
 	checkLocalStorage();
-//	testMode();//PC used
-	document.addEventListener("deviceready",onDeviceReady,false);
-	inter = setInterval(checkShow,100);
-}
-
-function onDeviceReady()
-{
-	document.addEventListener("offline",networkNoteShowup,false);
-	document.addEventListener("online",networkNoteHideup,false);
-	var networkState = navigator.connection.type;
-	if (networkState == Connetion.NONE) networkNoteShowup();
-}
-
-//handle network status change
-function networkNoteShowup()
-{
-	document.getElementById("login-net-note").style.display="block";
-	document.getElementById("home-net-note").style.display="block";
-	document.getElementById("sendWeibo-net-note").style.display="block";
-	document.getElementById("view-net-note").style.display="block";
-	document.getElementById("history-net-note").style.display="block";
-}
-
-function networkNoteHideup()
-{
-	document.getElementById("login-net-note").style.display="none";
-	document.getElementById("home-net-note").style.display="none";
-	document.getElementById("sendWeibo-net-note").style.display="none";
-	document.getElementById("view-net-note").style.display="none";
-	document.getElementById("history-net-note").style.display="none";
+	//testMode();//PC used
 }
 
 function jumpto(s)
@@ -92,34 +45,7 @@ function jumpto(s)
 	$.mobile.changePage("#"+s);
 }
 
-function exitApp()
-{
-	navigator.app.exitApp();
-}
-
 //weibo event handle
-function loginWeibo()
-{
-	var redirect_uri = "https://api.weibo.com/oauth2/default.html";
-	var encode_redirect_uri = encodeURIComponent(redirect_uri);
-	var url = "https://api.weibo.com/oauth2/authorize?display=mobile&client_id=4267533106&response_type=token&redirect_uri=" + encode_redirect_uri;
-	plugins.childBrowser.showWebPage(url, {showLocationBar: false});
-
-	plugins.childBrowser.onLocationChange = function(location) {
-		if (location.indexOf(redirect_uri) >= 0) {
-			var values = location.match("access_token=(.*)&remind_in=(.*)&expires_in=(.*)&uid=(.*)");
-			access_token = values[1];
-			var remind_in = values[2];
-			var expires_in = values[3];
-			uid = values[4];
-			localStorage.access_token = access_token;
-			localStorage.uid = uid;
-			plugins.childBrowser.close();
-			getUserInfo(); 
-			jumpto(last_page);
-		} 
-	};
-}
 
 function getUserInfo()
 {
@@ -136,23 +62,6 @@ function getUserInfo()
 	}
 	xmlhttp.open("GET", url, true);
 	xmlhttp.send();
-}
-
-function changeLoginWidth()
-{
-	$(".my-breakpoint-1.ui-grid-b .ui-block-a").css("width","35%");
-	$(".my-breakpoint-1.ui-grid-b .ui-block-a").css("margin","0");
-}
-
-function changeLoginState(id)
-{
-	document.getElementById(id).innerHTML='<p style="text-overflow:ellipsis; white-space:nowrap;overflow:hidden;">'+user_name+'</p>';
-}
-
-function checkLogin()
-{
-	if (user_name == null) loginWeibo();
-	else jumpto("sendWeibo");
 }
 
 jQuery( window ).on( "hashchange",function()
@@ -187,7 +96,7 @@ function addStrToContent(str)
 	var i;
 	if (str[0] == '@')
 	{
-		var str2 = str.substr(1);
+		var str2 = str.substr(1,str.length-2);
 		for (i = 0 ; i < last_at.length ; i++)
 			if (last_at[i] == str2) last_at.splice(i,1);
 		last_at.push(str2);
@@ -288,11 +197,6 @@ function atUser()
 	var s = document.getElementById("atUser-input").value;
 	if (s == "") updateFriends1();
 	else updateFriends2();
-}
-
-function setFocus(s)
-{
-	document.getElementById(s).focus();
 }
 
 //barcode scan

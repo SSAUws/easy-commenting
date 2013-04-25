@@ -1,0 +1,74 @@
+.my-breakpoint-2.ui-grid-a .ui-block-a
+{
+	width : 30%;
+}
+.my-breakpoint-2.ui-grid-a .ui-block-b
+{
+	width : 65%;
+	margin-left : 5%;
+}
+
+#itemInfo
+{
+	height:200px;
+}
+
+#itemInfo .title {
+	text-align: center;
+	font-weight: bold;
+	font-family: Arial;	
+	height: 20px;
+}
+
+#itemInfo .content {
+	height:180px;
+}
+
+#commentContainer {
+	position:relative;
+	top:20px;
+}
+
+#commentContainer img {
+	width:40px;
+	height: 40px;
+	border-radius: 4px;
+}
+
+#commentContainer p {
+	margin-top: 0;	
+}
+
+#commentContainer .author {
+	position: relative;
+	top: 0px;
+	left: 2.5%;
+	display: inline-block;
+		
+}
+#commentContainer .answer {
+	display:inline-block;
+	position: relative;	
+	left: 25%;
+	top: 8px;
+}
+#commentContainer .answer img {
+	width: 20px;
+	height: 20px;	
+}
+
+#commentContainer .user_name {
+	display: inline-block;
+	position: relative;
+	top: 3px;
+	color: #999;
+	font-size: 11px;
+	margin-bottom:5px;
+	margin-top: 5px;
+}
+#commentContainer .dialog {
+	position: relative;
+	display: inline-block;	
+	left: 5%;
+	top: -10px;
+}
