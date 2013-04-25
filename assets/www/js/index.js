@@ -4,6 +4,7 @@ var user_name;
 var user_img;
 var last_page = "atUser";
 var last_at;
+var inter;
 
 function changeAfterLogin()
 {
@@ -36,19 +37,28 @@ function checkLocalStorage()
 	}
 	else last_at = new Array;
 }
-(function($){
-	$(window).load(function()
-		{
-			emotionInit();
-			access_token = null;
-			user_name = null;
-			networkNoteHideup();
-			checkLocalStorage();
-			testMode();//PC used
-			document.addEventListener("deviceready",onDeviceReady,false);
-			$(".sth-content").mCustomScrollbar();
-		});
-})(jQuery);
+
+function checkShow()
+{
+	var s = $(".sth-content").is(":visible");
+	if (s == true)
+	{
+		$(".sth-content").mCustomScrollbar();
+		clearInterval(inter);
+	}
+}
+
+function onLoad()
+{
+	emotionInit();
+	access_token = null;
+	user_name = null;
+	networkNoteHideup();
+	checkLocalStorage();
+//	testMode();//PC used
+	document.addEventListener("deviceready",onDeviceReady,false);
+	inter = setInterval(checkShow,100);
+}
 
 function onDeviceReady()
 {
@@ -141,8 +151,8 @@ function changeLoginState(id)
 
 function checkLogin()
 {
-		if (user_name == null) loginWeibo();
-		else jumpto("sendWeibo");
+	if (user_name == null) loginWeibo();
+	else jumpto("sendWeibo");
 }
 
 jQuery( window ).on( "hashchange",function()
@@ -177,9 +187,10 @@ function addStrToContent(str)
 	var i;
 	if (str[0] == '@')
 	{
+		var str2 = str.substr(1);
 		for (i = 0 ; i < last_at.length ; i++)
-			if (last_at[i] == str) last_at.splice(i,1);
-		last_at.push(str);
+			if (last_at[i] == str2) last_at.splice(i,1);
+		last_at.push(str2);
 		while (last_at.length > 3)	last_at.shift();
 		localStorage.last_at = last_at.toString();
 	}
@@ -297,9 +308,4 @@ function barcodeScan()
 		alert("Scanning failed: " + error);
 	}
 	);
-}
-
-function getFocus(s)
-{
-	document.getElementById(s).focus();
 }

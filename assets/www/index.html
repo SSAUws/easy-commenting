@@ -18,7 +18,7 @@
 		<script type="text/javascript" src="js/jquery.mCustomScrollbar.min.js"></script>
 		<script type="text/javascript" src="js/emotion.js"></script>
 	</head>
-	<body>
+	<body onload="onLoad()">
 		<!-- home page-->
 		<div data-role="page" id="home">
 			<div data-role="header" data-tap-toggle="false" data-position="fixed">
@@ -175,8 +175,7 @@
 
 			<div data-role="content">
 				<a href="#badNet" data-role="button" data-icon="info" id="sendWeibo-net-note">No available network</a>
-				<textarea id="weibo-content" placeholder="Share something" data-role="none" onreadystatechange="getFocus('weibo-content')">
-				</textarea>
+				<textarea id="weibo-content" placeholder="Share something" data-role="none"></textarea>
 				<a href="#atUser" onclick="atUserInit()">@</a>
 				<div id="emotion-container">
 				</div>
