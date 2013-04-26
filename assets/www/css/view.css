@@ -27,48 +27,45 @@
 #commentContainer {
 	position:relative;
 	top:20px;
+	width:100%;
 }
 
-#commentContainer img {
-	width:40px;
-	height: 40px;
-	border-radius: 4px;
+.commentPart .author
+{
+	width:50px;
+	float:left;
 }
 
-#commentContainer p {
-	margin-top: 0;	
+.commentPart .author img
+{
+	width:50px;
 }
 
-#commentContainer .author {
-	position: relative;
-	top: 0px;
-	left: 2.5%;
-	display: inline-block;
-		
-}
-#commentContainer .answer {
-	display:inline-block;
-	position: relative;	
-	left: 25%;
-	top: 8px;
-}
-#commentContainer .answer img {
-	width: 20px;
-	height: 20px;	
+.commentPart .content
+{
+	margin-left:65px;
 }
 
-#commentContainer .user_name {
-	display: inline-block;
-	position: relative;
-	top: 3px;
-	color: #999;
-	font-size: 11px;
-	margin-bottom:5px;
-	margin-top: 5px;
+.commentPart .content .contentInfo
+{
+	font-size:10px;
+	color:#999;
 }
-#commentContainer .dialog {
-	position: relative;
-	display: inline-block;	
-	left: 5%;
-	top: -10px;
+
+.commentPart .content .contentInfo .time
+{
+	float:right;
+}
+
+.commentPart .content .contentText .left
+{
+	margin-right:21px;
+	padding:4px 0 4px;
+}
+
+.commentPart .content .contentText .answer
+{
+	float:right;
+	top:10px;
+	position:relative;
 }
