@@ -22,6 +22,7 @@
 		<script type="text/javascript" src="js/WeiboLogin.js"></script>
 		<link rel="stylesheet" href="css/sendWeibo.css" />
 		<link rel="stylesheet" href="css/view.css" />
+		<script type="text/javascript" src="js/fastclick.js"></script>
 	</head>
 	<body onload="onLoad();jQueryEventInit();phonegapInit()">
 		<!-- home page-->
@@ -64,7 +65,7 @@
 				</div>
 				<hr />
 				<a href="#" data-role="button" data-icon="search" data-inline="true" id="scanButton" data-theme="a">Scan Barcode</a>
-				<a href="#" class="jumptohistory" id="view-history">View history</a>
+				<a href="#" class="jumptohistory" id="viewHistory">View history</a>
 			</div>
 
 			<div data-role="footer" data-tap-toggle="false" data-position="fixed">
@@ -211,8 +212,7 @@
 			</div>
 
 			<div data-role="content">
-				<a href="#" class="jumptobadNet" data-role="button" data-icon="info" id="sendWeibo-net-note">No available network</a>
-				<textarea id="weibo-content" placeholder="Share something" data-role="none"></textarea>
+				<textarea id="weibo-content" placeholder="Share something" ></textarea>
 				<div id="commentBtnContainer">
 					<span class="jumptoatUser">@</span>
 					<span class="facial"><img src="img/expression.png" id="expressionTrigger" /></span>

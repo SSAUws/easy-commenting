@@ -1,6 +1,10 @@
 function jQueryEventInit()
 {
-	$("#scanButton").on("tap",barcodeScan);
+	FastClick.attach(document.body);
+	
+	$.mobile.transitionFallbacks.fade = "none";
+
+	$("#scanButton").on("click",barcodeScan);
 
 	$('#view').on('pageshow',function(){
 		$("#itemInfo .content").mCustomScrollbar();
@@ -15,46 +19,46 @@ function jQueryEventInit()
 		$("#atUser-input").focus();
 	});
 
-	$(".jumptoatUser").on("tap",function(){
+	$(".jumptoatUser").on("click",function(){
 		atUserInit();
 		jumpto("atUser");
 	});
 
-	$(".jumptosendWeibo").on("tap",checkLogin);
+	$(".jumptosendWeibo").on("click",checkLogin);
 
-	$(".jumptohome").on("tap",function(){
+	$(".jumptohome").on("click",function(){
 		jumpto("home");
 	});
 
-	$(".jumptoview").on("tap",function(){
+	$(".jumptoview").on("click",function(){
 		jumpto("view");
 	});
 
-	$(".jumptohistory").on("tap",function(){
+	$(".jumptohistory").on("click",function(){
 		jumpto("history");
 	});
 
-	$(".jumptobadNet").on("tap",function(){
+	$(".jumptobadNet").on("click",function(){
 		jumpto("badNet");
 	});
 
-	$("#sendWeiboButton").on("tap",sendWeibo);
+	$("#sendWeiboButton").on("click",sendWeibo);
 
-	$(".gotoLogin").on("tap",loginWeibo);
+	$(".gotoLogin").on("click",loginWeibo);
 
-	$("#expressionTrigger").on("tap",function(){
+	$("#expressionTrigger").on("click",function(){
 		$("#expressionContainer").toggle();
 	});
 
-	$(".navPopupTrigger1").on("tap",function(){
+	$(".navPopupTrigger1").on("click",function(){
 		$(".navPopup1").popup("open");
 	});
 
-	$(".navPopupTrigger2").on("tap",function(){
+	$(".navPopupTrigger2").on("click",function(){
 		$(".navPopup2").popup("open");
 	});
 
-	$(".navPopupTrigger3").on("tap",function(){
+	$(".navPopupTrigger3").on("click",function(){
 		$(".navPopup3").popup("open");
 	});
 }

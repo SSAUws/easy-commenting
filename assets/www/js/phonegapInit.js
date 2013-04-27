@@ -16,7 +16,6 @@ function onDeviceReady()
 function networkNoteShowup()
 {
 	document.getElementById("home-net-note").style.display="block";
-	document.getElementById("sendWeibo-net-note").style.display="block";
 	document.getElementById("view-net-note").style.display="block";
 	document.getElementById("history-net-note").style.display="block";
 }
@@ -24,7 +23,6 @@ function networkNoteShowup()
 function networkNoteHideup()
 {
 	document.getElementById("home-net-note").style.display="none";
-	document.getElementById("sendWeibo-net-note").style.display="none";
 	document.getElementById("view-net-note").style.display="none";
 	document.getElementById("history-net-note").style.display="none";
 }

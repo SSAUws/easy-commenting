@@ -18,7 +18,7 @@ a#scanButton
 	margin : 50px 30% 0 30%;
 }
 
-a#view-history
+a#viewHistory
 {
 	margin-top : 20px;
 	float : right;
@@ -32,33 +32,6 @@ a#view-history
 .my-breakpoint-3.ui-grid-b .ui-block-b
 {
 	width: 30%;
-}
-
-.sth-content
-{
-	height:200px;
-	overflow:hidden;
-}
-
-.emotion
-{
-	border: 1px solid;
-	border-color: #feeeed;
-}
-
-#weibo-content
-{
-	border: none;
-	display: block;
-	width: 100%;
-	height:200px;
-}
-
-/* fixed闪屏 */
-.ui-page {   
-     backface-visibility :  hidden ;   
-     -webkit-backface-visibility :  hidden ;  /* Chrome and Safari */   
-     -moz-backface-visibility :  hidden ;  /* Firefox */   
 }
 
 .myBtn
