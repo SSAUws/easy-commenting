@@ -34,6 +34,11 @@ view page底栏按钮（刷新，评论）
 @人功能，localstorage保存最近3个@
 表情
 
+4.27
+界面完善
+取消转场效果
+用fastclick代替click避免延时
+
 未解决备忘：
 toolbar、icon
 刷新功能未做

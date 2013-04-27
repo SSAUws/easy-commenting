@@ -23,6 +23,8 @@
 		<link rel="stylesheet" href="css/sendWeibo.css" />
 		<link rel="stylesheet" href="css/view.css" />
 		<script type="text/javascript" src="js/fastclick.js"></script>
+		<script type="text/javascript" src="js/atUser.js"></script>
+		<link rel="stylesheet" href="css/atUser.css" />
 	</head>
 	<body onload="onLoad();jQueryEventInit();phonegapInit()">
 		<!-- home page-->
@@ -136,7 +138,7 @@
 								<span class="time">4-27 00:28</span>
 							</div>
 							<div class="contentText">
-								<div class="answer">
+								<div class="answer jumptosendWeibo">
 									<img src="img/comment.png" />
 								</div>
 								<div class="left">
@@ -257,7 +259,7 @@
 			</div>
 			<div data-role="content">
 				<input type="search" placeholder="Please input username" id="atUser-input" onkeyup="atUser()"/>
-				<div id="user-list">
+				<div id="userList">
 				</div>
 			</div>
 			<div data-role="footer" data-tap-toggle="false" data-position="fixed">
