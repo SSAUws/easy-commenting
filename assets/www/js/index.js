@@ -32,6 +32,7 @@ function checkLocalStorage()
 
 function onLoad()
 {
+	viewPos = 0;
 	expressionInit();
 	access_token = null;
 	user_name = null;
@@ -46,23 +47,6 @@ function jumpto(s)
 }
 
 //weibo event handle
-
-function getUserInfo()
-{
-	var url = "https://api.weibo.com/2/users/show.json?uid="+uid+"&access_token=" + access_token;
-	var xmlhttp = new XMLHttpRequest();
-	xmlhttp.onreadystatechange = function() {
-		if (xmlhttp.readyState==4 && xmlhttp.status==200) 
-		{
-			var json = json_parse(xmlhttp.responseText);
-			user_name = json.screen_name;
-			user_img = json.profile_image_url;			
-			changeAfterLogin();
-		}
-	}
-	xmlhttp.open("GET", url, true);
-	xmlhttp.send();
-}
 
 jQuery( window ).on( "hashchange",function()
 		{
@@ -92,7 +76,7 @@ var friends;
 
 function addStrToContent(str)
 {
-	var obj = document.getElementById("weibo-content");
+	var obj = document.getElementById("weiboContent");
 	var i;
 	if (str[0] == '@')
 	{
@@ -117,7 +101,7 @@ function addStrToContent(str)
 				tmpStr = obj.value;
 			obj.value = tmpStr.substring(0, startPos) + str + tmpStr.substring(endPos, tmpStr.length);
 			cursorPos += str.length;
-			obj.selectionStart = obj.selectionEnd = cursorPos;
+			viewPos = obj.selectionStart = obj.selectionEnd = cursorPos;
 		}
 		else 
 		{

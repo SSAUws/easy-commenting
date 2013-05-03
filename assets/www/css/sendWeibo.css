@@ -17,8 +17,46 @@
 	width: 25px;
 }
 
-#weibo-content
+#weiboContent
 {
 	border: none;
 	height:200px;
+}
+
+.sendWeiboBtn1
+{
+	-moz-border-radius:4px;
+	-webkit-border-radius:4px;
+	border-radius:4px;
+
+	background: -moz-linear-gradient(19% 75% 90deg, #E0E0E0, #FAFAFA);
+
+	background: -webkit-gradient(linear, left top, left bottom, from(#FAFAFA), to(#E0E0E0));
+
+	color:#4A4A4A;
+	font-family:arial,helvetica,sans-serif;
+	font-size:14px;
+	font-weight:bold;
+	padding:8px 10px;
+	text-shadow:1px 1px 0 rgba(255, 255, 255, 0.7);
+	border: 1px solid #fff;
+}
+
+.sendWeiboBtn2
+{
+	-moz-border-radius:4px;
+	-webkit-border-radius:4px;
+	border-radius:4px;
+
+	background: -moz-linear-gradient(19% 75% 90deg, #CAEAFF, #e2f2ff);
+
+	background: -webkit-gradient(linear, left top, left bottom, from(#e2f2ff), to(#CAEAFF));
+
+	color:#637897;
+	font-family:arial,helvetica,sans-serif;
+	font-size:14px;
+	font-weight:bold;
+	padding:8px 10px;
+	text-shadow:1px 1px 0 rgba(255, 255, 255, 0.7);
+	border: 1px solid #C6E5E7;
 }

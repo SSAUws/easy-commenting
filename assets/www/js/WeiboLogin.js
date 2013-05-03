@@ -1,5 +1,6 @@
 function loginWeibo()
 {
+	if (user_name != null) return;
 	var redirect_uri = "https://api.weibo.com/oauth2/default.html";
 	var encode_redirect_uri = encodeURIComponent(redirect_uri);
 	var url = "https://api.weibo.com/oauth2/authorize?display=mobile&client_id=4267533106&response_type=token&redirect_uri=" + encode_redirect_uri;
@@ -23,26 +24,31 @@ function loginWeibo()
 
 function changeAfterLogin()
 {
-	changeLoginState("home-login");
-	changeLoginState("view-login");
-	changeLoginState("history-login");
-	changeLoginWidth();
-}
-
-
-function changeLoginWidth()
-{
-	$(".my-breakpoint-1.ui-grid-b .ui-block-a").css("width","35%");
-	$(".my-breakpoint-1.ui-grid-b .ui-block-a").css("margin","0");
-}
-
-function changeLoginState(id)
-{
-	document.getElementById(id).innerHTML='<p style="text-overflow:ellipsis; white-space:nowrap;overflow:hidden;">'+user_name+'</p>';
+	Array.prototype.forEach.call(document.getElementsByClassName('userName'), function(testEl)
+		   	{
+				testEl.innerHTML = user_name;
+			}, false);
 }
 
 function checkLogin()
 {
 	if (user_name == null) $("#popupBasic-screen").popup("open");
 	else jumpto("sendWeibo");
+}
+
+function getUserInfo()
+{
+	var url = "https://api.weibo.com/2/users/show.json?uid="+uid+"&access_token=" + access_token;
+	var xmlhttp = new XMLHttpRequest();
+	xmlhttp.onreadystatechange = function() {
+		if (xmlhttp.readyState==4 && xmlhttp.status==200) 
+		{
+			var json = json_parse(xmlhttp.responseText);
+			user_name = json.screen_name;
+			user_img = json.profile_image_url;			
+			changeAfterLogin();
+		}
+	}
+	xmlhttp.open("GET", url, true);
+	xmlhttp.send();
 }

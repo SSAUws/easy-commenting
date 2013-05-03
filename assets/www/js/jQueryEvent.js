@@ -12,7 +12,8 @@ function jQueryEventInit()
 	});
 
 	$("#sendWeibo").on("pageshow",function(){
-		$("#weibo-content").focus();
+		$("#weiboContent").focus();
+		setCursor();
 	});
 
 	$("#atUser").on("pageshow",function(){

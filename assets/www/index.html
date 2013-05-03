@@ -25,29 +25,13 @@
 		<script type="text/javascript" src="js/fastclick.js"></script>
 		<script type="text/javascript" src="js/atUser.js"></script>
 		<link rel="stylesheet" href="css/atUser.css" />
+		<script type="text/javascript" src="js/view.js"></script>
 	</head>
 	<body onload="onLoad();jQueryEventInit();phonegapInit()">
 		<!-- home page-->
 		<div data-role="page" id="home">
 			<div data-role="header" data-tap-toggle="false" data-position="fixed">
-				<div class="ui-grid-b my-breakpoint-1">
-					<div class="ui-block-a" id ="home-login">
-						<a href="#"  data-role="none" class="gotoLogin header myBtn">Login</a>
-					</div>
-					<div class="ui-block-b"logn long long long >
-						<a href="#" data-role="none" class="myBtn header middle navPopupTrigger1">Home</a>
-						<div data-role="popup" class="navPopup1" data-position-to=".navPopupTrigger1">
-							<ul data-role="listview" data-inset="true" >
-								<li><a href="#" class="jumptohome">Home</a></li>
-								<li><a href="#" class="jumptoview">View</a></li>
-								<li><a href="#" class="jumptohistory">History</a></li>
-							</ul>
-						</div>						
-					</div>
-					<div class="ui-block-c">
-						<img src="img/logo.jpg" alt="" width="50px" height="50px" class="logo"/>
-					</div>
-				</div>
+				<h1 class="userName gotoLogin">Click to login in</h1>
 			</div>		
 
 			<div data-role="content">
@@ -79,25 +63,8 @@
 		<!-- view page -->
 		<div data-role="page" id="view">
 			<div data-role="header" data-tap-toggle="false" data-position="fixed">
-				<div class="ui-grid-b my-breakpoint-1">
-					<div class="ui-block-a" id ="view-login">
-						<a href="#"  data-role="none" class="gotoLogin header myBtn">Login</a>
-					</div>
-					<div class="ui-block-b">
-						<a href="#" data-role="none" class="myBtn header middle navPopupTrigger2" >View</a>
-						<div data-role="popup" class="navPopup2" data-position-to=".navPopupTrigger2">
-							<ul data-role="listview" data-inset="true" >
-								<li><a href="#" class="jumptohome">Home</a></li>
-								<li><a href="#" class="jumptoview">View</a></li>
-								<li><a href="#" class="jumptohistory">History</a></li>
-							</ul>
-						</div>						
-					</div>
-					<div class="ui-block-c">
-						<img src="img/logo.jpg" alt="" width="50px" height="50px" class="logo"/>
-					</div>
-				</div>
-			</div>		
+				<h1 class="userName gotoLogin">Click to login in</h1>
+			</div>	
 
 			<div data-role="content">
 				<a href="#" class="jumptobadNet" data-role="button" data-icon="info" id="view-net-note">No available network</a>
@@ -151,9 +118,9 @@
 			</div>
 
 			<div data-role="footer" data-tap-toggle="false" data-position="fixed">
-				<div class="ui-grid-b my-breakpoint-3">
+				<div class="ui-grid-b">
 					<div class="ui-block-a">
-						<a href="#" data-role="button" data-icon="refresh" data-iconpos="top" data-shadow="false" data-iconshadow="false" data-mini="true">Refresh</a>
+						<img src="img/refresh.png" alt="" />
 					</div>
 					<div class="ui-block-b">
 						<div data-role="popup" data-tap-toggle="false" id="popupBasic-screen" data-transition="slidedown" data-theme="a" data-position-to="window" data-icon="delete" class="ui-content">
@@ -161,10 +128,10 @@
 							<p>If you don't have a weibo, click 
 							<a href="#" class="gotoLogin">here</a> for sign in</p>
 						</div>
-						<a href="#" class="jumptosendWeibo" data-role="button" data-icon="edit" data-iconpos="top" data-shadow="false" data-iconshadow="false"  data-mini="true">Comment</a>	
+						<img src="img/comment2.png" alt="" class="jumptosendWeibo"/>
 					</div>
 					<div class="ui-block-c">
-						<a href="#" data-icon="back" data-rel="back" data-role="button" data-iconpos="top" data-shadow="false" data-iconshadow="false"  data-mini="true">Back</a>
+						<img src="img/Back.png" alt="" />
 					</div>
 				</div>
 			</div>
@@ -174,25 +141,8 @@
 		<!-- history page -->
 		<div data-role="page" id="history">
 			<div data-role="header" data-tap-toggle="false" data-position="fixed">
-				<div class="ui-grid-b my-breakpoint-1">
-					<div class="ui-block-a" id ="history-login">
-						<a href="#"  data-role="none" class="gotoLogin header myBtn">Login</a>
-					</div>
-					<div class="ui-block-b">
-						<a href="#" data-role="none" class="myBtn header middle navPopupTrigger3">History</a>
-						<div data-role="popup" class="navPopup3" data-position-to=".navPopupTrigger3">
-							<ul data-role="listview" data-inset="true" >
-								<li><a href="#" class="jumptohome">Home</a></li>
-								<li><a href="#" class="jumptoview">View</a></li>
-								<li><a href="#" class="jumptohistory">History</a></li>
-							</ul>
-						</div>						
-					</div>
-					<div class="ui-block-c">
-						<img src="img/logo.jpg" alt="" width="50px" height="50px" class="logo"/>
-					</div>
-				</div>
-			</div>		
+				<h1 class="userName gotoLogin">Click to login in</h1>
+			</div>	
 
 			<div data-role="content">
 				<a href="#" class="jumptobadNet" data-role="button" data-icon="info" id="history-net-note">No available network</a>
@@ -208,13 +158,13 @@
 		<!-- write weibo page-->
 		<div data-role="page" id="sendWeibo">
 			<div data-role="header" data-tap-toggle="false" data-position="fixed">
-				<a href="#" class="jumptoview" data-icon="back" data-iconpos="notext" data-shadow="false" data-iconshadow="false" data-mini="true">Back</a>
+				<button class="jumptoView sendWeiboBtn1" data-role="none">Back</button>
 				<h3>Comment in Weibo</h3>
-				<a href="#" data-icon="edit" data-rel="back" id="sendWeiboButton" data-iconpos="notext" data-shadow="false" data-iconshadow="false" data-mini="true">Comment</a>
+				<button class="sendWeiboBtn2" id="sendWeiboButton" data-role="none">Send</button>
 			</div>
 
 			<div data-role="content">
-				<textarea id="weibo-content" placeholder="Share something" ></textarea>
+				<textarea id="weiboContent" placeholder="Share something" ></textarea>
 				<div id="commentBtnContainer">
 					<span class="jumptoatUser">@</span>
 					<span class="facial"><img src="img/expression.png" id="expressionTrigger" /></span>
