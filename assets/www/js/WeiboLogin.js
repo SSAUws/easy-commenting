@@ -40,7 +40,8 @@ function getUserInfo()
 {
 	var url = "https://api.weibo.com/2/users/show.json?uid="+uid+"&access_token=" + access_token;
 	var xmlhttp = new XMLHttpRequest();
-	xmlhttp.onreadystatechange = function() {
+	xmlhttp.onreadystatechange = function() 
+	{
 		if (xmlhttp.readyState==4 && xmlhttp.status==200) 
 		{
 			var json = json_parse(xmlhttp.responseText);

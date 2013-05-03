@@ -62,4 +62,6 @@ function jQueryEventInit()
 	$(".navPopupTrigger3").on("click",function(){
 		$(".navPopup3").popup("open");
 	});
+
+	$(".refresh").on("click",viewRefresh);
 }
