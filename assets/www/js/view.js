@@ -19,23 +19,24 @@ function updateComment(flag,archive)
 	$.each(archive,function(index,value){
 		var news = '<div class="commentPart">' + 
 		'<div class="author">' + 
-		'<img src="' + value.imageurl + '" />' + 
+		'<img src="' + value.image_url + '" />' + 
 		'</div>' +
 		'<div class="content">' +
 		'<div class="contentInfo">' + 
-		'<span class="user_name">' + value.userId + '</span>' +
+		'<span class="user_name">' + value.userid + '</span>' +
 		'<span class="time">' + value.date + '</span>' +
 		'</div>' +
 		'<div class="contentText">' +	
-		'<div class="answer jumptosendWeibo">' +
+		'<div class="answer jumptosendWeibo2">' +
 		'<img src="img/comment.png" />' +
 		'</div>' +
 		'<div class="left">' + value.content + '</div>' +
 		'</div>						</div>					</div>	<hr/>';
 		$(obj).append(news);
 	});
-	$(".jumptosendWeibo").on("click",checkLogin);
-	//setupScroll();
+	$(".jumptosendWeibo2").on("click",function() {
+		checkLogin();
+	});
 }
 
 function viewRefresh()
@@ -55,13 +56,4 @@ function viewRefresh()
 			updateComment(0,json.archive);
 		}
 		});
-	console.log($("#itemInfo").height());
-	console.log($(window).height());
-}
-
-function setupScroll()
-{
-	myScroll.destroy();
-	myScroll = null;
-	myScroll = new iScroll('wraper', { checkDOMChanges: true });	
 }

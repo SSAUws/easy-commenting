@@ -8,10 +8,6 @@ function jQueryEventInit()
 
 	$("#scanButton").on("click",barcodeScan);
 
-	$('#view').on('pageshow',function(){
-		viewRefresh();
-	});
-
 	$("#sendWeibo").on("pageshow",function(){
 		$("#weiboContent").focus();
 		setCursor();
@@ -26,9 +22,7 @@ function jQueryEventInit()
 		jumpto("atUser");
 	});
 
-	$(".jumptosendWeibo").on("click",function() {
-		checkLogin();
-	});
+	$(".jumptosendWeibo").on("click",checkLogin);
 
 	$(".jumptohome").on("click",function(){
 		jumpto("home");
@@ -46,24 +40,12 @@ function jQueryEventInit()
 		jumpto("badNet");
 	});
 
-	$("#sendButton").on("click",sendComment);
+	$("#sendButton").on("click",selectSend);
 
 	$(".gotoLogin").on("click",loginWeibo);
 
 	$("#expressionTrigger").on("click",function(){
 		$("#expressionContainer").toggle();
-	});
-
-	$(".navPopupTrigger1").on("click",function(){
-		$(".navPopup1").popup("open");
-	});
-
-	$(".navPopupTrigger2").on("click",function(){
-		$(".navPopup2").popup("open");
-	});
-
-	$(".navPopupTrigger3").on("click",function(){
-		$(".navPopup3").popup("open");
 	});
 
 	$(".refresh").on("click",viewRefresh);

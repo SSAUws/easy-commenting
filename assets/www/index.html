@@ -19,7 +19,6 @@
 		<link rel="stylesheet" href="css/bubble.css" />
 		<link rel="stylesheet" href="css/jquery.mCustomScrollbar.css" />
 		<script type="text/javascript" src="js/expression.js"></script>
-
 		<script type="text/javascript" src="js/phonegapInit.js"></script>
 		<script type="text/javascript" src="js/WeiboLogin.js"></script>
 		<link rel="stylesheet" href="css/sendWeibo.css" />
@@ -116,16 +115,12 @@
 							</div>
 						</div>
 					</div>
-<<<<<<< Updated upstream
 					<div class="intro_footer">
 						<div class="comment_sum">评论(<span id="c_count">10条</span>)</div>
 					</div>
 					<div class="triangle"></div>
 				</div>
 
-=======
-				</div>
->>>>>>> Stashed changes
 				<div id="commentContainer">
 					<div class="commentPart">
 						<div class="author">
@@ -174,6 +169,7 @@
 					</div>
 				</div>
 			</div>
+
 		</div>
 		<!-- view page -->
 
@@ -197,96 +193,75 @@
 			</div>
 		</div>
 		<!-- history page -->
-	</div>
 
-	<!-- write weibo page-->
-	<div data-role="page" id="sendWeibo">
-		<div data-role="header" data-tap-toggle="false" data-position="fixed">
-			<button class="jumptoView sendWeiboBtn1" data-role="none">Back</button>
-			<h3>Comment in Weibo</h3>
-			<button class="sendWeiboBtn2" id="sendButton" data-role="none">Send</button>
-		</div>
-<<<<<<< Updated upstream
-		
-		<!-- write weibo page-->
+		<!-- sendWeibo page-->
 		<div data-role="page" id="sendWeibo">
 			<div data-role="header" data-tap-toggle="false" data-position="fixed">
 				<div class="jumptoView btn_l">返回</div>
 				<div class="header_subtitle">
-			    	<div class="header_title">Add Comment</div>
+					<div class="header_title">Add Comment</div>
 					<div class="userName"></div>
-			    </div>
+				</div>
 				<div class="btn_h" id="sendButton">发送</div>
 			</div>
 
 			<div data-role="content">
-			    <div class="subcontent">
-			    	<textarea id="weiboContent" placeholder="Share something" ></textarea>
+				<div class="subcontent">
+					<textarea id="weiboContent" placeholder="Share something" ></textarea>
 					<input type="checkbox" name="transfer" id="transfer" data-role="none"/>
 					<label for="transfer">同时转发到微博</label>
-			    </div>
-			    <div id="commentBtnContainer">
+				</div>
+				<div id="commentBtnContainer">
 					<span class="jumptoatUser">@</span>
 					<span class="facial"><img src="img/expression.png" id="expressionTrigger" /></span>
 				</div>
 				<div id="expressionContainer">
 				</div>
-=======
-
-		<div data-role="content">
-			<textarea id="weiboContent" placeholder="Share something" ></textarea>
-			<div id="commentBtnContainer">
-				<span class="jumptoatUser">@</span>
-				<span class="facial"><img src="img/expression.png" id="expressionTrigger" /></span>
->>>>>>> Stashed changes
 			</div>
-			<div id="expressionContainer">
+
+			<div data-role="footer" data-tap-toggle="false" data-position="fixed">
+				<h2>@Copyright 2013 Easy-commenting</h2>
 			</div>
 		</div>
+		<!-- write weibo page-->
 
-		<div data-role="footer" data-tap-toggle="false" data-position="fixed">
-			<h2>@Copyright 2013 Easy-commenting</h2>
-		</div>
-	</div>
-	<!-- write weibo page-->
-
-	<!-- bad network page -->
-	<div data-role="page" id="badNet">
-		<div data-role="header" data-tap-toggle="false" data-position="fixed">
-			<h1>No available network</h1>
-			<a href="#"  data-role="button" data-rel="back" data-icon="back" data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-icon-nodisc">back</a>
-		</div><!-- /header -->
-		<div data-role="content">
-			<h2>Can't connect to internet</h2>
-			<p>Your device does not start the mobile network or wireless LAN</p>
-			<hr />
-			<h3>If you need to connect to the Internet, please refer to the following points:</h3>
-			<li>Check the phone's wireless LAN settings to see if there can access the wireless LAN signal.</li>
-			<li>Check whether the phone has access to the mobile network, and the phone out of service</li>
-			<h3>If you have access to the wireless LAN：</h3>
-			<li>Please check whether the wireless LAN hotspots have access to the Internet, or the hot spots is to allow your device to access the Internet.</li>
-		</div>
-		<div data-role="footer" data-tap-toggle="false" data-position="fixed">
-			<h2>@Copyright 2013 Easy-commenting</h2>
-		</div>
-	</div>
-	<!-- bad network page -->
-
-	<!-- at user page -->
-	<div data-role="page" id="atUser">
-		<div data-role="header" data-tap-toggle="false" data-position="fixed">
-			<h1>Contact</h1>
-			<a href="#"  class="jumptosendWeibo" data-role="button" data-shadow="false" data-mini="true">Close</a>
-		</div>
-		<div data-role="content">
-			<input type="search" placeholder="Please input username" id="atUser-input" onkeyup="atUser()"/>
-			<div id="userList">
+		<!-- bad network page -->
+		<div data-role="page" id="badNet">
+			<div data-role="header" data-tap-toggle="false" data-position="fixed">
+				<h1>No available network</h1>
+				<a href="#"  data-role="button" data-rel="back" data-icon="back" data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-icon-nodisc">back</a>
+			</div><!-- /header -->
+			<div data-role="content">
+				<h2>Can't connect to internet</h2>
+				<p>Your device does not start the mobile network or wireless LAN</p>
+				<hr />
+				<h3>If you need to connect to the Internet, please refer to the following points:</h3>
+				<li>Check the phone's wireless LAN settings to see if there can access the wireless LAN signal.</li>
+				<li>Check whether the phone has access to the mobile network, and the phone out of service</li>
+				<h3>If you have access to the wireless LAN：</h3>
+				<li>Please check whether the wireless LAN hotspots have access to the Internet, or the hot spots is to allow your device to access the Internet.</li>
+			</div>
+			<div data-role="footer" data-tap-toggle="false" data-position="fixed">
+				<h2>@Copyright 2013 Easy-commenting</h2>
 			</div>
 		</div>
-		<div data-role="footer" data-tap-toggle="false" data-position="fixed">
-			<h2>@Copyright 2013 Easy-commenting</h2>
+		<!-- bad network page -->
+
+		<!-- at user page -->
+		<div data-role="page" id="atUser">
+			<div data-role="header" data-tap-toggle="false" data-position="fixed">
+				<h1>Contact</h1>
+				<a href="#"  class="jumptosendWeibo" data-role="button" data-shadow="false" data-mini="true">Close</a>
+			</div>
+			<div data-role="content">
+				<input type="search" placeholder="Please input username" id="atUser-input" onkeyup="atUser()"/>
+				<div id="userList">
+				</div>
+			</div>
+			<div data-role="footer" data-tap-toggle="false" data-position="fixed">
+				<h2>@Copyright 2013 Easy-commenting</h2>
+			</div>
 		</div>
-	</div>
-	<!-- at user page -->
-</body>
+		<!-- at user page -->
+	</body>
 </html>

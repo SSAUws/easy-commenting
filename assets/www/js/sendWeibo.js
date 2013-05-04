@@ -7,8 +7,7 @@ function sendWeibo()
 	xmlhttp.onreadystatechange = function() {
 		if (xmlhttp.readyState==4 && xmlhttp.status==200) 
 		{
-			alert("Send Successfully!");
-			document.getElementById("weiboContent").value = "";
+			console.log("Send(Weibo)!");
 			sendComment();
 		}
 	}
@@ -30,14 +29,18 @@ function sendComment()
 		},
 		type : 'post',
 		datatype : 'json',
-		success : function(){console.log("Send!");}
+		success : function(){
+			document.getElementById("weiboContent").value = "";
+			console.log("Send(py)!");
+		}
 	});
 	jumpto("view");
+	viewRefresh();
 }
 
 function selectSend()
 {
-	if ($("#transfer").is(':checked')) {
-		sendWeibo();
-	} else sendComment();
+	if (document.getElementById("weiboContent").value == "") return;
+	if ($("#transfer").is(':checked')==true) sendWeibo();
+	else sendComment();
 }
