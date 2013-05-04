@@ -35,6 +35,8 @@ function onLoad()
 {
 	viewPos = 0;
 	expressionInit();
+	jQueryEventInit();
+	phonegapInit();
 	access_token = null;
 	user_name = null;
 	networkNoteHideup();

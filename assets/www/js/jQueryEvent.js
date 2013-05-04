@@ -5,6 +5,14 @@ function jQueryEventInit()
 	FastClick.attach(document.body);
 
 	$.mobile.transitionFallbacks.fade = "none";
+	$.mobile.transitionFallbacks.pop= "none";
+	$.mobile.transitionFallbacks.flip= "none";
+	$.mobile.transitionFallbacks.turn= "none";
+	$.mobile.transitionFallbacks.flow= "none";
+	$.mobile.transitionFallbacks.slidefade= "none";
+	$.mobile.transitionFallbacks.slide= "none";
+	$.mobile.transitionFallbacks.slideup= "none";
+	$.mobile.transitionFallbacks.slidedown= "none";
 
 	$("#scanButton").on("click",barcodeScan);
 
