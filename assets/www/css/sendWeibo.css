@@ -2,6 +2,14 @@
 {
 	font-size:25px;
 	color:#434343;
+	position: relative;
+	left: 3%;
+	margin-top: 5px;
+}
+.facial {
+	position: relative;
+	margin-left: 5px;
+	margin-top: 10px;	
 }
 
 #commentBtnContainer
@@ -15,12 +23,17 @@
 	position:relative;
 	display: inline-block;
 	width: 25px;
+	top: 7px;
+	margin-left: 10px;
 }
 
 #weiboContent
 {
 	border: none;
 	height:200px;
+}
+#expressionContainer {
+	margin-top: 10px;	
 }
 
 .sendWeiboBtn1

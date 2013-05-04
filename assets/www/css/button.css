@@ -13,3 +13,22 @@
 	font-weight: lighter;
 	font-family: "Microsoft YaHei";
 }
+.btn_l {
+	position: absolute;
+	display: inline-block;
+	border: 1px solid #D3D3D3;
+	border-radius: 5px;
+	width: 50px;
+	height: 25px;
+	margin: 8px;
+	left: 2%;
+	background: #D3D3D3;	
+	text-align: center;
+	color: #fff;
+	font-weight: lighter;
+	font-family: "Microsoft YaHei";	
+}
+#sendButton {
+	position: absolute;
+	left: 75%;	
+}

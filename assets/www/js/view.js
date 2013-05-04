@@ -54,4 +54,6 @@ function viewRefresh()
 			updateComment(0,json.archive);
 		}
 		});
+	console.log($("#itemInfo").height());
+	console.log($(window).height());
 }

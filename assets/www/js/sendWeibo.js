@@ -9,6 +9,7 @@ function sendWeibo()
 		{
 			alert("Send Successfully!");
 			document.getElementById("weiboContent").value = "";
+			sendComment();
 		}
 	}
 	xmlhttp.open("POST", url, true);
@@ -31,14 +32,12 @@ function sendComment()
 		datatype : 'json',
 		success : function(){console.log("Send!");}
 	});
-	//if ()
-	sendWeibo();
 	jumpto("view");
 }
 
 function selectSend()
 {
-	// TODO(moye): remove the true here.
-	if (true) sendWeibo();
-	else sendComment();
+	if ($("#transfer").is(':checked')) {
+		sendWeibo();
+	} else sendComment();
 }

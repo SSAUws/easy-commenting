@@ -55,17 +55,25 @@
 }
 
 .intro_footer {
-	margin-bottom: 10px;
-	margin-top: 5px;	
+	margin-top: 10px;	
 	display: block;
-
+	width: 100%;
+	padding-left: 15px;
+}
+.triangle {
+	position: relative;
+	border-width: 10px;
+	border-style: solid;
+	border-color:transparent transparent #fff;
+	z-index: 10;
+	display: inline-block;
+	left: 4%;
 }
 
 #commentContainer {
 	position:relative;
 	top:10px;
 	width:100%;
-	border-bottom: 1px solid #dbdbdb;
 	margin: 5px;
 }
 .commentPart {
