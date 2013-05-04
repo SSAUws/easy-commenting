@@ -1,14 +1,15 @@
+var myScroll;
+
 function jQueryEventInit()
 {
 	FastClick.attach(document.body);
-	
+
 	$.mobile.transitionFallbacks.fade = "none";
 
 	$("#scanButton").on("click",barcodeScan);
 
 	$('#view').on('pageshow',function(){
-		$("#itemInfo .content").mCustomScrollbar();
-		$('#view').unbind('pageshow');
+		viewRefresh();
 	});
 
 	$("#sendWeibo").on("pageshow",function(){

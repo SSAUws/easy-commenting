@@ -39,16 +39,7 @@ function onLoad()
 	user_name = null;
 	networkNoteHideup();
 	checkLocalStorage();
-	$("#goView").click(function(){
-		jumpto("view");
-	});
-	$("#goHistory").click(function(){
-		jumpto("history");
-	});
-	$("#goHome").click(function() {
-		jumpto("");
-	})
-	//testMode();//PC used
+	testMode();//PC used
 }
 
 function jumpto(s)

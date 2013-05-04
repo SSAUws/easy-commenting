@@ -18,7 +18,6 @@
 		<script type="text/javascript" src="js/json_parse.js"></script>
 		<link rel="stylesheet" href="css/bubble.css" />
 		<link rel="stylesheet" href="css/jquery.mCustomScrollbar.css" />
-		<script type="text/javascript" src="js/jquery.mCustomScrollbar.min.js"></script>
 		<script type="text/javascript" src="js/expression.js"></script>
 
 		<script type="text/javascript" src="js/phonegapInit.js"></script>
@@ -36,10 +35,10 @@
 		<!-- home page-->
 		<div data-role="page" id="home">
 			<div data-role="header" data-tap-toggle="false" data-position="fixed">
-			    <div class="header_subtitle">
-			    	<div class="header_title">Easy Comment</div>
+				<div class="header_subtitle">
+					<div class="header_title">Easy Comment</div>
 					<div class="userName"></div>
-			    </div>
+				</div>
 				<div class="btn_h gotologin">登录</div>
 			</div>		
 
@@ -72,8 +71,8 @@
 						<img src="img/commenting.png" alt="" class="footer_icon"/>
 						<div class="icon_explain">首页</div>
 					</div>
-					<div class="ui-block-b icon_pos" >
-						<img id="goView" src="img/commenting.png" alt="" class="footer_icon"/>
+					<div class="ui-block-b icon_pos jumptoview" >
+						<img src="img/commenting.png" alt="" class="footer_icon"/>
 						<div class="icon_explain">浏览</div>
 					</div>
 					<div class="ui-block-c  icon_pos">
@@ -92,10 +91,10 @@
 		<!-- view page -->
 		<div data-role="page" id="view">
 			<div data-role="header" data-tap-toggle="false" data-position="fixed">
-				 <div class="header_subtitle">
-			    	<div class="header_title">Easy Comment</div>
+				<div class="header_subtitle">
+					<div class="header_title">Easy Comment</div>
 					<div class="userName"></div>
-			    </div>
+				</div>
 				<div class="btn_h gotologin">login</div>
 			</div>	
 
@@ -109,20 +108,24 @@
 						</div>
 					</div>
 					<div class="lower">
-							<div class="info">
-								<div class="content">
-									<p>This is <span class="name"></span></p>
-									<p class="feat">Features are...</p>
-									<p>Advantages are below</p>
-								</div>
+						<div class="info">
+							<div class="content">
+								<p>This is <span class="name"></span></p>
+								<p class="feat">Features are...</p>
+								<p>Advantages are below</p>
 							</div>
+						</div>
 					</div>
+<<<<<<< Updated upstream
 					<div class="intro_footer">
 						<div class="comment_sum">评论(<span id="c_count">10条</span>)</div>
 					</div>
 					<div class="triangle"></div>
 				</div>
 
+=======
+				</div>
+>>>>>>> Stashed changes
 				<div id="commentContainer">
 					<div class="commentPart">
 						<div class="author">
@@ -134,11 +137,11 @@
 								<span class="time">4-27 00:28</span>
 							</div>
 							<div class="contentText">
-								<div class="left">
-									I think this is good a useful thing indeed aaaaaa!
-								</div>
 								<div class="answer jumptosendWeibo">
 									<img src="img/comment.png" />
+								</div>
+								<div class="left">
+									I think this is good a useful thing indeed aaaaaa!
 								</div>
 							</div>
 						</div>
@@ -148,38 +151,39 @@
 
 			<div data-role="footer" data-tap-toggle="false" data-position="fixed">
 				<div class="ui-grid-c">
-					<div class="ui-block-a icon_pos active" >
+					<div class="ui-block-a icon_pos" >
 						<img src="img/commenting.png" alt="" class="footer_icon refresh"/>
 						<div class="icon_explain">刷新</div>
 					</div>
-					<div class="ui-block-b icon_pos" >
+					<div class="ui-block-b icon_pos jumptosendWeibo">
 						<div data-role="popup" data-tap-toggle="false" id="popupBasic-screen" data-transition="slidedown" data-theme="a" data-position-to="window" data-icon="delete" class="ui-content">
 							<p>Please login with your weibo first<p>
 							<p>If you don't have a weibo, click 
 							<a href="#" class="gotoLogin">here</a> for sign in</p>
 						</div>
-						<img id="goView" src="img/commenting.png" alt="" class="jumptosendWeibo footer_icon"/>
+						<img src="img/commenting.png" alt="" class="jumptosendWeibo footer_icon"/>
 						<div class="icon_explain">评论</div>
 					</div>
-					<div class="ui-block-c  icon_pos">
-						<img id="goHistory" src="img/commenting.png" alt="" class="footer_icon"/>
+					<div class="ui-block-c  icon_pos jumptohistory">
+						<img src="img/commenting.png" alt="" class="footer_icon"/>
 						<div class="icon_explain">设置</div>
 					</div>
-					<div class="ui-block-d  icon_pos">
-						<img id="goHome" src="img/commenting.png" alt="" class="footer_icon"/>
+					<div class="ui-block-d  icon_pos jumptohome">
+						<img src="img/commenting.png" alt="" class="footer_icon"/>
 						<div class="icon_explain">首页</div>
 					</div>
 				</div>
+			</div>
 		</div>
 		<!-- view page -->
 
 		<!-- history page -->
 		<div data-role="page" id="history">
 			<div data-role="header" data-tap-toggle="false" data-position="fixed">
-				 <div class="header_subtitle">
-			    	<div class="header_title">Easy Comment</div>
+				<div class="header_subtitle">
+					<div class="header_title">Easy Comment</div>
 					<div class="userName"></div>
-			    </div>
+				</div>
 				<div class="btn_h gotologin">login</div>
 			</div>	
 
@@ -193,7 +197,16 @@
 			</div>
 		</div>
 		<!-- history page -->
+	</div>
+
+	<!-- write weibo page-->
+	<div data-role="page" id="sendWeibo">
+		<div data-role="header" data-tap-toggle="false" data-position="fixed">
+			<button class="jumptoView sendWeiboBtn1" data-role="none">Back</button>
+			<h3>Comment in Weibo</h3>
+			<button class="sendWeiboBtn2" id="sendButton" data-role="none">Send</button>
 		</div>
+<<<<<<< Updated upstream
 		
 		<!-- write weibo page-->
 		<div data-role="page" id="sendWeibo">
@@ -218,51 +231,62 @@
 				</div>
 				<div id="expressionContainer">
 				</div>
-			</div>
+=======
 
-			<div data-role="footer" data-tap-toggle="false" data-position="fixed">
-				<h2>@Copyright 2013 Easy-commenting</h2>
+		<div data-role="content">
+			<textarea id="weiboContent" placeholder="Share something" ></textarea>
+			<div id="commentBtnContainer">
+				<span class="jumptoatUser">@</span>
+				<span class="facial"><img src="img/expression.png" id="expressionTrigger" /></span>
+>>>>>>> Stashed changes
+			</div>
+			<div id="expressionContainer">
 			</div>
 		</div>
-		<!-- write weibo page-->
 
-		<!-- bad network page -->
-		<div data-role="page" id="badNet">
-			<div data-role="header" data-tap-toggle="false" data-position="fixed">
-				<h1>No available network</h1>
-				<a href="#"  data-role="button" data-rel="back" data-icon="back" data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-icon-nodisc">back</a>
-			</div><!-- /header -->
-			<div data-role="content">
-				<h2>Can't connect to internet</h2>
-				<p>Your device does not start the mobile network or wireless LAN</p>
-				<hr />
-				<h3>If you need to connect to the Internet, please refer to the following points:</h3>
-				<li>Check the phone's wireless LAN settings to see if there can access the wireless LAN signal.</li>
-				<li>Check whether the phone has access to the mobile network, and the phone out of service</li>
-				<h3>If you have access to the wireless LAN：</h3>
-				<li>Please check whether the wireless LAN hotspots have access to the Internet, or the hot spots is to allow your device to access the Internet.</li>
-			</div>
-			<div data-role="footer" data-tap-toggle="false" data-position="fixed">
-				<h2>@Copyright 2013 Easy-commenting</h2>
+		<div data-role="footer" data-tap-toggle="false" data-position="fixed">
+			<h2>@Copyright 2013 Easy-commenting</h2>
+		</div>
+	</div>
+	<!-- write weibo page-->
+
+	<!-- bad network page -->
+	<div data-role="page" id="badNet">
+		<div data-role="header" data-tap-toggle="false" data-position="fixed">
+			<h1>No available network</h1>
+			<a href="#"  data-role="button" data-rel="back" data-icon="back" data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-icon-nodisc">back</a>
+		</div><!-- /header -->
+		<div data-role="content">
+			<h2>Can't connect to internet</h2>
+			<p>Your device does not start the mobile network or wireless LAN</p>
+			<hr />
+			<h3>If you need to connect to the Internet, please refer to the following points:</h3>
+			<li>Check the phone's wireless LAN settings to see if there can access the wireless LAN signal.</li>
+			<li>Check whether the phone has access to the mobile network, and the phone out of service</li>
+			<h3>If you have access to the wireless LAN：</h3>
+			<li>Please check whether the wireless LAN hotspots have access to the Internet, or the hot spots is to allow your device to access the Internet.</li>
+		</div>
+		<div data-role="footer" data-tap-toggle="false" data-position="fixed">
+			<h2>@Copyright 2013 Easy-commenting</h2>
+		</div>
+	</div>
+	<!-- bad network page -->
+
+	<!-- at user page -->
+	<div data-role="page" id="atUser">
+		<div data-role="header" data-tap-toggle="false" data-position="fixed">
+			<h1>Contact</h1>
+			<a href="#"  class="jumptosendWeibo" data-role="button" data-shadow="false" data-mini="true">Close</a>
+		</div>
+		<div data-role="content">
+			<input type="search" placeholder="Please input username" id="atUser-input" onkeyup="atUser()"/>
+			<div id="userList">
 			</div>
 		</div>
-		<!-- bad network page -->
-
-		<!-- at user page -->
-		<div data-role="page" id="atUser">
-			<div data-role="header" data-tap-toggle="false" data-position="fixed">
-				<h1>Contact</h1>
-				<a href="#"  class="jumptosendWeibo" data-role="button" data-shadow="false" data-mini="true">Close</a>
-			</div>
-			<div data-role="content">
-				<input type="search" placeholder="Please input username" id="atUser-input" onkeyup="atUser()"/>
-				<div id="userList">
-				</div>
-			</div>
-			<div data-role="footer" data-tap-toggle="false" data-position="fixed">
-				<h2>@Copyright 2013 Easy-commenting</h2>
-			</div>
+		<div data-role="footer" data-tap-toggle="false" data-position="fixed">
+			<h2>@Copyright 2013 Easy-commenting</h2>
 		</div>
-		<!-- at user page -->
-	</body>
+	</div>
+	<!-- at user page -->
+</body>
 </html>
