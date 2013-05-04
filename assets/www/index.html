@@ -11,6 +11,7 @@
 		<script type="text/javascript" src="js/index.js"></script>
 		<link rel="stylesheet" href="css/index.css" />
 		<link rel="stylesheet" href="css/button.css" />
+		<link rel="stylesheet" href="css/icons.css" />
 		<script type="text/javascript" src="js/barcodescanner.js"/></script>
 		<script type="text/javascript" src="js/childbrowser.js"></script>
 		<script type="text/javascript" src="js/json_parse.js"></script>
@@ -18,7 +19,7 @@
 		<link rel="stylesheet" href="css/jquery.mCustomScrollbar.css" />
 		<script type="text/javascript" src="js/jquery.mCustomScrollbar.min.js"></script>
 		<script type="text/javascript" src="js/expression.js"></script>
-		<script type="text/javascript" src="js/jQueryEvent.js"></script>
+
 		<script type="text/javascript" src="js/phonegapInit.js"></script>
 		<script type="text/javascript" src="js/WeiboLogin.js"></script>
 		<link rel="stylesheet" href="css/sendWeibo.css" />
@@ -28,6 +29,7 @@
 		<link rel="stylesheet" href="css/atUser.css" />
 		<script type="text/javascript" src="js/view.js"></script>
 		<script type="text/javascript" src="js/sendWeibo.js"></script>
+		<script type="text/javascript" src="js/jQueryEvent.js"></script>
 	</head>
 	<body onload="onLoad();jQueryEventInit();phonegapInit()">
 		<!-- home page-->
@@ -37,7 +39,7 @@
 			    	<div class="header_title">Easy Comment</div>
 					<div class="userName"></div>
 			    </div>
-				<div class="btn_h gotologin">login</div>
+				<div class="btn_h gotologin">登录</div>
 			</div>		
 
 			<div data-role="content">
@@ -58,10 +60,30 @@
 				<hr />
 				<a href="#" data-role="button" data-icon="search" data-inline="true" id="scanButton" data-theme="a">Scan Barcode</a>
 				<a href="#" class="jumptohistory" id="viewHistory">View history</a>
+				<div class="logo">
+					<img src="img/fq_logo.png" />
+				</div>
 			</div>
 
 			<div data-role="footer" data-tap-toggle="false" data-position="fixed">
-				<h2>@Copyright 2013 Easy-commenting</h2>
+				<div class="ui-grid-c">
+					<div class="ui-block-a icon_pos active" >
+						<img src="img/commenting.png" alt="" class="footer_icon"/>
+						<div class="icon_explain">首页</div>
+					</div>
+					<div class="ui-block-b icon_pos" >
+						<img id="goView" src="img/commenting.png" alt="" class="footer_icon"/>
+						<div class="icon_explain">浏览</div>
+					</div>
+					<div class="ui-block-c  icon_pos">
+						<img id="goHistory" src="img/commenting.png" alt="" class="footer_icon"/>
+						<div class="icon_explain">设置</div>
+					</div>
+					<div class="ui-block-d  icon_pos">
+						<img id="goReply" src="img/commenting.png" alt="" class="footer_icon"/>
+						<div class="icon_explain">关于</div>
+					</div>
+				</div>
 			</div>
 		</div>
 		<!-- home page -->
@@ -78,31 +100,25 @@
 
 			<div data-role="content">
 				<a href="#" class="jumptobadNet" data-role="button" data-icon="info" id="view-net-note">No available network</a>
-				<div id="itemInfo" class="ui-grid-a my-breakpoint-2">
-					<div class="ui-block-a">
+				<div id="itemInfo">
+					<div class="upper">
 						<img src="img/sample.jpg" id = "itemImg" width="100%" height="200px"/>
+						<div class="title">
+							<span class="name" id = "itemId">Something</span>
+						</div>
 					</div>
-					<div class="ui-block-b">
-						<div class="bubble">
-							<span class="bubble-left bubble-cor"></span>
+					<div class="lower">
 							<div class="info">
-								<div class="title">
-									<span class="name" id = "itemId">Something</span>
-								</div>
 								<div class="content">
 									<p>This is <span class="name"></span></p>
 									<p class="feat">Features are...</p>
 									<p>Advantages are below</p>
-									<dl class="advantages">
-										<dd>1. ... </dd>
-										<dd>2. ... </dd>
-										<dd>3. ... </dd>
-										<dd>4. ... </dd>
-									</dl>
 								</div>
 							</div>
-						</div>
 					</div>
+				</div>
+				<div class="intro_footer">
+						<div class="comment_sum">评论(<span id="c_count">10条</span>)</div>
 				</div>
 				<div id="commentContainer">
 					<div class="commentPart">
@@ -115,11 +131,11 @@
 								<span class="time">4-27 00:28</span>
 							</div>
 							<div class="contentText">
+								<div class="left">
+									I think this is good a useful thing indeed aaaaaa!
+								</div>
 								<div class="answer jumptosendWeibo">
 									<img src="img/comment.png" />
-								</div>
-								<div class="left">
-									I think this is good and useful!I think this is good and useful!I think this is good and useful!I think this is good and useful!I think this is good and useful!
 								</div>
 							</div>
 						</div>
@@ -128,23 +144,29 @@
 			</div>
 
 			<div data-role="footer" data-tap-toggle="false" data-position="fixed">
-				<div class="ui-grid-b">
-					<div class="ui-block-a">
-						<img src="img/refresh.png" alt="" class="refresh"/>
+				<div class="ui-grid-c">
+					<div class="ui-block-a icon_pos active" >
+						<img src="img/commenting.png" alt="" class="footer_icon refresh"/>
+						<div class="icon_explain">刷新</div>
 					</div>
-					<div class="ui-block-b">
+					<div class="ui-block-b icon_pos" >
 						<div data-role="popup" data-tap-toggle="false" id="popupBasic-screen" data-transition="slidedown" data-theme="a" data-position-to="window" data-icon="delete" class="ui-content">
 							<p>Please login with your weibo first<p>
 							<p>If you don't have a weibo, click 
 							<a href="#" class="gotoLogin">here</a> for sign in</p>
 						</div>
-						<img src="img/comment2.png" alt="" class="jumptosendWeibo"/>
+						<img id="goView" src="img/commenting.png" alt="" class="jumptosendWeibo footer_icon"/>
+						<div class="icon_explain">评论</div>
 					</div>
-					<div class="ui-block-c">
-						<img src="img/Back.png" alt="" />
+					<div class="ui-block-c  icon_pos">
+						<img id="goHistory" src="img/commenting.png" alt="" class="footer_icon"/>
+						<div class="icon_explain">设置</div>
+					</div>
+					<div class="ui-block-d  icon_pos">
+						<img id="goHome" src="img/commenting.png" alt="" class="footer_icon"/>
+						<div class="icon_explain">首页</div>
 					</div>
 				</div>
-			</div>
 		</div>
 		<!-- view page -->
 
@@ -168,7 +190,8 @@
 			</div>
 		</div>
 		<!-- history page -->
-
+		</div>
+		
 		<!-- write weibo page-->
 		<div data-role="page" id="sendWeibo">
 			<div data-role="header" data-tap-toggle="false" data-position="fixed">

@@ -25,7 +25,9 @@ function jQueryEventInit()
 		jumpto("atUser");
 	});
 
-	$(".jumptosendWeibo").on("click",checkLogin);
+	$(".jumptosendWeibo").on("click",function() {
+		checkLogin();
+	});
 
 	$(".jumptohome").on("click",function(){
 		jumpto("home");

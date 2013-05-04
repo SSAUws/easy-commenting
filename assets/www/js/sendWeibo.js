@@ -38,6 +38,7 @@ function sendComment()
 
 function selectSend()
 {
-	if () sendWeibo();
+	// TODO(moye): remove the true here.
+	if (true) sendWeibo();
 	else sendComment();
 }

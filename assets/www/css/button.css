@@ -6,9 +6,10 @@
 	width: 50px;
 	height: 25px;
 	margin: 8px;
-	left: 40%;
+	left: 30%;
 	background: #778899;	
 	text-align: center;
 	color: #fff;
-	font-weight: normal;
+	font-weight: lighter;
+	font-family: "Microsoft YaHei";
 }

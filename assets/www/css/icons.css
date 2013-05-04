@@ -1,0 +1,15 @@
+.footer_icon {
+	position: relative;
+	width: 30px;
+	height: 30px;	
+	margin-left: 30px;
+	margin-top: 5px;
+}
+.icon_explain {
+	position: relative;
+	margin-left: 30px;
+	margin-bottom: 5px;
+}
+.icon_pos {
+	font-family: "Microsoft YaHei";
+}

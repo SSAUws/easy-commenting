@@ -33,8 +33,10 @@ function changeAfterLogin()
 
 function checkLogin()
 {
-	if (user_name == null) $("#popupBasic-screen").popup("open");
-	else jumpto("sendWeibo");
+	if (user_name == null) 
+		$("#popupBasic-screen").popup("open");
+	else
+		jumpto("sendWeibo");
 }
 
 function getUserInfo()
