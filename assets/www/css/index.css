@@ -1,3 +1,26 @@
+.header_title {
+	position: relative;
+	left: 5%;
+	font-weight: bold;
+	display: inline-block;	
+	margin-top: 10px;
+}
+.header_subtitle {
+	position: relative;
+	left: 35%;
+	width: 170px;
+	height: 50px;
+	display: inline-block;	
+}
+.userName {
+	position: relative;
+	left: 0%;
+	font-weight: normal;
+	color:#BEBEBE;
+	font-size: 12px; 
+	margin-bottom: 8px;
+		
+}
 .my-breakpoint-1.ui-grid-b .ui-block-a 
 { 
 	width: 20%; 

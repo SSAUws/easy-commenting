@@ -2,7 +2,7 @@ var access_token;
 var uid;
 var user_name;
 var user_img;
-var last_page = "atUser";
+var last_page = "home";
 var last_at;
 var inter;
 
@@ -38,7 +38,7 @@ function onLoad()
 	user_name = null;
 	networkNoteHideup();
 	checkLocalStorage();
-	testMode();//PC used
+	//testMode();//PC used
 }
 
 function jumpto(s)

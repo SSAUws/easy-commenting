@@ -28,6 +28,7 @@ function changeAfterLogin()
 		   	{
 				testEl.innerHTML = user_name;
 			}, false);
+	$(".gotologin").css("display","none");
 }
 
 function checkLogin()

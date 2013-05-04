@@ -1,0 +1,14 @@
+.btn_h {
+	position: relative;
+	display: inline-block;
+	border: 1px solid #778899;
+	border-radius: 5px;
+	width: 50px;
+	height: 25px;
+	margin: 8px;
+	left: 40%;
+	background: #778899;	
+	text-align: center;
+	color: #fff;
+	font-weight: normal;
+}
