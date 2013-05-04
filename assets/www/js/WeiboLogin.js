@@ -49,8 +49,19 @@ function getUserInfo()
 			user_name = json.screen_name;
 			user_img = json.profile_image_url;			
 			changeAfterLogin();
+			updateUserInfo();
 		}
 	}
 	xmlhttp.open("GET", url, true);
 	xmlhttp.send();
+}
+
+function updateUserInfo()
+{
+	$.ajax({
+		url : host + "/userlogin",
+		data : {userid : user_name , imageurl : user_img},
+		type : 'get',
+		success : function(){console.log("Login!");}
+	});
 }

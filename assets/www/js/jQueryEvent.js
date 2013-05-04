@@ -43,7 +43,7 @@ function jQueryEventInit()
 		jumpto("badNet");
 	});
 
-	$("#sendWeiboButton").on("click",sendWeibo);
+	$("#sendButton").on("click",sendComment);
 
 	$(".gotoLogin").on("click",loginWeibo);
 

@@ -27,6 +27,7 @@
 		<script type="text/javascript" src="js/atUser.js"></script>
 		<link rel="stylesheet" href="css/atUser.css" />
 		<script type="text/javascript" src="js/view.js"></script>
+		<script type="text/javascript" src="js/sendWeibo.js"></script>
 	</head>
 	<body onload="onLoad();jQueryEventInit();phonegapInit()">
 		<!-- home page-->
@@ -79,14 +80,14 @@
 				<a href="#" class="jumptobadNet" data-role="button" data-icon="info" id="view-net-note">No available network</a>
 				<div id="itemInfo" class="ui-grid-a my-breakpoint-2">
 					<div class="ui-block-a">
-						<img src="img/sample.jpg" width="100%" height="200px"/>
+						<img src="img/sample.jpg" id = "itemImg" width="100%" height="200px"/>
 					</div>
 					<div class="ui-block-b">
 						<div class="bubble">
 							<span class="bubble-left bubble-cor"></span>
 							<div class="info">
 								<div class="title">
-									I AM <span class="name"></span>
+									<span class="name" id = "itemId">Something</span>
 								</div>
 								<div class="content">
 									<p>This is <span class="name"></span></p>
@@ -173,7 +174,7 @@
 			<div data-role="header" data-tap-toggle="false" data-position="fixed">
 				<button class="jumptoView sendWeiboBtn1" data-role="none">Back</button>
 				<h3>Comment in Weibo</h3>
-				<button class="sendWeiboBtn2" id="sendWeiboButton" data-role="none">Send</button>
+				<button class="sendWeiboBtn2" id="sendButton" data-role="none">Send</button>
 			</div>
 
 			<div data-role="content">

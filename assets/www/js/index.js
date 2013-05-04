@@ -6,6 +6,7 @@ var last_page = "home";
 var last_at;
 var inter;
 
+//index.js
 function testMode()
 {
 	access_token = "2.00bA9bWCI_IoeEa3943643efx8XQ3B" ;
@@ -46,31 +47,11 @@ function jumpto(s)
 	$.mobile.changePage("#"+s);
 }
 
-//weibo event handle
-
 jQuery( window ).on( "hashchange",function()
 		{
 			var hash = location.hash;
 			if (hash != "#login") last_page = hash.substr(1);
 		})
-
-function sendWeibo()
-{
-	var s = document.getElementById("weibo-content").value;
-	var encode_s = encodeURIComponent(s);
-	var url = "https://api.weibo.com/2/statuses/update.json?status=" + encode_s + "&access_token=" + access_token;
-	var xmlhttp = new XMLHttpRequest();
-	xmlhttp.onreadystatechange = function() {
-		if (xmlhttp.readyState==4 && xmlhttp.status==200) 
-		{
-			alert("Send Successfully!");
-			document.getElementById("weibo-content").value = "";
-		}
-	}
-	xmlhttp.open("POST", url, true);
-	xmlhttp.setRequestHeader("Content-Type","application/x-www-form-urlencoded;"); 
-	xmlhttp.send();
-}
 
 var friends;
 
