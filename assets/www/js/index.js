@@ -97,13 +97,10 @@ function addStrToContent(str)
 function barcodeScan()
 {
 	window.plugins.barcodeScanner.scan( function(result) {
-		alert("We got a barcode<br/>" +
-			"Result: " + result.text + "<br/>" +
-			"Format: " + result.format + "<br/>" +
-			"Cancelled: " + result.cancelled);
+		itemId = result.text;
 		jumpto("view");
+		viewRefresh();
 	}, function(error) {
-		alert("Scanning failed: " + error);
 	}
 	);
 }

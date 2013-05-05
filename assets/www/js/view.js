@@ -1,5 +1,6 @@
 var viewPos;
 var host = "http://www.crazylpy.me:8888";
+var itemId = "barcode1";
 
 function setCursor()
 {
@@ -43,10 +44,9 @@ function viewRefresh()
 {
 	var obj = document.getElementById("commentContainer");
 	obj.innerHTML = "";
-	var id = "barcode1";
 	$.ajax({
 		url : host + "/requestbarcode",
-		data : {id : id},
+		data : {id : itemId},
 		type : 'get',
 		datatype : 'json',
 		success : function(data){
