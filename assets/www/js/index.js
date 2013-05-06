@@ -29,6 +29,12 @@ function checkLocalStorage()
 		last_at = s.split(",");
 	}
 	else last_at = new Array;
+	if (localStorage.itemInfo != undefined)
+	{
+		document.getElementById("itemInfo").innerHTML = localStorage.itemInfo;
+		document.getElementById("commentContainer").innerHTML = localStorage.commentContainer;
+		itemId = localStorage.itemId;
+	}
 }
 
 function onLoad()

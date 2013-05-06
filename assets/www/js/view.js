@@ -54,6 +54,9 @@ function viewRefresh()
 			console.log(json);
 			updateItem(json.image,json.id);
 			updateComment(0,json.archive);
+			localStorage.itemInfo = document.getElementById("itemInfo").innerHTML;
+			localStorage.commentContainer = document.getElementById("commentContainer").innerHTML;
+			localStorage.itemId = json.id;
 		}
 		});
 }
