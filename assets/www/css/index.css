@@ -1,51 +1,33 @@
-.header_title {
-	position: relative;
-	width: 80%;
-	margin: 0 auto;
+.header_title
+{
 	font-weight: bold;	
-	margin-top: 10px;
 }
-.logo {
+
+.myHeader
+{
+	text-align:center;
+}
+
+.logo 
+{
 	position: absolute;
 	top: 83%;
 	left: 57%;
 	width: 15%;
 	display: inline-block;
 }
-.logo img {
+
+.logo img 
+{
 	position: relative;
 	height: 50px;	
 }
-.header_subtitle {
-	position: relative;
-	left: 30%;
-	width: 170px;
-	height: 50px;
-	display: inline-block;	
-}
-.userName {
-	position: relative;
-	width: 90%;
-	margin: 0 auto;
+
+.userName 
+{
 	font-weight: normal;
 	color:#BEBEBE;
 	font-size: 12px; 
-	margin-bottom: 8px;
-		
-}
-.my-breakpoint-1.ui-grid-b .ui-block-a 
-{ 
-	width: 20%; 
-	margin-right:15%;
-}
-.my-breakpoint-1.ui-grid-b .ui-block-b
-{
-   	width: 30%; 
-	margin-right:15%;
-}
-.my-breakpoint-1.ui-grid-b .ui-block-c 
-{
-   	width: 20%; 
 }
 
 a#scanButton
@@ -60,16 +42,6 @@ a#viewHistory
 	font-weight: bold;
 	color:#778899;
 	
-}
-
-.my-breakpoint-3.ui-grid-b .ui-block-a 
-{ 
-	width: 30%; 
-	margin-right:5%;
-}
-.my-breakpoint-3.ui-grid-b .ui-block-b
-{
-	width: 30%;
 }
 
 .myBtn
@@ -100,6 +72,18 @@ a
 {
 	TEXT-DECORATION:none;
 }
-.active {
+
+.active 
+{
 	background: #D3D3D3;	
+}
+
+.footer_icon {
+	width: 30px;
+	height: 30px;	
+}
+
+.icon_pos {
+	font-family: "Microsoft YaHei";
+	text-align:center;
 }
