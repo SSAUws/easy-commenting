@@ -1,3 +1,4 @@
+/*  public part  */
 .header_title
 {
 	font-weight: bold;	
@@ -8,64 +9,11 @@
 	text-align:center;
 }
 
-.logo 
-{
-	position: absolute;
-	top: 83%;
-	left: 57%;
-	width: 15%;
-	display: inline-block;
-}
-
-.logo img 
-{
-	position: relative;
-	height: 50px;	
-}
-
 .userName 
 {
 	font-weight: normal;
 	color:#BEBEBE;
 	font-size: 12px; 
-}
-
-a#scanButton
-{
-	margin : 50px 30% 20px 30%;
-}
-
-a#viewHistory
-{
-	position: relative;
-	left: 55%;
-	font-weight: bold;
-	color:#778899;
-	
-}
-
-.myBtn
-{
-	color:black;
-	text-align:center;
-	padding:3px;
-	width: 40px;
-	height: 20px;
-	border: 1px solid #d4d4d4;
-	background:#F6F4F0;
-	border-radius: 5px;	
-}
-
-.myBtn.header
-{
-	top:15px;
-	position:relative;
-}
-
-.myBtn.middle
-{
-	left:30px;
-	position:relative;
 }
 
 a
@@ -87,3 +35,108 @@ a
 	font-family: "Microsoft YaHei";
 	text-align:center;
 }
+/*  public part  */
+
+/*  home page  */
+.logo 
+{
+	position: absolute;
+	bottom:60px;
+	right:5px;
+	z-index:-1;
+}
+
+.logo img 
+{
+	position: relative;
+	height: 50px;	
+}
+
+
+a#scanButton
+{
+	margin-top : 50px;
+}
+
+a#viewHistory
+{
+	position: relative;
+	left: 55%;
+	font-weight: bold;
+	color:#778899;
+	display:block;
+}
+
+.bubble
+{
+	line-height:30px; 
+	padding-left:2em; 
+	background:#f3f3f3;
+	font-size:15px; 
+	position:relative; 
+	left: 10px;
+}
+
+.bubble-cor
+{ 
+	width:0;
+   	height:0;
+   	font-size:0;
+	border-style:solid;
+	position:absolute; 
+}
+
+.bubble-left
+{
+	border-width:15px;
+	border-color:transparent #f3f3f3 transparent transparent;
+	left:-27px;
+	bottom:50%;
+}
+
+.bubble-right
+{
+	border-width:20px;
+	border-color:transparent transparent transparent #f3f3f3;
+	right:-25px;
+}
+
+.secondPart
+{
+	text-align:center;
+}
+/*  home page  */
+
+/*  sendComment page  */
+.btn_h {
+	border: 1px solid #778899;
+	border-radius: 5px;
+	width: 50px;
+	height: 25px;
+	margin: 8px 8px 8px 0;
+	background: #778899;	
+	text-align: center;
+	color: #fff;
+	font-weight: lighter;
+	font-family: "Microsoft YaHei";
+	float:right;
+}
+
+.btn_l {
+	border: 1px solid #D3D3D3;
+	border-radius: 5px;
+	width: 50px;
+	height: 25px;
+	margin: 8px 0 8px 8px;
+	background: #D3D3D3;	
+	text-align: center;
+	color: #fff;
+	font-weight: lighter;
+	font-family: "Microsoft YaHei";	
+	float:left;
+}
+
+.subcontent {
+	border-bottom: 1px solid #dbdbdb;	
+}
+/*  sendComment page  */
