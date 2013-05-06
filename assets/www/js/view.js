@@ -1,16 +1,17 @@
 var viewPos;
 var host = "http://www.crazylpy.me:8888";
-var itemId = "barcode1";
+var itemId = "名侦探柯南";
 
 function setCursor()
 {
 	document.getElementById("weiboContent").selectionStart = viewPos;
 }
 
-function updateItem(img,id)
+function updateItem(img,id,tags)
 {
 	document.getElementById("itemImg").src = img;
 	document.getElementById("itemId").innerHTML = id;
+	document.getElementById("itemContent").innerHTML = tags;
 }
 
 function updateComment(flag,archive)
@@ -28,7 +29,7 @@ function updateComment(flag,archive)
 		'<span class="time">' + value.date + '</span>' +
 		'</div>' +
 		'<div class="contentText">' +	
-		'<div class="answer jumptosendWeibo2">' +
+		'<div class="answer" onclick="toReply(' + ("'" + value.userid + "'") + ')">' +
 		'<img src="img/comment.png" />' +
 		'</div>' +
 		'<div class="left">' + value.content + '</div>' +
@@ -52,7 +53,7 @@ function viewRefresh()
 		success : function(data){
 			var json = json_parse(data);
 			console.log(json);
-			updateItem(json.image,json.id);
+			updateItem(json.image,json.id,json.tags);
 			updateComment(0,json.archive);
 			localStorage.itemInfo = document.getElementById("itemInfo").innerHTML;
 			localStorage.commentContainer = document.getElementById("commentContainer").innerHTML;

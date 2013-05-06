@@ -18,13 +18,12 @@ function sendWeibo()
 
 function sendComment()
 {
-	var id = "barcode1";
 	var s = document.getElementById("weiboContent").value;
 	$.ajax({
 		url : host + '/userpostcomment',
 		data : {
 			userid : user_name,
-			objectid : id,
+			objectid : itemId,
 			comment : s
 		},
 		type : 'post',

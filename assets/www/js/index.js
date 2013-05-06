@@ -16,7 +16,7 @@ function testMode()
 
 function checkLocalStorage()
 {
-	//	localStorage.clear();
+//	localStorage.clear();
 	if (localStorage.access_token != undefined)
 	{
 		access_token = localStorage.access_token;
@@ -109,4 +109,14 @@ function barcodeScan()
 	}, function(error) {
 	}
 	);
+}
+
+function toReply(s)
+{
+	if (checkLogin() == false) $("#popupBasic-screen").popup("open");
+	else
+	{
+		addStrToContent("对@" + s + "的回复: ");
+		jumpto("sendWeibo");
+	}
 }

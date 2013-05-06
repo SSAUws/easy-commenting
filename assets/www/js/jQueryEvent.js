@@ -30,7 +30,13 @@ function jQueryEventInit()
 		jumpto("atUser");
 	});
 
-	$(".jumptosendWeibo").on("click",checkLogin);
+	$(".jumptosendWeibo").on("click",function(){
+		if (checkLogin == false) $("#popupBasic-screen").popup("open");
+		else
+		{
+			jumpto("sendWeibo");
+		}
+	});
 
 	$(".jumptohome").on("click",function(){
 		jumpto("home");
@@ -57,4 +63,17 @@ function jQueryEventInit()
 	});
 
 	$(".refresh").on("click",viewRefresh);
+
+	$("#backtoViewTrigger").on("click",function(){
+		$("#backtoViewPopup").popup("open");
+	});
+
+	$("#closebacktoViewTrigger").on("click",function(){
+		$("#backtoViewPopup").popup("close");
+	});
+
+	$("#backtoView").on("click",function(){
+		document.getElementById("weiboContent").value = "";
+		jumpto("view");
+	});
 }
