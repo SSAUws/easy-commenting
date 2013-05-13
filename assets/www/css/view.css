@@ -66,6 +66,8 @@
 }
 .commentPart {
 	overflow: hidden;	
+	margin-bottom: 5px;
+	border-bottom:　1px solid #dbdbdb;
 }
 
 .commentPart .author
@@ -109,4 +111,30 @@
 }
 .commentPart .content .contentText .answer img {
 	width: 18px;	
+}
+
+.not_fill{
+	background:#f2dede;
+	border-color:#eed3d7;
+	width: 80%;
+	margin: 0 auto;
+	border-radius: 5px;
+	display: none;
+	padding-left: 1px;
+}
+
+#upload_item_intro {
+	border: none;
+	height: 20%;	
+}
+
+.upgrade {
+	display: inline-block;
+	float: right;
+	margin-right: 5px;
+	font-size: 12px;
+	color:#F8F8FF;	
+	padding: 2px;
+	background:rgba(112,128,144,0.6);
+	border-radius: 10px;
 }

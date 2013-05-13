@@ -103,9 +103,21 @@ function addStrToContent(str)
 function barcodeScan()
 {
 	window.plugins.barcodeScanner.scan( function(result) {
+		var reg = /[A-Za-z\d]{32}/g;
 		itemId = result.text;
-		jumpto("view");
-		viewRefresh();
+		console.log(itemId);
+		if (itemId.match(reg))
+			itemId = md5(itemId);
+		console.log(md5);
+		if (checkIdExits()) {
+			jumpto("view");
+			viewRefresh();
+		}
+		else {
+			jumpto("home");
+			if (itemId != null)
+				getTheItemUploadInfo();
+		}
 	}, function(error) {
 	}
 	);
@@ -119,4 +131,21 @@ function toReply(s)
 		addStrToContent("对@" + s + "的回复: ");
 		jumpto("sendWeibo");
 	}
+}
+
+function checkIdExits() {
+	var flag;
+	var postUrl = host + "/requestbarcode?id=" + itemId;
+	$.getJSON(postUrl, function(json) {
+		if (json.length == 0) flag = false;
+		else flag = true;
+	});
+	console.log(flag);
+	return flag;
+}
+
+
+function getTheItemUploadInfo() {
+	console.log("getItemUpload");
+	$("#item_not_exist").popup("open");
 }

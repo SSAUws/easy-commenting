@@ -10,10 +10,12 @@
 		<link rel="stylesheet" href="css/sendWeibo.css" />
 		<link rel="stylesheet" href="css/view.css" />
 		<link rel="stylesheet" href="css/atUser.css" />
+		<script type="text/javascript" src="js/md5.js"></script>
 		<script type="text/javascript" src="js/cordova-2.5.0.js"></script>
 		<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
 		<script type="text/javascript" src="js/jquery.mobile-1.3.1.min.js"></script>
 		<script type="text/javascript" src="js/index.js"></script>
+		<script type="text/javascript" src="js/upload_item.js"></script>
 		<script type="text/javascript" src="js/barcodescanner.js"/></script>
 		<script type="text/javascript" src="js/childbrowser.js"></script>
 		<script type="text/javascript" src="js/json_parse.js"></script>
@@ -23,6 +25,7 @@
 		<script type="text/javascript" src="js/fastclick.js"></script>
 		<script type="text/javascript" src="js/atUser.js"></script>
 		<script type="text/javascript" src="js/view.js"></script>
+		<script type="text/javascript" src="js/viewhistory.js"></script>
 		<script type="text/javascript" src="js/sendWeibo.js"></script>
 		<script type="text/javascript" src="js/jQueryEvent.js"></script>
 	</head>
@@ -56,11 +59,27 @@
 				<div class="secondPart">
 					<a href="#" data-role="button" data-icon="search" data-inline="true" id="scanButton" data-theme="a">Scan Barcode</a>
 					<!--
-					<a href="#" class="jumptohistory" id="viewHistory">View history</a>
+					<a href="#" class="jumptoownhistory" id="viewHistory">View history</a>
 					-->
 				</div>
 				<div class="logo">
 					<img src="img/fq_logo.png" />
+				</div>
+				<div data-role="popup" data-tap-toggle="false" class="logout_btn" data-transition="slidedown" data-theme="a" data-position-to="window" data-icon="delete" class="ui-content">
+					<p> 确定要注销帐号？</p>
+					<button class="cancel_logout">取消</button>
+					<button class="certify_logout">确定</button>
+				</div>
+				<div data-role="popup" data-tap-toggle="false" id="item_not_exist" data-transition="slidedown" data-theme="a" data-position-to="window" data-icon="delete" class="ui-content">
+					<p>这个二维码在我们的库中还不存在</p>
+					<p>想要上传吗？</p>
+					<button id="cancel_upload">取消</button>
+					<button id="certify_upload">确定</button>
+				</div>
+				<div data-role="popup" data-tap-toggle="false" id="popupBasic-screen_home" data-transition="slidedown" data-theme="a" data-position-to="window" data-icon="delete" class="ui-content">
+					<p>Please login with your weibo first<p>
+					<p>If you don't have a weibo, click 
+					<a href="#" class="gotoLogin">here</a> for sign in</p>
 				</div>
 			</div>
 
@@ -70,11 +89,11 @@
 						<img src="img/home.png" alt="" class="footer_icon"/>
 						<div>首页</div>
 					</div>
-					<div class="ui-block-b icon_pos jumptoview" >
+					<div class="ui-block-b icon_pos jumptoownhistory" >
 						<img src="img/view.png" alt="" class="footer_icon"/>
 						<div>浏览</div>
 					</div>
-					<div class="ui-block-c icon_pos">
+					<div class="ui-block-c icon_pos logout_app">
 						<img id="goHistory" src="img/setting.png" alt="" class="footer_icon"/>
 						<div>设置</div>
 					</div>
@@ -116,6 +135,11 @@
 						<div class="comment_sum">评论(<span id="c_count">10条</span>)</div>
 					</div>
 					<div class="triangle"></div>
+				</div>
+				<div data-role="popup" data-tap-toggle="false" class="logout_btn" data-transition="slidedown" data-theme="a" data-position-to="window" data-icon="delete" class="ui-content">
+					<p> 确定要注销帐号？</p>
+					<button class="cancel_logout">取消</button>
+					<button class="certify_logout">确定</button>
 				</div>
 
 				<div id="commentContainer">
@@ -160,7 +184,7 @@
 						<img src="img/refresh.png" alt="" class="footer_icon refresh"/>
 						<div>刷新</div>
 					</div>
-					<div class="ui-block-d  icon_pos">
+					<div class="ui-block-d  icon_pos logout_app">
 						<img src="img/setting.png" alt="" class="footer_icon"/>
 						<div>设置</div>
 					</div>
@@ -174,7 +198,7 @@
 		<div data-role="page" id="history">
 			<div class="myHeader" data-role="header" data-tap-toggle="false" data-position="fixed">
 				<div class="header_subtitle">
-					<div class="header_title">Easy Comment</div>
+					<div class="header_title">Items I commented</div>
 					<div class="userName"></div>
 				</div>
 				<div class="btn_h gotologin">login</div>
@@ -227,6 +251,65 @@
 			</div>
 		</div>
 		<!-- write weibo page-->
+		
+		<!-- add a new content page -->
+		<div data-role="page" id="addNewItem">
+			<div class="myHeader" data-role="header" data-tap-toggle="false" data-position="fixed">
+				<div class="header_subtitle">
+					<div class="header_title">上传新二维码</div>
+					<div class="userName"></div>
+				</div>
+				<div class="btn_h gotologin">login</div>
+			</div>	
+			<div data-role="content">
+					<label for="item_name">物品名称:</label>
+					<input type="text" name="item_name" id="upload_item_name" />
+					<div class="not_fill" id="name_not_fill">
+						<p>物品名称不能为空！</p>
+					</div>
+					<label for="upload_item_intro">物品描述</label>
+					<textarea id="upload_item_intro" name="upload_item_intro" placeholder="Add the item description here"></textarea>
+					<div class="not_fill" id="intro_not_fill">
+						<p>物品描述不能为空！</p>
+					</div>
+					<div data-role="popup" data-tap-toggle="false" id="popupBecauseEmpty" data-transition="slidedown" data-theme="a" data-position-to="window" data-icon="delete" class="ui-content">
+							<p>Warning<p>
+							<p>物品名或者物品描述不能为空！</p>
+					</div>
+					<input type="button" id="upload_item_btn" value="确定" />
+			</div>
+		</div>
+		<!-- add a new content page -->
+		
+		<!-- view history comment page -->
+		<div data-role="page" id="historyComment">
+			<div class="myHeader" data-role="header" data-tap-toggle="false" data-position="fixed">
+				<div class="header_subtitle">
+					<div class="header_title">我的历史评论</div>
+					<div class="userName"></div>
+				</div>
+				<div class="btn_h gotologin">login</div>
+			</div>
+			<div data-role="content" id="commentdiv">
+					<div class="commentPart" id="itemcomment0">
+						<div class="author">
+							<a class="jumptoviewfromhistory" id="record0" href="#"><img src="img/self.jpg" /></a>
+							<span id="item0" class="invisible"></span>
+						</div>
+						<div class="content">
+							<div class="contentInfo">
+								<span class="time">4-27 00:28</span>
+							</div>
+							<div class="contentText">
+								I think this is good a useful thing indeed aaaaaa!
+							</div>
+							<div class="upgrade"><span class="commentdiff">10</span>条更新</div>
+						</div>
+					</div>
+			</div>	
+		</div>
+		
+		
 
 		<!-- bad network page -->
 		<div data-role="page" id="badNet">

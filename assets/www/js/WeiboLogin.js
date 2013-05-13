@@ -22,6 +22,32 @@ function loginWeibo()
 	};
 }
 
+function logoutWeibo() {
+	var url = "https://api.weibo.com/2/account/end_session.json?access_token=" + access_token;
+	var xmlhttp = new XMLHttpRequest();
+	xmlhttp.onreadystatechange = function() {
+		if (xmlhttp.readyState==4 && xmlhttp.status==200) 
+		{
+			var json = json_parse(xmlhttp.responseText);
+			user_name = null;
+			localStorage.removeItem('access_token');
+			localStorage.removeItem('uid');
+			changeAfterLogout();
+		}
+	};
+	
+	xmlhttp.open("GET", url, true);
+	xmlhttp.send();
+}
+
+function changeAfterLogout() {
+	Array.prototype.forEach.call(document.getElementsByClassName('userName'), function(testEl)
+		   	{
+				testEl.innerHTML = user_name;
+			}, false);
+	$(".gotologin").show();
+}
+
 function changeAfterLogin()
 {
 	Array.prototype.forEach.call(document.getElementsByClassName('userName'), function(testEl)
