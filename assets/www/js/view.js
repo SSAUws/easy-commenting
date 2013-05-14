@@ -7,10 +7,10 @@ function setCursor()
 	document.getElementById("weiboContent").selectionStart = viewPos;
 }
 
-function updateItem(img,id,tags)
+function updateItem(img,title,tags)
 {
 	document.getElementById("itemImg").src = img;
-	document.getElementById("itemId").innerHTML = id;
+	document.getElementById("itemId").innerHTML = title;
 	document.getElementById("itemContent").innerHTML = tags;
 }
 
@@ -53,7 +53,7 @@ function viewRefresh()
 		success : function(data){
 			var json = json_parse(data);
 			console.log(json);
-			updateItem(json.image,json.id,json.tags);
+			updateItem(json.image, json.name, json.tags);
 			updateComment(0,json.archive);
 			localStorage.itemInfo = document.getElementById("itemInfo").innerHTML;
 			localStorage.commentContainer = document.getElementById("commentContainer").innerHTML;

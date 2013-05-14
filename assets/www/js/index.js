@@ -100,27 +100,25 @@ function addStrToContent(str)
 }	
 
 //barcode scan
-function barcodeScan()
-{
-	window.plugins.barcodeScanner.scan( function(result) {
+function barcodeScan() {
+	window.plugins.barcodeScanner.scan(function(result) {
+		if (result.cancelled)
+			return;
 		var reg = /[A-Za-z\d]{32}/g;
 		itemId = result.text;
-		console.log(itemId);
-		if (itemId.match(reg))
-			itemId = md5(itemId);
-		console.log(md5);
-		if (checkIdExits()) {
+		itemId = md5(itemId);
+		var url = host + "/requestbarcode?id=" + itemId;
+		$.get(url, function(data) { 
 			jumpto("view");
 			viewRefresh();
-		}
-		else {
-			jumpto("home");
-			if (itemId != null)
+		}).error(function(xhr) {
+			if(xhr.status == 404) {
+				jumpto('home');
 				getTheItemUploadInfo();
-		}
+			}
+		});	
 	}, function(error) {
-	}
-	);
+	});
 }
 
 function toReply(s)
@@ -133,19 +131,6 @@ function toReply(s)
 	}
 }
 
-function checkIdExits() {
-	var flag;
-	var postUrl = host + "/requestbarcode?id=" + itemId;
-	$.getJSON(postUrl, function(json) {
-		if (json.length == 0) flag = false;
-		else flag = true;
-	});
-	console.log(flag);
-	return flag;
-}
-
-
 function getTheItemUploadInfo() {
-	console.log("getItemUpload");
 	$("#item_not_exist").popup("open");
 }

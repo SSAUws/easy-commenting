@@ -1,24 +1,28 @@
-function upload_item(){
-	var item_content = $("#upload_item_intro").val();
-	var item_name = $("#upload_item_name").val();
-	$.ajax({
-			url: host + '/barcodeupload',
-			type: 'post',
-			data: {id: itemId, tags: item_content, name: item_name, image: "test.png"},
-			datatype: 'json',
-			crossDomain: true,
-			success: function(data) {
-				console.log(data);
-				jumpto("view");
-			},
-			error: function(a, b, c) {
-				alert("What?")
-				console.log(a.statusCode());
-			}
-	});
-}
-
 function checkContentNotEmpty() {
 	return ($("#upload_item_name").val() != "" && 
 			$("#upload_item_intro").val() != "" );
+}
+
+function uploadBarcodeInfo() {
+	if (!checkContentNotEmpty()) {
+		// TODO(jane): popup the warning.
+		return ;
+	}
+	
+	var oOutput = document.getElementById("output"), oData = new FormData(
+			document.forms.namedItem("barcodeinfo"));
+	oData.append("id", itemId);
+
+	var oReq = new XMLHttpRequest();
+	oReq.open("POST", host + '/barcodeupload', true);
+	oReq.onload = function(oEvent) {
+		if (oReq.status == 200) {
+			oOutput.innerHTML = "Uploaded!";
+		} else {
+			oOutput.innerHTML = "Error " + oReq.status
+					+ " occurred uploading your file.<br \/>";
+		}
+	};
+
+	oReq.send(oData);
 }

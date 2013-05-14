@@ -149,4 +149,8 @@ function jQueryEventInit()
 		$(".logout_btn").popup("close");
 		logoutWeibo();
 	});
+	
+	$('#uploadBarcodeInfoBtn').on('click', function() {
+		uploadBarcodeInfo();
+	});
 }

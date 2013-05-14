@@ -8,6 +8,7 @@ function onDeviceReady()
 	document.addEventListener("offline",networkNoteShowup,false);
 	document.addEventListener("online",networkNoteHideup,false);
 	document.addEventListener("backbutton",handleBack,false);
+	window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
 	var networkState = navigator.connection.type;
 	if (networkState == Connetion.NONE) networkNoteShowup();
 }
