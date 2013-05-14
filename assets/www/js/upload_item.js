@@ -5,7 +5,7 @@ function checkContentNotEmpty() {
 
 function uploadBarcodeInfo() {
 	if (!checkContentNotEmpty()) {
-		// TODO(jane): popup the warning.
+		$("#popupBecauseEmpty").popup("open");
 		return ;
 	}
 	

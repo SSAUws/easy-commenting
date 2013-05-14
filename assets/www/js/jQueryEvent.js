@@ -115,15 +115,6 @@ function jQueryEventInit()
 		} else $("#intro_not_fill").fadeOut();
 	});
 	
-	$("#upload_item_btn").click(function(){
-		console.log(checkContentNotEmpty());
-		if (checkContentNotEmpty()) {
-			upload_item();
-		}else {
-			$("#popupBecauseEmpty").popup("open");
-		}
-	});
-	
 	$("#popupBecauseEmpty").click(function() {
 		$(this).popup("close");
 	})
