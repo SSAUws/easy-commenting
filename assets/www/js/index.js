@@ -34,6 +34,13 @@ function checkLocalStorage()
 		document.getElementById("itemInfo").innerHTML = localStorage.itemInfo;
 		document.getElementById("commentContainer").innerHTML = localStorage.commentContainer;
 		itemId = localStorage.itemId;
+		lastViewDate = localStorage.lastViewDate;
+		templastViewDate = lastViewDate;
+	}
+
+	if (localStorage.history != undefined)
+	{
+		document.getElementById("commentdiv").innerHTML = localStorage.history;
 	}
 }
 
@@ -45,9 +52,14 @@ function onLoad()
 	phonegapInit();
 	access_token = null;
 	user_name = null;
+	var nowDate = new Date();
+	lastViewDate = nowDate.toISOString();
+	lastViewDate = lastViewDate.replace(/T/,' ').replace(/\..+/,'');
+	templastViewDate = lastViewDate;
 	networkNoteHideup();
 	checkLocalStorage();
 	testMode();//PC used
+	console.log(lastViewDate);
 }
 
 function jumpto(s)

@@ -58,15 +58,6 @@ a#scanButton
 	margin-top : 50px;
 }
 
-a#viewHistory
-{
-	position: relative;
-	left: 55%;
-	font-weight: bold;
-	color:#778899;
-	display:block;
-}
-
 .bubble
 {
 	line-height:30px; 
@@ -140,3 +131,18 @@ a#viewHistory
 	border-bottom: 1px solid #dbdbdb;	
 }
 /*  sendComment page  */
+
+/*  view page  */
+#viewMore
+{
+	position:relative;
+	width:100%;
+	text-align:center;
+	margin:5px;
+}
+
+#viewMore:hover
+{
+	background: #D3D3D3;	
+}
+/*  view page  */

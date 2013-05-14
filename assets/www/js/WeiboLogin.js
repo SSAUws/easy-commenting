@@ -32,6 +32,7 @@ function logoutWeibo() {
 			user_name = null;
 			localStorage.removeItem('access_token');
 			localStorage.removeItem('uid');
+			localStorage.removeItem('history');
 			changeAfterLogout();
 		}
 	};

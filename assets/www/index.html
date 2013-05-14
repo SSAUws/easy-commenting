@@ -162,6 +162,11 @@
 							</div>
 						</div>
 					</div>
+					<hr />
+				</div>
+				<div id="viewMore">
+					Click to get more comments.
+					<hr />
 				</div>
 			</div>
 
@@ -174,14 +179,14 @@
 					<div class="ui-block-b icon_pos jumptosendWeibo">
 						<div data-role="popup" data-tap-toggle="false" id="popupBasic-screen" data-transition="slidedown" data-theme="a" data-position-to="window" data-icon="delete" class="ui-content">
 							<p>Please login with your weibo first<p>
-							<p>If you don't have a weibo, click 
+							<p>click 
 							<a href="#" class="gotoLogin">here</a> for sign in</p>
 						</div>
 						<img src="img/comment2.png" alt="" class="footer_icon"/>
 						<div>评论</div>
 					</div>
 					<div class="ui-block-c  icon_pos">
-						<img src="img/refresh.png" alt="" class="footer_icon refresh"/>
+						<img src="img/refresh.png" alt="" class="footer_icon viewRefresh"/>
 						<div>刷新</div>
 					</div>
 					<div class="ui-block-d  icon_pos jumptohistory">
@@ -207,26 +212,28 @@
 			<div data-role="content">
 				<a href="#" class="jumptobadNet" data-role="button" data-icon="info" id="history-net-note">No available network</a>
 				<div data-role="content" id="commentdiv">
-					<div class="commentPart" id="itemcomment0">
-						<div class="author">
-							<a class="jumptoviewfromhistory" id="record0" href="#"><img src="img/self.jpg" /></a>
-							<span id="item0" class="invisible"></span>
-						</div>
-						<div class="content">
-							<div class="contentInfo">
-								<span class="time">4-27 00:28</span>
-							</div>
-							<div class="contentText">
-								I think this is good a useful thing indeed aaaaaa!
-							</div>
-							<div class="upgrade"><span class="commentdiff">10</span>条更新</div>
-						</div>
-					</div>
 				</div>
 			</div>
 
 			<div data-role="footer" data-tap-toggle="false" data-position="fixed">
-				<button onclick="getUserComment()">refresh</button>
+				<div class="ui-grid-c">
+					<div class="ui-block-a icon_pos jumptohome" >
+						<img src="img/home.png" alt="" class="footer_icon"/>
+						<div>首页</div>
+					</div>
+					<div class="ui-block-b icon_pos jumptoview">
+						<img src="img/view.png" alt="" class="footer_icon"/>
+						<div>浏览</div>
+					</div>
+					<div class="ui-block-c icon_pos historyRefresh">
+						<img src="img/refresh.png" alt="" class="footer_icon refresh"/>
+						<div>刷新</div>
+					</div>
+					<div class="ui-block-d  icon_pos jumptohistory active">
+						<img src="img/setting.png" alt="" class="footer_icon"/>
+						<div>历史</div>
+					</div>
+				</div>
 			</div>
 		</div>
 		<!-- history page -->
@@ -290,8 +297,8 @@
 						<p>物品描述不能为空！</p>
 					</div>
 					<div data-role="popup" data-tap-toggle="false" id="popupBecauseEmpty" data-transition="slidedown" data-theme="a" data-position-to="window" data-icon="delete" class="ui-content">
-							<p>Warning<p>
-							<p>物品名或者物品描述不能为空！</p>
+						<p>Warning<p>
+						<p>物品名或者物品描述不能为空！</p>
 					</div>
 					<label for="file">上传描述图片:</label>
 					<input type="file" name="image" id="upload_image" multiple="multiple"/>

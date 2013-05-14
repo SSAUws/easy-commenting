@@ -1,6 +1,8 @@
 var viewPos;
 var host = "http://www.crazylpy.me:8888";
 var itemId = "心理罪";
+var lastViewDate;
+var templastViewDate;
 
 function setCursor()
 {
@@ -21,7 +23,7 @@ function updateComment(flag,archive)
 	$.each(archive,function(index,value){
 		var news = '<div class="commentPart">' + 
 		'<div class="author">' + 
-		'<img src="' + value.image_url + '" />' + 
+		'<img src="' + value.user_image_url + '" />' + 
 		'</div>' +
 		'<div class="content">' +
 		'<div class="contentInfo">' + 
@@ -35,30 +37,43 @@ function updateComment(flag,archive)
 		'<div class="left">' + value.content + '</div>' +
 		'</div>						</div>					</div>	<hr/>';
 		$(obj).append(news);
-	});
-	$(".jumptosendWeibo2").on("click",function() {
-		checkLogin();
+		if (flag == 0) lastViewDate = value.date;
+		else templastViewDate = value.date;
 	});
 }
 
 function viewRefresh()
 {
-	var obj = document.getElementById("commentContainer");
-	obj.innerHTML = "";
 	$.ajax({
 		url : host + "/requestbarcode",
 		data : {id : itemId},
 		type : 'get',
 		datatype : 'json',
 		success : function(data){
-			console.log(data);
 			var json = json_parse(data);
 			console.log(json);
-			updateItem(json.image, json.name, json.tags);
+			updateItem(json.image, json.id, json.tags);
 			updateComment(0,json.archive);
 			localStorage.itemInfo = document.getElementById("itemInfo").innerHTML;
 			localStorage.commentContainer = document.getElementById("commentContainer").innerHTML;
 			localStorage.itemId = json.id;
+			localStorage.lastViewDate = lastViewDate;
+			templastViewDate = lastViewDate;
 		}
 		});
+}
+
+function viewRefreshForMore()
+{
+	$.ajax({
+		url : host + "/requestbarcode",
+		data : {id : itemId,date : templastViewDate},
+		type : 'get',
+		datatype : 'json',
+		success : function(data){
+			var json = json_parse(data);
+			console.log(json);
+			updateComment(1,json.archive);
+		},
+	});
 }

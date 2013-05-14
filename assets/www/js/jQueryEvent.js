@@ -44,7 +44,6 @@ function jQueryEventInit()
 	$(".jumptohistory").on("click",function() {
 		if (checkLogin())
 		{
-			getUserComment();
 			jumpto("history");
 		}
 		else 
@@ -53,10 +52,6 @@ function jQueryEventInit()
 
 	$(".jumptoview").on("click",function(){
 		jumpto("view");
-	});
-
-	$(".jumptohistory").on("click",function(){
-		jumpto("history");
 	});
 
 	$(".jumptobadNet").on("click",function(){
@@ -71,7 +66,7 @@ function jQueryEventInit()
 		$("#expressionContainer").toggle();
 	});
 
-	$(".refresh").on("click", viewRefresh);
+	$(".viewRefresh").on("click", viewRefresh);
 
 	$("#backtoViewTrigger").on("click",function(){
 		$("#backtoViewPopup").popup("open");
@@ -85,6 +80,12 @@ function jQueryEventInit()
 		document.getElementById("weiboContent").value = "";
 		jumpto("view");
 	});
+
+	$(".historyRefresh").on("click",function(){
+		historyRefresh();
+	});
+
+	$("#viewMore").on("click",viewRefreshForMore);
 	
 	$("#cancel_upload").on("click",function() {
 		jumpto("home");
