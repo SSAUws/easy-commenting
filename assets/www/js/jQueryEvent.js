@@ -41,18 +41,11 @@ function jQueryEventInit()
 		jumpto("home");
 	});
 	
-	$(".jumptohistory").on("click", function() {
-		jumpto("history");
-	});
-	
-	$(".jumptoviewfromhistory").on("click",function() {
-		passItemIdInHistory();
-	});
-	
-	$(".jumptoownhistory").on("click",function() {
-		if (checkLogin()){
+	$(".jumptohistory").on("click",function() {
+		if (checkLogin())
+		{
 			getUserComment();
-			jumpto("historyComment");
+			jumpto("history");
 		}
 		else 
 			$("#popupBasic-screen_home").popup("open");

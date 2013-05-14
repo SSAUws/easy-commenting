@@ -1,22 +1,23 @@
-function getUserComment() {
+function getUserComment() 
+{
 	var cur_date = Date();
 	var result = $.ajax({
-		url: url + '/requestusercomment',
-		type: get,
-		data: {userid: uid, date: cur_date},
-		dataType: json,
+		url: host + '/requestusercomments',
+		type: 'get',
+		data: {userid: user_name},
+		dataType: 'json',
 		success: function(data) {
-			var request = json.parse(data);
+			var request = data;
 			console.log(request);
 			if (request.length == 0) {
 				$("#nocomment").show();
 				$("#historycomment").hide();
 			} else {
-				$.each(request, function(index, value) {
-					var comment = '<div class="commentPart" id="itemcomment'+index+'">'+
+				document.getElementById("commentdiv").innerHTML = "";
+				$.each(request.archive, function(index, value) {
+					var comment = '<div class="commentPart">'+
 						'<div class="author">'+
-							'<a class="jumptoview" id="record'+index+'" href="#"><img src="'+value.url+'" /></a>'+
-							'<span id="item'+index +'" class="invisible">'+value.objectid+'</span>'+
+							'<img src="'+value.image_url+'" onclick="passItemIdInHistory(' + ("'" + value.objectid +"'") +')"/>'+
 						'</div>'+
 						'<div class="content">'+
 							'<div class="contentInfo">'+
@@ -28,7 +29,7 @@ function getUserComment() {
 							'<div class="upgrade"><span class="commentdiff">'+value.count+'</span>条更新</div>'+
 						'</div>'+
 					'</div>';
-					$(".commentdiv").append(comment);
+					$("#commentdiv").append(comment);
 				})
 			}
 		}
@@ -38,10 +39,9 @@ function getUserComment() {
 	});
 }
 
-function passItemIdInHistory() {
-	var aid = this.attr("id");
-	aid = aid.replace('record', 'item');
-	itemId = $("#"+ aid).text();
+function passItemIdInHistory(newItemID)
+{
+	itemId = newItemID;
 	jumpto("view");
-
+	viewRefresh();
 }

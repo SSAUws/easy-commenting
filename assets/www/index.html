@@ -89,17 +89,17 @@
 						<img src="img/home.png" alt="" class="footer_icon"/>
 						<div>首页</div>
 					</div>
-					<div class="ui-block-b icon_pos jumptoownhistory" >
+					<div class="ui-block-b icon_pos jumptoview" >
 						<img src="img/view.png" alt="" class="footer_icon"/>
 						<div>浏览</div>
 					</div>
-					<div class="ui-block-c icon_pos logout_app">
+					<div class="ui-block-d icon_pos jumptohistory">
 						<img id="goHistory" src="img/setting.png" alt="" class="footer_icon"/>
-						<div>设置</div>
+						<div>历史</div>
 					</div>
-					<div class="ui-block-d icon_pos">
+					<div class="ui-block-c icon_pos logout_app">
 						<img id="goReply" src="img/about.png" alt="" class="footer_icon"/>
-						<div>关于</div>
+						<div>注销</div>
 					</div>
 				</div>
 			</div>
@@ -184,9 +184,9 @@
 						<img src="img/refresh.png" alt="" class="footer_icon refresh"/>
 						<div>刷新</div>
 					</div>
-					<div class="ui-block-d  icon_pos logout_app">
+					<div class="ui-block-d  icon_pos jumptohistory">
 						<img src="img/setting.png" alt="" class="footer_icon"/>
-						<div>设置</div>
+						<div>历史</div>
 					</div>
 				</div>
 			</div>
@@ -198,19 +198,35 @@
 		<div data-role="page" id="history">
 			<div class="myHeader" data-role="header" data-tap-toggle="false" data-position="fixed">
 				<div class="header_subtitle">
-					<div class="header_title">Items I commented</div>
+					<div class="header_title">我的历史评论</div>
 					<div class="userName"></div>
 				</div>
 				<div class="btn_h gotologin">login</div>
-			</div>	
+			</div>
 
 			<div data-role="content">
 				<a href="#" class="jumptobadNet" data-role="button" data-icon="info" id="history-net-note">No available network</a>
-				<p id="barcode-decode"></p>
+				<div data-role="content" id="commentdiv">
+					<div class="commentPart" id="itemcomment0">
+						<div class="author">
+							<a class="jumptoviewfromhistory" id="record0" href="#"><img src="img/self.jpg" /></a>
+							<span id="item0" class="invisible"></span>
+						</div>
+						<div class="content">
+							<div class="contentInfo">
+								<span class="time">4-27 00:28</span>
+							</div>
+							<div class="contentText">
+								I think this is good a useful thing indeed aaaaaa!
+							</div>
+							<div class="upgrade"><span class="commentdiff">10</span>条更新</div>
+						</div>
+					</div>
+				</div>
 			</div>
 
 			<div data-role="footer" data-tap-toggle="false" data-position="fixed">
-				<h2>@Copyright 2013 Easy-commenting</h2>
+				<button onclick="getUserComment()">refresh</button>
 			</div>
 		</div>
 		<!-- history page -->
@@ -251,7 +267,7 @@
 			</div>
 		</div>
 		<!-- write weibo page-->
-		
+
 		<!-- add a new content page -->
 		<div data-role="page" id="addNewItem">
 			<div class="myHeader" data-role="header" data-tap-toggle="false" data-position="fixed">
@@ -284,37 +300,6 @@
 				<a href="javascript:void(0);" id="uploadBarcodeInfoBtn">上传开始</a>
 			</div>
 		</div>
-		<!-- add a new content page -->
-		
-		<!-- view history comment page -->
-		<div data-role="page" id="historyComment">
-			<div class="myHeader" data-role="header" data-tap-toggle="false" data-position="fixed">
-				<div class="header_subtitle">
-					<div class="header_title">我的历史评论</div>
-					<div class="userName"></div>
-				</div>
-				<div class="btn_h gotologin">login</div>
-			</div>
-			<div data-role="content" id="commentdiv">
-					<div class="commentPart" id="itemcomment0">
-						<div class="author">
-							<a class="jumptoviewfromhistory" id="record0" href="#"><img src="img/self.jpg" /></a>
-							<span id="item0" class="invisible"></span>
-						</div>
-						<div class="content">
-							<div class="contentInfo">
-								<span class="time">4-27 00:28</span>
-							</div>
-							<div class="contentText">
-								I think this is good a useful thing indeed aaaaaa!
-							</div>
-							<div class="upgrade"><span class="commentdiff">10</span>条更新</div>
-						</div>
-					</div>
-			</div>	
-		</div>
-		
-		
 
 		<!-- bad network page -->
 		<div data-role="page" id="badNet">

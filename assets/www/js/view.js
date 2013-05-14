@@ -1,6 +1,6 @@
 var viewPos;
 var host = "http://www.crazylpy.me:8888";
-var itemId = "名侦探柯南";
+var itemId = "心理罪";
 
 function setCursor()
 {
@@ -51,6 +51,7 @@ function viewRefresh()
 		type : 'get',
 		datatype : 'json',
 		success : function(data){
+			console.log(data);
 			var json = json_parse(data);
 			console.log(json);
 			updateItem(json.image, json.name, json.tags);
