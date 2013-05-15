@@ -1,0 +1,22 @@
+.aboutus_title h1{
+	font-size: 19px;
+	font-style: italic;
+	margin-left: 10%;
+}
+
+.aboutus_intro {
+	position: relative;
+	width: 90%;
+	margin: 0 auto;	
+}
+
+.partone {
+	margin-bottom: 30px;
+	background: rgba(224,238,238,0.7);
+	border-radius: 5px;
+	padding: 8px;
+}
+
+.partone p {
+	text-intent: 3px;	
+}

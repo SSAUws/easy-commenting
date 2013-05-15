@@ -80,6 +80,10 @@ function jQueryEventInit()
 		document.getElementById("weiboContent").value = "";
 		jumpto("view");
 	});
+	
+	$(".jumptoaboutus").on("click", function() {
+		jumpto("aboutus");
+	});
 
 	$(".historyRefresh").on("click",function(){
 		historyRefresh();
@@ -141,7 +145,7 @@ function jQueryEventInit()
 		uploadBarcodeInfo();
 	});
 	$(".cancel_quit").on("click", function() {
-		$(".quit_btn").popup("close");
+		$("#quit_btn").popup("close");
 	});
 	$(".certify_quit").on("click", function() {
 		navigator.app.exitApp();
