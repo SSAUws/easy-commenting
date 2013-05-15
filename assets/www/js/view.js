@@ -3,6 +3,7 @@ var host = "http://www.crazylpy.me:8888";
 var itemId = "心理罪";
 var lastViewDate;
 var templastViewDate;
+var isViewMore;
 
 function setCursor()
 {

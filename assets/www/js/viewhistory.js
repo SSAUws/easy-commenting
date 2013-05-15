@@ -32,7 +32,7 @@ function updateHistory(flag,request)
 		'</div>'+
 		'<div class="upgrade"><span class="commentdiff">'+value.count+'</span>条更新</div>'+
 		'</div>'+
-		'</div>';
+		'</div>'+"<hr/>";
 		$(obj).append(comment);
 	})
 }
