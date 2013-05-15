@@ -37,6 +37,7 @@ function checkLocalStorage()
 		itemId = localStorage.itemId;
 		lastViewDate = localStorage.lastViewDate;
 		templastViewDate = lastViewDate;
+		isViewMore = localStorage.isViewMore;
 	}
 
 	if (localStorage.history != undefined)
@@ -44,6 +45,7 @@ function checkLocalStorage()
 		document.getElementById("commentdiv").innerHTML = localStorage.history;
 		lastHistoryDate = localStorage.lastHistoryDate;
 		templastHistoryDate = lastHistoryDate;
+		isHistoryMore = localStorage.isHistoryMore;
 	}
 }
 
@@ -63,6 +65,8 @@ function onLoad()
 	templastHistoryDate = lastHistoryDate;
 	networkNoteHideup();
 	checkLocalStorage();
+	checkViewMore(1,isViewMore);
+	checkHistoryMore(1,isHistoryMore);
 	testMode();//PC used
 }
 
@@ -76,12 +80,8 @@ function jumpto(s)
 jQuery( window ).on( "hashchange",function()
 		{
 			var hash = location.hash;
-<<<<<<< HEAD
-			last_page = hash.substr(1);
-=======
 			last_page = now_page;
-			if (hash != "#login") now_page = hash.substr(1);
->>>>>>> df4e391f137e388c0bad205a818e56a73032d213
+			now_page = hash.substr(1);
 		})
 
 var friends;
@@ -126,20 +126,20 @@ function addStrToContent(str)
 function barcodeScan() {
 	window.plugins.barcodeScanner.scan(function(result) {
 		if (result.cancelled)
-			return;
-		var reg = /[A-Za-z\d]{32}/g;
-		itemId = result.text;
-		itemId = md5(itemId);
-		var url = host + "/requestbarcode?id=" + itemId;
-		$.get(url, function(data) { 
-			jumpto("view");
-			viewRefresh();
-		}).error(function(xhr) {
-			if(xhr.status == 404) {
-				jumpto('home');
-				getTheItemUploadInfo();
-			}
-		});	
+		return;
+	var reg = /[A-Za-z\d]{32}/g;
+	itemId = result.text;
+	itemId = md5(itemId);
+	var url = host + "/requestbarcode?id=" + itemId;
+	$.get(url, function(data) { 
+		jumpto("view");
+		viewRefresh();
+	}).error(function(xhr) {
+		if(xhr.status == 404) {
+			jumpto('home');
+			getTheItemUploadInfo();
+		}
+	});	
 	}, function(error) {
 	});
 }

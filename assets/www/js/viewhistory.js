@@ -1,5 +1,6 @@
 var lastHistoryDate;
 var templastHistoryDate;
+var isHistoryMore = false;
 
 function historyRefresh() 
 {
@@ -48,7 +49,7 @@ function updateHistory(flag,request)
 		'<div class="contentText">'+
 		value.content+
 		'</div>'+
-		'<div class="upgrade"><span class="commentdiff">'+value.count+'</span>条更新</div>'+
+		'<div class="upgrade"><span class="commentdiff">'+request.number[index]+'</span>条更新</div>'+
 		'</div>'+
 		'</div>'+"<hr/>";
 		$(obj).append(comment);
@@ -62,4 +63,20 @@ function passItemIdInHistory(newItemID)
 	itemId = newItemID;
 	jumpto("view");
 	viewRefresh();
+}
+
+function checkHistoryMore(flag,more)
+{
+	isHistoryMore = more;
+	if (flag == 0) localStorage.isHistoryMore = isHistoryMore;
+	if (isHistoryMore)
+	{
+		$("#historyMore").show();
+		$("#noHistoryMore").hide();
+	}
+	else
+	{
+		$("#historyMore").hide();
+		$("#noHistoryMore").show();
+	}
 }

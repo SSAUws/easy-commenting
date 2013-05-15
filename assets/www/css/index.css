@@ -142,7 +142,7 @@ a#scanButton
 /*  sendComment page  */
 
 /*  view page  */
-#viewMore
+.more
 {
 	position:relative;
 	width:100%;
@@ -150,22 +150,18 @@ a#scanButton
 	margin:5px;
 }
 
-#viewMore:hover
+.more:hover
 {
 	background: #D3D3D3;	
 }
 /*  view page  */
 
 /*  history page  */
-#historyMore
+#commentdiv
 {
+	position:relative;
+	top:10px;
 	width:100%;
-	margin:5px;
-	text-align:center;
-}
-
-#historyMore:hover
-{
-	background: #D3D3D3;	
+	margin: 5px;
 }
 /*  history page  */

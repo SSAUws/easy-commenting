@@ -140,14 +140,9 @@
 						</div>
 					</div>
 					<div class="intro_footer">
-						<div class="comment_sum">评论(<span id="c_count">10条</span>)</div>
+						<div class="comment_sum">评论(<span id="c_count">10</span>条)</div>
 					</div>
 					<div class="triangle"></div>
-				</div>
-				<div data-role="popup" data-tap-toggle="false" class="logout_btn" data-transition="slidedown" data-theme="a" data-position-to="window" data-icon="delete" class="ui-content">
-					<p> 确定要注销帐号？</p>
-					<button class="cancel_logout">取消</button>
-					<button class="certify_logout">确定</button>
 				</div>
 
 				<div id="commentContainer">
@@ -172,8 +167,12 @@
 					</div>
 					<hr />
 				</div>
-				<div id="viewMore">
-					<span id = "viewMoreContent">More</span>
+				<div id="viewMore" class="more">
+					更多
+					<hr />
+				</div>
+				<div id="noViewMore" class="more">
+					已经到底部了
 					<hr />
 				</div>
 			</div>
@@ -220,10 +219,14 @@
 
 			<div data-role="content">
 				<a href="#" class="jumptobadNet" data-role="button" data-icon="info" id="history-net-note">No available network</a>
-				<div data-role="content" id="commentdiv">
+				<div id="commentdiv">
 				</div>
-				<div id="historyMore">
-					<span id="historyMoreContent">More</span>
+				<div id="historyMore" class="more">
+					更多
+					<hr />
+				</div>
+				<div id="noHistoryMore" class="more">
+					已经到底部了
 					<hr />
 				</div>
 				

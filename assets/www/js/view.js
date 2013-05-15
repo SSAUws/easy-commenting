@@ -3,18 +3,19 @@ var host = "http://www.crazylpy.me:8888";
 var itemId = "konan";
 var lastViewDate;
 var templastViewDate;
-var isViewMore;
+var isViewMore = false;
 
 function setCursor()
 {
 	document.getElementById("weiboContent").selectionStart = viewPos;
 }
 
-function updateItem(img,title,tags)
+function updateItem(img,title,tags,num)
 {
 	document.getElementById("itemImg").src = img;
 	document.getElementById("itemId").innerHTML = title;
 	document.getElementById("itemContent").innerHTML = tags;
+	document.getElementById("c_count").innerHTML = num;
 }
 
 function updateComment(flag,archive)
@@ -47,13 +48,14 @@ function viewRefresh()
 {
 	$.ajax({
 		url : host + "/requestbarcode",
-		data : {id : itemId},
+		data : {id : itemId , userid : user_name},
 		type : 'get',
 		datatype : 'json',
 		success : function(data){
 			var json = json_parse(data);
 			console.log(json);
-			updateItem(json.image, json.name, json.tags);
+			checkViewMore(0,json.more);
+			updateItem(json.image, json.name, json.tags, json.number);
 			updateComment(0,json.archive);
 			localStorage.itemInfo = document.getElementById("itemInfo").innerHTML;
 			localStorage.commentContainer = document.getElementById("commentContainer").innerHTML;
@@ -67,13 +69,30 @@ function viewRefreshForMore()
 {
 	$.ajax({
 		url : host + "/requestbarcode",
-		data : {id : itemId,date : templastViewDate},
+		data : {id : itemId,date : templastViewDate , userid : user_name},
 		type : 'get',
 		datatype : 'json',
 		success : function(data){
 			var json = json_parse(data);
 			console.log(json);
+			checkViewMore(1,json.more);
 			updateComment(1,json.archive);
 		},
 	});
+}
+
+function checkViewMore(flag,more)
+{
+	isViewMore = more;
+	if (flag == 0) localStorage.isViewMore = isViewMore;
+	if (isViewMore)
+	{
+		$("#viewMore").show();
+		$("#noViewMore").hide();
+	}
+	else
+	{
+		$("#viewMore").hide();
+		$("#noViewMore").show();
+	}
 }
