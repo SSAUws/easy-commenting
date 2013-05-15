@@ -6,17 +6,16 @@ var last_page = "home";
 var last_at;
 var inter;
 
-//index.js
-//function testMode()
-//{
-//	access_token = "2.00bA9bWCI_IoeEa3943643efx8XQ3B" ;
-//	uid = "2314034221";
-//	getUserInfo();
-//}
+function testMode()
+{
+	access_token = "2.00bA9bWCI_IoeEa3943643efx8XQ3B" ;
+	uid = "2314034221";
+	getUserInfo();
+}
 
 function checkLocalStorage()
 {
-	//localStorage.clear();
+	localStorage.clear();
 	if (localStorage.access_token != undefined)
 	{
 		access_token = localStorage.access_token;
@@ -41,6 +40,8 @@ function checkLocalStorage()
 	if (localStorage.history != undefined)
 	{
 		document.getElementById("commentdiv").innerHTML = localStorage.history;
+		lastHistoryDate = localStorage.lastHistoryDate;
+		templastHistoryDate = lastHistoryDate;
 	}
 }
 
@@ -56,10 +57,11 @@ function onLoad()
 	lastViewDate = nowDate.toISOString();
 	lastViewDate = lastViewDate.replace(/T/,' ').replace(/\..+/,'');
 	templastViewDate = lastViewDate;
+	lastHistoryDate = lastViewDate;
+	templastHistoryDate = lastHistoryDate;
 	networkNoteHideup();
 	checkLocalStorage();
-	//testMode();//PC used
-	console.log(lastViewDate);
+	testMode();//PC used
 }
 
 function jumpto(s)
@@ -70,7 +72,7 @@ function jumpto(s)
 jQuery( window ).on( "hashchange",function()
 		{
 			var hash = location.hash;
-			if (hash != "#login") last_page = hash.substr(1);
+			last_page = hash.substr(1);
 		})
 
 var friends;

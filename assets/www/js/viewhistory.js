@@ -1,3 +1,6 @@
+var lastHistoryDate;
+var templastHistoryDate;
+
 function historyRefresh() 
 {
 	var result = $.ajax({
@@ -9,7 +12,22 @@ function historyRefresh()
 			console.log(data);
 			updateHistory(0,data);
 			localStorage.history = document.getElementById("commentdiv").innerHTML;
+			localStorage.lastHistoryDate = lastHistoryDate;
 		}
+	});
+}
+
+function historyRefreshForMore()
+{
+	$.ajax({
+		url: host + '/requestusercomments',
+		type: 'get',
+		data: {userid: user_name,date:templastHistoryDate},
+		dataType: 'json',
+		success: function(data) {
+			console.log(data);
+			updateHistory(1,data);
+		},
 	});
 }
 
@@ -24,7 +42,7 @@ function updateHistory(flag,request)
 		'</div>'+
 		'<div class="content">'+
 		'<div class="contentInfo">'+
-		'<span class="user_name">' + value.objectivalue.objectid+ '</span>' +
+		'<span class="user_name">' + value.objectid+ '</span>' +
 		'<span class="time">'+value.date+'</span>'+
 		'</div>'+
 		'<div class="contentText">'+
@@ -34,6 +52,8 @@ function updateHistory(flag,request)
 		'</div>'+
 		'</div>'+"<hr/>";
 		$(obj).append(comment);
+		if (flag == 0) lastHistoryDate = value.date;
+		templastHistoryDate = value.date;
 	})
 }
 

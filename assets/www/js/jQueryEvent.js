@@ -86,6 +86,8 @@ function jQueryEventInit()
 	});
 
 	$("#viewMore").on("click",viewRefreshForMore);
+
+	$("#historyMore").on("click",historyRefreshForMore);
 	
 	$("#cancel_upload").on("click",function() {
 		jumpto("home");

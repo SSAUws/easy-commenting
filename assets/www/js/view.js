@@ -1,6 +1,6 @@
 var viewPos;
 var host = "http://www.crazylpy.me:8888";
-var itemId = "心理罪";
+var itemId = "konan";
 var lastViewDate;
 var templastViewDate;
 var isViewMore;
@@ -39,7 +39,7 @@ function updateComment(flag,archive)
 		'</div>						</div>					</div>	<hr/>';
 		$(obj).append(news);
 		if (flag == 0) lastViewDate = value.date;
-		else templastViewDate = value.date;
+		templastViewDate = value.date;
 	});
 }
 
@@ -53,13 +53,12 @@ function viewRefresh()
 		success : function(data){
 			var json = json_parse(data);
 			console.log(json);
-			updateItem(json.image, json.id, json.tags);
+			updateItem(json.image, json.name, json.tags);
 			updateComment(0,json.archive);
 			localStorage.itemInfo = document.getElementById("itemInfo").innerHTML;
 			localStorage.commentContainer = document.getElementById("commentContainer").innerHTML;
 			localStorage.itemId = json.id;
 			localStorage.lastViewDate = lastViewDate;
-			templastViewDate = lastViewDate;
 		}
 		});
 }
