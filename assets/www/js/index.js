@@ -7,12 +7,12 @@ var last_at;
 var inter;
 
 //index.js
-function testMode()
-{
-	access_token = "2.00bA9bWCI_IoeEa3943643efx8XQ3B" ;
-	uid = "2314034221";
-	getUserInfo();
-}
+//function testMode()
+//{
+//	access_token = "2.00bA9bWCI_IoeEa3943643efx8XQ3B" ;
+//	uid = "2314034221";
+//	getUserInfo();
+//}
 
 function checkLocalStorage()
 {
@@ -58,7 +58,7 @@ function onLoad()
 	templastViewDate = lastViewDate;
 	networkNoteHideup();
 	checkLocalStorage();
-	testMode();//PC used
+	//testMode();//PC used
 	console.log(lastViewDate);
 }
 

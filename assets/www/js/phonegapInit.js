@@ -31,5 +31,5 @@ function networkNoteHideup()
 //handle backbutton
 function handleBack()
 {
-	navigator.app.exitApp();
+	$(".quit_btn").popup("open");
 }
