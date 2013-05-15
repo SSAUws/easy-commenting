@@ -11,6 +11,7 @@
 		<link rel="stylesheet" href="css/view.css" />
 		<link rel="stylesheet" href="css/atUser.css" />
 		<link rel="stylesheet" href="css/upload.css" />
+		<link rel="stylesheet" href="css/aboutus.css" />
 		<script type="text/javascript" src="js/md5.js"></script>
 		<script type="text/javascript" src="js/cordova-2.5.0.js"></script>
 		<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
@@ -34,11 +35,11 @@
 		<!-- home page-->
 		<div data-role="page" id="home">
 			<div class="myHeader" data-role="header" data-tap-toggle="false" data-position="fixed">
+				<div class="btn_h gotologin">登录</div>
 				<div class="header_subtitle">
 					<div class="header_title">Easy Comment</div>
 					<div class="userName"></div>
 				</div>
-				<div class="btn_h gotologin">登录</div>
 			</div>		
 
 			<div data-role="content">
@@ -82,7 +83,7 @@
 					<p>If you don't have a weibo, click 
 					<a href="#" class="gotoLogin">here</a> for sign in</p>
 				</div>
-				<div data-role="popup" data-tap-toggle="false" class="quit_btn" data-transition="slidedown" data-theme="a" data-position-to="window" data-icon="delete" class="ui-content">
+				<div data-role="popup" data-tap-toggle="false" id="quit_btn" data-transition="slidedown" data-theme="a" data-position-to="window" data-icon="delete" class="ui-content">
 					<p> 确定要退出程序？</p>
 					<button class="cancel_quit">取消</button>
 					<button class="certify_quit">确定</button>
@@ -96,13 +97,13 @@
 						<img src="img/home.png" alt="" class="footer_icon"/>
 						<div>首页</div>
 					</div>
-					<div class="ui-block-b icon_pos jumptoview" >
+					<div class="ui-block-b icon_pos jumptohistory" >
 						<img src="img/view.png" alt="" class="footer_icon"/>
-						<div>浏览</div>
-					</div>
-					<div class="ui-block-d icon_pos jumptohistory">
-						<img id="goHistory" src="img/setting.png" alt="" class="footer_icon"/>
 						<div>历史</div>
+					</div>
+					<div class="ui-block-d icon_pos jumptoaboutus">
+						<img id="goHistory" src="img/setting.png" alt="" class="footer_icon"/>
+						<div>关于</div>
 					</div>
 					<div class="ui-block-c icon_pos logout_app">
 						<img id="goReply" src="img/about.png" alt="" class="footer_icon"/>
@@ -147,11 +148,6 @@
 					<p> 确定要注销帐号？</p>
 					<button class="cancel_logout">取消</button>
 					<button class="certify_logout">确定</button>
-				</div>
-				<div data-role="popup" data-tap-toggle="false" class="quit_btn" data-transition="slidedown" data-theme="a" data-position-to="window" data-icon="delete" class="ui-content">
-					<p> 确定要退出程序？</p>
-					<button class="cancel_quit">取消</button>
-					<button class="certify_quit">确定</button>
 				</div>
 
 				<div id="commentContainer">
@@ -229,11 +225,6 @@
 				<div id="historyMore">
 					<span id="historyMoreContent">More</span>
 					<hr />
-				</div>
-				<div data-role="popup" data-tap-toggle="false" class="quit_btn" data-transition="slidedown" data-theme="a" data-position-to="window" data-icon="delete" class="ui-content">
-					<p> 确定要退出程序？</p>
-					<button class="cancel_quit">取消</button>
-					<button class="certify_quit">确定</button>
 				</div>
 				
 			</div>
@@ -335,15 +326,46 @@
 				<div id="output"></div>
 				<a href="javascript:void(0);" id="uploadBarcodeInfoBtn" class="upload_btn pos_a">上传</a>
 				<a href="javascript:void(0);" class="upload_btn pos_b jumptohome">返回</a>
-				<div data-role="popup" data-tap-toggle="false" class="quit_btn" data-transition="slidedown" data-theme="a" data-position-to="window" data-icon="delete" class="ui-content">
-					<p> 确定要退出程序？</p>
-					<button class="cancel_quit">取消</button>
-					<button class="certify_quit">确定</button>
-				</div>
 				
 			</div>
 		</div>
-
+		<!--  add new content page -->
+		
+		<!--  about us -->
+		<div data-role="page" id="aboutus">
+			<div class="myHeader" data-role="header" data-tap-toggle="false" data-position="fixed">
+				<div class="header_subtitle">
+					<div class="btn_l jumptohome">返回</div>
+					<div class="header_title">Easy comment</div>
+					<div class="userName"></div>
+				</div>
+				<div class="btn_h gotologin">login</div>
+			</div>	
+			<div data-role="content">
+				<div class="aboutus_title">
+					<h1>Easy comment 2013</h1>
+				</div>
+				<div class="aboutus_intro">
+					<div class="partone">
+						<p><strong>Esay comment</strong>,基于微博用户和云平台的二维码分享交流的手机应用</p>
+						<p>用户在扫描二维码中，可以找到此物品的具体信息，并且进行评论和回复，
+						根据兴趣相同的其他用户交流从而达到社交的目的</p>
+					</div>
+					<div class="partone">
+						<p>创作团队：easy maker</p>
+						<p>成员： 聂丰，莫益阶，张潮滨，林培泳,<br/>   李健弘</p>
+					</div>
+				</div>
+				<div class="logo">
+						<img src="img/fq_logo.png" />
+				</div>
+			</div>
+			<div data-role="footer" data-tap-toggle="false" data-position="fixed">
+				<h2>@Copyright 2013 Easy-commenting</h2>
+			</div>
+		</div>
+		<!-- about us -->
+			
 		<!-- bad network page -->
 		<div data-role="page" id="badNet">
 			<div data-role="header" data-tap-toggle="false" data-position="fixed">

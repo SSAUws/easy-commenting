@@ -1,7 +1,14 @@
 /*  public part  */
+.header_subtitle {
+	display: inline-block;	
+	margin-left: 52px;
+}
+
 .header_title
 {
 	font-weight: bold;	
+	margin-top: 8px;
+	text-align: center;
 }
 
 .myHeader
@@ -111,6 +118,8 @@ a#scanButton
 	font-weight: lighter;
 	font-family: "Microsoft YaHei";
 	float:right;
+	position: relative;
+	display: inline-block;
 }
 
 .btn_l {

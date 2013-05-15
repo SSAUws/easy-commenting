@@ -2,8 +2,10 @@ var access_token;
 var uid;
 var user_name;
 var user_img;
-var last_page = "home";
+var now_page = "home";
+var last_page = null;
 var last_at;
+var first = true;
 var inter;
 
 //index.js
@@ -64,13 +66,16 @@ function onLoad()
 
 function jumpto(s)
 {
+	if (s == "home") first = true;
+	else first = false;
 	$.mobile.changePage("#"+s);
 }
 
 jQuery( window ).on( "hashchange",function()
 		{
 			var hash = location.hash;
-			if (hash != "#login") last_page = hash.substr(1);
+			last_page = now_page;
+			if (hash != "#login") now_page = hash.substr(1);
 		})
 
 var friends;

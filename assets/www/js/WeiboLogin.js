@@ -54,6 +54,7 @@ function changeAfterLogin()
 	Array.prototype.forEach.call(document.getElementsByClassName('userName'), function(testEl)
 		   	{
 				testEl.innerHTML = user_name;
+				$(".header_subtitle").css("margin-left", "0");
 			}, false);
 	$(".gotologin").css("display","none");
 }
