@@ -1,0 +1,20 @@
+.upload_btn {
+	position: relative;
+	width: 80px;
+	padding : 2px;
+	border: 1px solid #dbdbdb;
+	background: #dbdbdb;
+	border-radius: 5px;
+	color: #6C7B8B;
+	font-weight: bold;	
+}
+
+.pos_a {
+	position: relative;
+	left: 10%;	
+}
+
+.pos_b {
+	position: relative;
+	left: 50%;	
+}
