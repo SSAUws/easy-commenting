@@ -1,6 +1,6 @@
 var viewPos;
 var host;
-var itemId; 
+var itemId;
 var lastViewDate;
 var templastViewDate;
 var isViewMore = false;

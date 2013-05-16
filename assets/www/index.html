@@ -64,7 +64,7 @@
 				<div class="logo">
 					<img src="img/fq_logo.png" />
 				</div>
-				<div data-role="popup" data-tap-toggle="false" class="logout_btn" data-transition="slidedown" data-theme="a" data-position-to="window" data-icon="delete" class="ui-content">
+				<div data-role="popup" data-tap-toggle="false" class="logout_btn" data-transition="slidedown" data-theme="a" data-position-to="window" data-icon="delete" class="ui-content" id = "homeLogout">
 					<p> 确定要注销帐号？</p>
 					<button class="cancel_logout">取消</button>
 					<button class="certify_logout">确定</button>
@@ -125,44 +125,25 @@
 				<a href="#" class="jumptobadNet" data-role="button" data-icon="info" id="view-net-note">网络连接不可用</a>
 				<div id="itemInfo">
 					<div class="upper">
-						<img src="img/sample.jpg" id = "itemImg" width="100%" height="200px"/>
+						<img src="img/logo2.png" id = "itemImg" width="100%" height="200px"/>
 						<div class="title">
-							<span class="name" id = "itemId"></span>
+							<span class="name" id = "itemId">Easy comment</span>
 						</div>
 					</div>
 					<div class="lower">
 						<div class="info">
 							<div class="content" id="itemContent">
+								简单易用！
 							</div>
 						</div>
 					</div>
 					<div class="intro_footer">
-						<div class="comment_sum">评论(<span id="c_count">10</span>条)</div>
+						<div class="comment_sum">评论(<span id="c_count">0</span>条)</div>
 					</div>
 					<div class="triangle"></div>
 				</div>
 
 				<div id="commentContainer">
-					<div class="commentPart">
-						<div class="author">
-							<img src="img/self.jpg" />
-						</div>
-						<div class="content">
-							<div class="contentInfo">
-								<span class="user_name">Jan要开开心心做自己</span>
-								<span class="time">4-27 00:28</span>
-							</div>
-							<div class="contentText">
-								<div class="answer jumptosendWeibo">
-									<img src="img/comment.png" />
-								</div>
-								<div class="left">
-									I think this is good a useful thing indeed aaaaaa!
-								</div>
-							</div>
-						</div>
-					</div>
-					<hr />
 				</div>
 				<div id="viewMore" class="more">
 					更多
@@ -213,15 +194,18 @@
 
 			<div data-role="content">
 				<a href="#" class="jumptobadNet" data-role="button" data-icon="info" id="history-net-note">网络连接不可用</a>
-				<div id="historyWrapper">
 				<div id="commentdiv">
-				</div>
 				</div>
 				<div id="historyMore" class="more">
 					更多
 					<hr />
 				</div>
 			</div>
+				<div data-role="popup" data-tap-toggle="false" class="logout_btn" data-transition="slidedown" data-theme="a" data-position-to="window" data-icon="delete" class="ui-content" id="historyLogout">
+					<p> 确定要注销帐号？</p>
+					<button class="cancel_logout">取消</button>
+					<button class="certify_logout">确定</button>
+				</div>
 
 			<div data-role="footer" data-tap-toggle="false" data-position="fixed">
 				<div class="ui-grid-c">
@@ -233,7 +217,7 @@
 						<img src="img/view.png" alt="" class="footer_icon"/>
 						<div>历史</div>
 					</div>
-					<div class="ui-block-c icon_pos jumptoBack">
+					<div class="ui-block-c icon_pos logout_app">
 						<img src="img/about.png" alt="" class="footer_icon"/>
 						<div>注销</div>
 					</div>

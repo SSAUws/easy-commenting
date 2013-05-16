@@ -6,7 +6,6 @@ var page_stack;
 var last_at;
 var now_page = "home"
 var inter;
-var historyScroll;
 
 function testMode()
 {
@@ -17,7 +16,7 @@ function testMode()
 
 function checkLocalStorage()
 {
-	localStorage.clear();
+//	localStorage.clear();
 	if (localStorage.access_token != undefined)
 	{
 		access_token = localStorage.access_token;
@@ -69,10 +68,10 @@ function onLoad()
 	checkHistoryMore(1,isHistoryMore);
 	page_stack = new Array();
 	page_stack.push("home");
-	//host = "http://103.31.20.58:8888";
-	host = "http://www.crazylpy.me:8888";
-	itemId = "76a7d49f6547492e6422a9957649b0f3";
-	testMode();//PC used
+	host = "http://103.31.20.58:8888";
+	//host = "http://www.crazylpy.me:8888";
+	itemId = "nemomojie";
+//	testMode();//PC used
 }
 
 function jumpto(s)

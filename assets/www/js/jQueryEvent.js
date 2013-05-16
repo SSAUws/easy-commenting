@@ -63,14 +63,14 @@ function jQueryEventInit()
 
 	$(".jumptosendWeibo").on("click",function(){
 		if (checkLogin() == false) 
-	{
-		if (now_page == 'home')
-		$("#popupBasic-screen_home").popup("open");
-	if (now_page == 'view')
-		$("#popupBasic-screen_view").popup("open");
-	}
+		{
+			if (now_page == 'home')
+				$("#popupBasic-screen_home").popup("open");
+			if (now_page == 'view')
+				$("#popupBasic-screen_view").popup("open");
+		}
 		else
-		jumpto("sendWeibo");
+			jumpto("sendWeibo");
 	});
 
 	$(".jumptohome").on("click",function(){
@@ -84,7 +84,6 @@ function jQueryEventInit()
 	}
 		else 
 	{
-		console.log(now_page);
 		if (now_page == 'home')
 		$("#popupBasic-screen_home").popup("open");
 	if (now_page == 'view')
@@ -161,25 +160,21 @@ function jQueryEventInit()
 		$(this).popup("close");
 	})
 
-	$("#home .logout_app").on("click", function() {
+	$(".logout_app").on("click", function() {
 		if (checkLogin()) {
-			$(".logout_btn").popup("open");
+			var s = "#" + now_page + "Logout";
+			$(s).popup("open");
 		}
 	})
-
-	$("#view .logout_app").on("click", function() {
-		if (checkLogin()) {
-			$(".logout_btn").popup("open");
-		}
-	})
-
 
 	$(".cancel_logout").on("click",function(){
-		$(".logout_btn").popup("close");
+		var s = "#" + now_page + "Logout";
+		$(s).popup("close");
 	});
 
 	$(".certify_logout").on("click", function() {
-		$(".logout_btn").popup("close");
+		var s = "#" + now_page + "Logout";
+		$(s).popup("close");
 		logoutWeibo();
 	});
 
