@@ -28,7 +28,7 @@ function jQueryEventInit()
 	
 	$("#history").on("pageshow",function(){
 		page_stack.push("history");
-		now_page = history;
+		now_page = "history";
 	});
 
 	$("#sendWeibo").on("pageshow",function(){
