@@ -45,6 +45,8 @@ function changeAfterLogout() {
 	Array.prototype.forEach.call(document.getElementsByClassName('userName'), function(testEl)
 		   	{
 				testEl.innerHTML = user_name;
+				$(".header_subtitle").css("margin-left", "52px");
+				$(".header_subtitle2").css("margin-right", "0px");
 			}, false);
 	$(".gotologin").show();
 }
@@ -55,6 +57,7 @@ function changeAfterLogin()
 		   	{
 				testEl.innerHTML = user_name;
 				$(".header_subtitle").css("margin-left", "0");
+				$(".header_subtitle2").css("margin-left", "0");
 			}, false);
 	$(".gotologin").css("display","none");
 }

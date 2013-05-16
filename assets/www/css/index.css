@@ -134,6 +134,7 @@ a#scanButton
 	font-weight: lighter;
 	font-family: "Microsoft YaHei";	
 	float:left;
+	display: inline-block;
 }
 
 .subcontent {

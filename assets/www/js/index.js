@@ -67,20 +67,16 @@ function onLoad()
 	checkViewMore(1,isViewMore);
 	checkHistoryMore(1,isHistoryMore);
 	page_stack = new Array();
+	page_stack.push("home");
 	testMode();//PC used
 }
 
 function jumpto(s)
 {
+	if (s == "home") first = true;
+	else first = false;
 	$.mobile.changePage("#"+s);
 }
-
-jQuery( window ).on( "hashchange",function()
-		{
-			var hash = location.hash;
-			hash = hash.substr(1);
-			page_stack.push(hash);
-		})
 
 var friends;
 

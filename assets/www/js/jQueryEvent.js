@@ -15,6 +15,18 @@ function jQueryEventInit()
 	$.mobile.transitionFallbacks.slidedown= "none";
 
 	$("#scanButton").on("click",barcodeScan);
+	
+	$("#home").on("pageshow",function(){
+		page_stack.push("home");
+	});
+	
+	$("#view").on("pageshow",function(){
+		page_stack.push("view");
+	});
+	
+	$("#history").on("pageshow",function(){
+		page_stack.push("history");
+	});
 
 	$("#sendWeibo").on("pageshow",function(){
 		$("#weiboContent").focus();

@@ -32,13 +32,14 @@ function networkNoteHideup()
 function handleBack()
 {
 	var len = page_stack.length;
-	if (len > 0)
+	if (len > 1)
 	{
-		var last = page_stack.pop();
+		var last = page_stack[len-2];
+		page_stack.pop();
 		jumpto(last);
 	}
 	else
 	{
-		$("#quit_btn").pop();
+		$("#quit_btn").popup("open");
 	}
 }
