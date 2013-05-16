@@ -4,7 +4,7 @@ var user_name;
 var user_img;
 var page_stack;
 var last_at;
-var first = true;
+var now_page = "home"
 var inter;
 
 function testMode()

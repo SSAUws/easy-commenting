@@ -1,5 +1,5 @@
 var viewPos;
-var host = "http://www.crazylpy.me:8888";
+var host = "http://103.31.20.58:8888";
 var itemId = "konan";
 var lastViewDate;
 var templastViewDate;

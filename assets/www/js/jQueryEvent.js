@@ -18,23 +18,40 @@ function jQueryEventInit()
 	
 	$("#home").on("pageshow",function(){
 		page_stack.push("home");
+		now_page = "home";
 	});
 	
 	$("#view").on("pageshow",function(){
 		page_stack.push("view");
+		now_page = "view";
 	});
 	
 	$("#history").on("pageshow",function(){
 		page_stack.push("history");
+		now_page = history;
 	});
 
 	$("#sendWeibo").on("pageshow",function(){
 		$("#weiboContent").focus();
 		setCursor();
+		now_page = "sendWeibo";
 	});
 
 	$("#atUser").on("pageshow",function(){
 		$("#atUser-input").focus();
+		now_page = "atUser";
+	});
+
+	$("#addNewItem").on("pageshow",function(){
+		now_page = "addNewItem";
+	});
+
+	$("#aboutus").on("pageshow",function(){
+		now_page = "aboutus";
+	});
+
+	$("#badNet").on("pageshow",function(){
+		now_page = "badNet";
 	});
 
 	$(".jumptoatUser").on("click",function(){

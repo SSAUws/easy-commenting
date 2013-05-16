@@ -17,7 +17,7 @@ function loginWeibo()
 			localStorage.uid = uid;
 			plugins.childBrowser.close();
 			getUserInfo(); 
-			jumpto(last_page);
+			jumpto(now_page);
 		} 
 	};
 }

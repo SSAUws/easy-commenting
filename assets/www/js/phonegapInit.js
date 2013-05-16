@@ -31,11 +31,21 @@ function networkNoteHideup()
 //handle backbutton
 function handleBack()
 {
-	var len = page_stack.length;
-	if (len > 1)
+	var flag = true;
+	var last;
+	while (true)
 	{
-		var last = page_stack[len-2];
-		page_stack.pop();
+		var len = page_stack.length;
+		if (len <= 0)
+		{
+			flag = false;
+			break;
+		}
+		last = page_stack.pop();
+		if (last != now_page) break;
+	}
+	if (flag)
+	{
 		jumpto(last);
 	}
 	else
