@@ -12,7 +12,7 @@ function uploadBarcodeInfo()
 		return ;
 	}
 	$.mobile.loading('show',{text:"上传中",textVisible:true});
-	var oOutput = document.getElementById("output"), oData = new FormData(
+	var oOutput = document.getElementById("uploadOutput"), oData = new FormData(
 			document.forms.namedItem("barcodeinfo"));
 	oData.append("id", itemId);
 	console.log(oData);
@@ -23,10 +23,14 @@ function uploadBarcodeInfo()
 		if (oReq.status == 200) {
 			oOutput.innerHTML = "上传成功，即将跳转";
 			$.mobile.loading('hide');
+			$("#uploadOutput").popup("open");
+			setTimeout('$("#uploadOutput").popup("close");',1000);
 			setTimeout('jumpto("view");'+'viewRefresh();',2000);
 		} else {
 			oOutput.innerHTML = "错误 " + oReq.status
 					+ " 上传物品失败<br/>";
+			$("#uploadOutput").popup("open");
+			setTimeout('$("#uploadOutput").popup("close");',1000);
 		}
 	};
 	oReq.send(oData);

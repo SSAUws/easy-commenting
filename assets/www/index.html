@@ -94,17 +94,17 @@
 						<img src="img/home.png" alt="" class="footer_icon"/>
 						<div>首页</div>
 					</div>
-					<div class="ui-block-b icon_pos logout_app" >
+					<div class="ui-block-b icon_pos  jumptohistory">
+						<img src="img/view.png" alt="" class="footer_icon"/>
+						<div>历史</div>
+					</div>
+					<div class="ui-block-c icon_pos logout_app" >
 						<img id="goReply" src="img/about.png" alt="" class="footer_icon"/>
 						<div>注销</div>
 					</div>
-					<div class="ui-block-c icon_pos jumptoaboutus">
+					<div class="ui-block-d icon_pos jumptoaboutus">
 						<img id="goHistory" src="img/setting.png" alt="" class="footer_icon"/>
 						<div>关于</div>
-					</div>
-					<div class="ui-block-d icon_pos  jumptohistory">
-						<img src="img/view.png" alt="" class="footer_icon"/>
-						<div>历史</div>
 					</div>
 				</div>
 			</div>
@@ -127,7 +127,7 @@
 					<div class="upper">
 						<img src="img/sample.jpg" id = "itemImg" width="100%" height="200px"/>
 						<div class="title">
-							<span class="name" id = "itemId">Something</span>
+							<span class="name" id = "itemId"></span>
 						</div>
 					</div>
 					<div class="lower">
@@ -213,7 +213,9 @@
 
 			<div data-role="content">
 				<a href="#" class="jumptobadNet" data-role="button" data-icon="info" id="history-net-note">网络连接不可用</a>
+				<div id="historyWrapper">
 				<div id="commentdiv">
+				</div>
 				</div>
 				<div id="historyMore" class="more">
 					更多
@@ -227,17 +229,17 @@
 						<img src="img/home.png" alt="" class="footer_icon"/>
 						<div>首页</div>
 					</div>
-					<div class="ui-block-b icon_pos jumptoview">
+					<div class="ui-block-b  icon_pos jumptohistory active">
 						<img src="img/view.png" alt="" class="footer_icon"/>
-						<div>浏览</div>
-					</div>
-					<div class="ui-block-c icon_pos historyRefresh">
-						<img src="img/refresh.png" alt="" class="footer_icon refresh"/>
-						<div>刷新</div>
-					</div>
-					<div class="ui-block-d  icon_pos jumptohistory active">
-						<img src="img/setting.png" alt="" class="footer_icon"/>
 						<div>历史</div>
+					</div>
+					<div class="ui-block-c icon_pos jumptoBack">
+						<img src="img/about.png" alt="" class="footer_icon"/>
+						<div>注销</div>
+					</div>
+					<div class="ui-block-d icon_pos jumptoaboutus">
+						<img src="img/setting.png" alt="" class="footer_icon refresh"/>
+						<div>关于</div>
 					</div>
 				</div>
 			</div>
@@ -315,7 +317,7 @@
 					<label for="file">上传描述图片:</label>
 					<input type="file" name="image" id="upload_image" multiple="multiple"/>
 				</form>
-				<div id="output"></div>
+				<div id="uploadOutput" data-role="popup"></div>
 				<a href="javascript:void(0);" id="uploadBarcodeInfoBtn" class="upload_btn pos_a">上传</a>
 				<a href="javascript:void(0);" class="upload_btn pos_b jumptohome">返回</a>
 

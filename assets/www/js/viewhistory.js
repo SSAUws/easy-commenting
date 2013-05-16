@@ -4,6 +4,7 @@ var isHistoryMore = false;
 
 function historyRefresh() 
 {
+	$.mobile.loading("show",{text:"加载中",textVisible:true});
 	var result = $.ajax({
 		url: host + '/requestusercomments',
 		type: 'get',
@@ -20,6 +21,7 @@ function historyRefresh()
 
 function historyRefreshForMore()
 {
+	$.mobile.loading("show",{text:"加载中",textVisible:true});
 	$.ajax({
 		url: host + '/requestusercomments',
 		type: 'get',
@@ -56,7 +58,8 @@ function updateHistory(flag,request)
 		$(obj).append(comment);
 		if (flag == 0) lastHistoryDate = value.date;
 		templastHistoryDate = value.date;
-	})
+	});
+	$.mobile.loading("hide");
 }
 
 function passItemIdInHistory(newItemID)

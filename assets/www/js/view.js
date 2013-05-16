@@ -1,6 +1,6 @@
 var viewPos;
-var host = "http://103.31.20.58:8888";
-var itemId = "konan";
+var host;
+var itemId; 
 var lastViewDate;
 var templastViewDate;
 var isViewMore = false;
@@ -39,7 +39,6 @@ function updateComment(flag,archive)
 		'</div>' +
 		'<div class="left">' + value.content + '</div>' +
 		'</div>						</div>					</div>	<hr/>';
-		console.log(news);
 		$(obj).append(news);
 		if (flag == 0) lastViewDate = value.date;
 		templastViewDate = value.date;
@@ -48,6 +47,7 @@ function updateComment(flag,archive)
 
 function viewRefresh()
 {
+	$.mobile.loading("show",{text:"加载中",textVisible:true});
 	$.ajax({
 		url : host + "/requestbarcode",
 		data : {id : itemId , userid : user_name},
@@ -65,10 +65,12 @@ function viewRefresh()
 			localStorage.lastViewDate = lastViewDate;
 		}
 		});
+	$.mobile.loading("hide");
 }
 
 function viewRefreshForMore()
 {
+	$.mobile.loading("show",{text:"加载中",textVisible:true});
 	$.ajax({
 		url : host + "/requestbarcode",
 		data : {id : itemId,date : templastViewDate , userid : user_name},

@@ -1,4 +1,9 @@
 /*  public part  */
+hr
+{
+	border:#f1f1f1 solid 1px;
+}
+
 .header_subtitle {
 	display: inline-block;	
 	margin-left: 52px;
