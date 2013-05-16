@@ -12,8 +12,7 @@ function uploadBarcodeInfo()
 		return ;
 	}
 	$.mobile.loading('show',{text:"上传中",textVisible:true});
-	var oOutput = document.getElementById("uploadOutput"), oData = new FormData(
-			document.forms.namedItem("barcodeinfo"));
+	var oOutput = document.getElementById("uploadOutput"), oData = new FormData(document.forms.namedItem("barcodeinfo"));
 	oData.append("id", itemId);
 	console.log(oData);
 

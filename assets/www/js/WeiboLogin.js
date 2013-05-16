@@ -8,6 +8,7 @@ function loginWeibo()
 
 	plugins.childBrowser.onLocationChange = function(location) {
 		if (location.indexOf(redirect_uri) >= 0) {
+			console.log("here");
 			var values = location.match("access_token=(.*)&remind_in=(.*)&expires_in=(.*)&uid=(.*)");
 			access_token = values[1];
 			var remind_in = values[2];

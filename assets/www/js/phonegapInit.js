@@ -13,6 +13,11 @@ function onDeviceReady()
 	if (networkState == Connetion.NONE) networkNoteShowup();
 }
 
+function gotFS()
+{
+
+}
+
 //handle network status change
 function networkNoteShowup()
 {
