@@ -37,13 +37,14 @@ function updateHistory(flag,request)
 	var obj = document.getElementById("commentdiv");
 	if (flag == 0) obj.innerHTML = "";
 	$.each(request.archive, function(index, value) {
+		value.content = replaceExpression(value.content);
 		var comment = '<div class="commentPart">'+
 		'<div class="author">'+
 		'<img src="'+value.barcode_image_url+'" onclick="passItemIdInHistory(' + ("'" + value.objectid +"'") +')"/>'+
 		'</div>'+
 		'<div class="content">'+
 		'<div class="contentInfo">'+
-		'<span class="user_name">' + value.objectid+ '</span>' +
+		'<span class="user_name">' + value.objectname+ '</span>' +
 		'<span class="time">'+value.date+'</span>'+
 		'</div>'+
 		'<div class="contentText">'+

@@ -49,6 +49,7 @@ function changeAfterLogout() {
 				$(".header_subtitle2").css("margin-right", "0px");
 			}, false);
 	$(".gotologin").show();
+	document.getElementById("commentdiv").innerHTML = "";
 }
 
 function changeAfterLogin()

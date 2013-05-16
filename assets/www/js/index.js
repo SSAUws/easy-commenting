@@ -16,7 +16,7 @@ function testMode()
 
 function checkLocalStorage()
 {
-	localStorage.clear();
+	//localStorage.clear();
 	if (localStorage.access_token != undefined)
 	{
 		access_token = localStorage.access_token;
@@ -127,7 +127,6 @@ function barcodeScan() {
 	var url = host + "/requestbarcode?id=" + itemId;
 	$.get(url, function(data) { 
 		jumpto("view");
-		viewRefresh();
 	}).error(function(xhr) {
 		if(xhr.status == 404) {
 			jumpto('home');
@@ -151,3 +150,31 @@ function toReply(s)
 function getTheItemUploadInfo() {
 	$("#item_not_exist").popup("open");
 }
+
+/*  view part  */
+function replaceExpression(str)
+{
+	var ret = new String();
+	while (true)
+	{
+		var i = str.indexOf('[');
+		if (i == -1) break;
+		ret += str.substr(0,i);
+		str = str.substr(i,str.length-i);
+		var j = str.indexOf(']');
+		if (j == -1) break;
+		var imgName = str.substr(1,j-1);
+		var imgIndex = expression.indexOf(imgName);
+		if (imgIndex <= 0)
+		{
+			ret += str.substr(0,1);
+			str = str.substr(1,str.length-1);
+			continue;
+		}
+		ret += '<img src="expression/' + imgIndex + '.gif"' + ' alt="' + expression[imgIndex] + '"/>';
+		str = str.substr(j+1,str.length-j);
+	}
+	ret += str;
+	return ret;
+}
+/*  view part  */

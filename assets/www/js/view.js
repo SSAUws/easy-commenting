@@ -23,6 +23,7 @@ function updateComment(flag,archive)
 	var obj = document.getElementById("commentContainer");
 	if (flag == 0) obj.innerHTML = "";
 	$.each(archive,function(index,value){
+		value.content = replaceExpression(value.content);
 		var news = '<div class="commentPart">' + 
 		'<div class="author">' + 
 		'<img src="' + value.user_image_url + '" />' + 
@@ -38,6 +39,7 @@ function updateComment(flag,archive)
 		'</div>' +
 		'<div class="left">' + value.content + '</div>' +
 		'</div>						</div>					</div>	<hr/>';
+		console.log(news);
 		$(obj).append(news);
 		if (flag == 0) lastViewDate = value.date;
 		templastViewDate = value.date;

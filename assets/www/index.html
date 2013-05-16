@@ -43,7 +43,7 @@
 			</div>		
 
 			<div data-role="content">
-				<a href="#" class="jumptobadNet" data-role="button" data-icon="info" id="home-net-note">No available network</a>
+				<a href="#" class="jumptobadNet" data-role="button" data-icon="info" id="home-net-note">网络连接不可用</a>
 				<div class="ui-grid-a">
 					<div class="ui-block-a">
 						<img src="img/blue-camera-icon.png" width="100%" alt="" />
@@ -51,18 +51,15 @@
 					<div class="ui-block-b" style="margin-top:15%;" width="45%">
 						<div class="bubble">
 							<span class="bubble-left bubble-cor"></span>
-							Share items<br/>
-							Communication<br/>
-							Make friends<br/>
+							分享<br/>
+							交流<br/>
+							社交<br/>
 						</div>
 					</div>
 				</div>
 				<hr />
 				<div class="secondPart">
 					<a href="#" data-role="button" data-icon="search" data-inline="true" id="scanButton" data-theme="a">Scan Barcode</a>
-					<!--
-					<a href="#" class="jumptoownhistory" id="viewHistory">View history</a>
-					-->
 				</div>
 				<div class="logo">
 					<img src="img/fq_logo.png" />
@@ -78,11 +75,12 @@
 					<button id="cancel_upload">取消</button>
 					<button id="certify_upload">确定</button>
 				</div>
-				<div data-role="popup" data-tap-toggle="false" id="popupBasic-screen_home" data-transition="slidedown" data-theme="a" data-position-to="window" data-icon="delete" class="ui-content">
-					<p>Please login with your weibo first<p>
-					<p>If you don't have a weibo, click 
-					<a href="#" class="gotoLogin">here</a> for sign in</p>
-				</div>
+		<div data-role="popup" data-tap-toggle="false" id="popupBasic-screen_home" data-transition="slidedown" data-theme="a" data-position-to="window" data-icon="delete" class="ui-content">
+			<p>请先登录微博账号</p>
+			<p>点击 
+			<a href="#" class="gotoLogin">这里</a>
+			登录</p>
+		</div>
 				<div data-role="popup" data-tap-toggle="false" id="quit_btn" data-transition="slidedown" data-theme="a" data-position-to="window" data-icon="delete" class="ui-content">
 					<p> 确定要退出程序？</p>
 					<button class="cancel_quit">取消</button>
@@ -120,11 +118,11 @@
 					<div class="header_title">Easy Comment</div>
 					<div class="userName"></div>
 				</div>
-				<div class="btn_h gotologin">login</div>
+				<div class="btn_h gotologin">登录</div>
 			</div>	
 
 			<div data-role="content">
-				<a href="#" class="jumptobadNet" data-role="button" data-icon="info" id="view-net-note">No available network</a>
+				<a href="#" class="jumptobadNet" data-role="button" data-icon="info" id="view-net-note">网络连接不可用</a>
 				<div id="itemInfo">
 					<div class="upper">
 						<img src="img/sample.jpg" id = "itemImg" width="100%" height="200px"/>
@@ -178,12 +176,13 @@
 						<img src="img/home.png" alt="" class="footer_icon"/>
 						<div>首页</div>
 					</div>
+		<div data-role="popup" data-tap-toggle="false" id="popupBasic-screen_view" data-transition="slidedown" data-theme="a" data-position-to="window" data-icon="delete" class="ui-content">
+			<p>请先登录微博账号</p>
+			<p>点击 
+			<a href="#" class="gotoLogin">这里</a>
+			登录</p>
+		</div>
 					<div class="ui-block-b icon_pos jumptosendWeibo">
-						<div data-role="popup" data-tap-toggle="false" id="popupBasic-screen" data-transition="slidedown" data-theme="a" data-position-to="window" data-icon="delete" class="ui-content">
-							<p>Please login with your weibo first<p>
-							<p>click 
-							<a href="#" class="gotoLogin">here</a> for sign in</p>
-						</div>
 						<img src="img/comment2.png" alt="" class="footer_icon"/>
 						<div>评论</div>
 					</div>
@@ -204,16 +203,16 @@
 		<!-- history page -->
 		<div data-role="page" id="history">
 			<div class="myHeader" data-role="header" data-tap-toggle="false" data-position="fixed">
-			
+
 				<div class="header_subtitle">
 					<div class="header_title">我的历史评论</div>
 					<div class="userName"></div>
 				</div>
-				<div class="btn_h gotologin">login</div>
+				<div class="btn_h gotologin">登录</div>
 			</div>
 
 			<div data-role="content">
-				<a href="#" class="jumptobadNet" data-role="button" data-icon="info" id="history-net-note">No available network</a>
+				<a href="#" class="jumptobadNet" data-role="button" data-icon="info" id="history-net-note">网络连接不可用</a>
 				<div id="commentdiv">
 				</div>
 				<div id="historyMore" class="more">
@@ -251,20 +250,20 @@
 				<div class="btn_l" id="backtoViewTrigger">返回</div>
 				<div class="btn_h" id="sendButton">发送</div>
 				<div class="header_subtitle">
-					<div class="header_title">Add Comment</div>
+					<div class="header_title">发表评论</div>
 					<div class="userName"></div>
 				</div>
 			</div>
 
 			<div data-role="content">
 				<div data-role="popup" data-tap-toggle="false" id="backtoViewPopup" data-transition="slidedown" data-theme="a" data-position-to="window" data-icon="delete" class="ui-content">
-					<p> It will empty your comment and go back</p>
-					<p> Are you sure?</p>
-					<button id="closebacktoViewTrigger">No</button>
-					<button id="backtoView">Yes</button>
+					<p>返回将会清空你的评论</p>
+					<p>确定？</p>
+					<button id="closebacktoViewTrigger">否</button>
+					<button id="backtoView">是</button>
 				</div>
 				<div class="subcontent">
-					<textarea id="weiboContent" placeholder="Share something" ></textarea>
+					<textarea id="weiboContent" placeholder="分享" ></textarea>
 					<input type="checkbox" name="transfer" id="transfer" data-role="none"/>
 					<label for="transfer">同时转发到微博</label>
 				</div>
@@ -279,7 +278,7 @@
 					<button class="cancel_quit">取消</button>
 					<button class="certify_quit">确定</button>
 				</div>
-				
+
 			</div>
 
 			<div data-role="footer" data-tap-toggle="false" data-position="fixed">
@@ -319,11 +318,11 @@
 				<div id="output"></div>
 				<a href="javascript:void(0);" id="uploadBarcodeInfoBtn" class="upload_btn pos_a">上传</a>
 				<a href="javascript:void(0);" class="upload_btn pos_b jumptohome">返回</a>
-				
+
 			</div>
 		</div>
 		<!--  add new content page -->
-		
+
 		<!--  about us -->
 		<div data-role="page" id="aboutus">
 			<div class="myHeader" data-role="header" data-tap-toggle="false" data-position="fixed">
@@ -352,7 +351,7 @@
 					</div>
 				</div>
 				<div class="logo">
-						<img src="img/fq_logo.png" />
+					<img src="img/fq_logo.png" />
 				</div>
 			</div>
 			<div data-role="footer" data-tap-toggle="false" data-position="fixed">
@@ -360,22 +359,22 @@
 			</div>
 		</div>
 		<!-- about us -->
-			
+
 		<!-- bad network page -->
 		<div data-role="page" id="badNet">
 			<div data-role="header" data-tap-toggle="false" data-position="fixed">
-				<h1>No available network</h1>
+				<h1>网络连接不可用</h1>
 				<a href="#"  data-role="button" data-rel="back" data-icon="back" data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-icon-nodisc">back</a>
 			</div><!-- /header -->
 			<div data-role="content">
-				<h2>Can't connect to internet</h2>
-				<p>Your device does not start the mobile network or wireless LAN</p>
+				<h2>未能连接到互联网</h2>
+				<p>您的设备未启动移动网络或无线局域网</p>
 				<hr />
-				<h3>If you need to connect to the Internet, please refer to the following points:</h3>
-				<li>Check the phone's wireless LAN settings to see if there can access the wireless LAN signal.</li>
-				<li>Check whether the phone has access to the mobile network, and the phone out of service</li>
-				<h3>If you have access to the wireless LAN：</h3>
-				<li>Please check whether the wireless LAN hotspots have access to the Internet, or the hot spots is to allow your device to access the Internet.</li>
+				<h3>如需要连接到互联网，请参考以下几点：</h3>
+				<li>检查手机中的无线局域网设置，查看是否有可接入的无线局域网信号。</li>
+				<li>检查手机是否已接入移动网络，并且手机没有被停机。</li>
+				<h3>如果您已接入无线局域网：</h3>
+				<li>请检查您的所连接的无线局域网热点是否已接入互联网，或者该热点是否允许您的设备访问互联网。</li>
 			</div>
 			<div data-role="footer" data-tap-toggle="false" data-position="fixed">
 				<h2>@Copyright 2013 Easy-commenting</h2>
@@ -387,7 +386,7 @@
 		<div data-role="page" id="atUser">
 			<div data-role="header" data-tap-toggle="false" data-position="fixed">
 				<h1>Contact</h1>
-				<a href="#"  class="jumptosendWeibo" data-role="button" data-shadow="false" data-mini="true">Close</a>
+				<a href="#"  class="jumptosendWeibo" data-role="button" data-shadow="false" data-mini="true">关闭</a>
 			</div>
 			<div data-role="content">
 				<input type="search" placeholder="Please input username" id="atUser-input" onkeyup="atUser()"/>
