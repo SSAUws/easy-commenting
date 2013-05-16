@@ -19,6 +19,7 @@ function uploadBarcodeInfo() {
 		if (oReq.status == 200) {
 			oOutput.innerHTML = "Uploaded!";
 			jumpto("view");
+			viewRefresh();
 		} else {
 			oOutput.innerHTML = "Error " + oReq.status
 					+ " occurred uploading your file.<br \/>";

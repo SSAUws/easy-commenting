@@ -2,8 +2,7 @@ var access_token;
 var uid;
 var user_name;
 var user_img;
-var now_page = "home";
-var last_page = null;
+var page_stack;
 var last_at;
 var first = true;
 var inter;
@@ -67,21 +66,20 @@ function onLoad()
 	checkLocalStorage();
 	checkViewMore(1,isViewMore);
 	checkHistoryMore(1,isHistoryMore);
+	page_stack = new Array();
 	testMode();//PC used
 }
 
 function jumpto(s)
 {
-	if (s == "home") first = true;
-	else first = false;
 	$.mobile.changePage("#"+s);
 }
 
 jQuery( window ).on( "hashchange",function()
 		{
 			var hash = location.hash;
-			last_page = now_page;
-			now_page = hash.substr(1);
+			hash = hash.substr(1);
+			page_stack.push(hash);
 		})
 
 var friends;

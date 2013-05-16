@@ -88,11 +88,9 @@ function checkViewMore(flag,more)
 	if (isViewMore)
 	{
 		$("#viewMore").show();
-		$("#noViewMore").hide();
 	}
 	else
 	{
 		$("#viewMore").hide();
-		$("#noViewMore").show();
 	}
 }

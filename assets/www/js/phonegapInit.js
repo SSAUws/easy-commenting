@@ -31,9 +31,14 @@ function networkNoteHideup()
 //handle backbutton
 function handleBack()
 {
-	
-	console.log(last_page);
-	if (first)
-		$("#quit_btn").popup("open");
-	else jumpto(last_page);
+	var len = page_stack.length;
+	if (len > 0)
+	{
+		var last = page_stack.pop();
+		jumpto(last);
+	}
+	else
+	{
+		$("#quit_btn").pop();
+	}
 }

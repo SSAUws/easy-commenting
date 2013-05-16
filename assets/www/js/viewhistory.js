@@ -72,11 +72,9 @@ function checkHistoryMore(flag,more)
 	if (isHistoryMore)
 	{
 		$("#historyMore").show();
-		$("#noHistoryMore").hide();
 	}
 	else
 	{
 		$("#historyMore").hide();
-		$("#noHistoryMore").show();
 	}
 }
