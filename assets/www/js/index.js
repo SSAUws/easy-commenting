@@ -69,9 +69,7 @@ function onLoad()
 	page_stack = new Array();
 	page_stack.push("home");
 	host = "http://103.31.20.58:8888";
-	//host = "http://www.crazylpy.me:8888";
-	itemId = "nemomojie";
-//	testMode();//PC used
+	//testMode();//PC used
 }
 
 function jumpto(s)

@@ -1,7 +1,11 @@
 .aboutus_title h1{
 	font-size: 19px;
 	font-style: italic;
-	margin-left: 10%;
+} 
+
+.aboutus_title
+{
+	text-align:center;
 }
 
 .aboutus_intro {
@@ -23,4 +27,5 @@
 .header_subtitle2 {
 	display: inline-block;	
 	margin-right: 52px;
+	margin-left: 52px;
 }
