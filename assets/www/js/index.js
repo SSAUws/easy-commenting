@@ -16,7 +16,7 @@ function testMode()
 
 function checkLocalStorage()
 {
-//	localStorage.clear();
+	//	localStorage.clear();
 	if (localStorage.access_token != undefined)
 	{
 		access_token = localStorage.access_token;

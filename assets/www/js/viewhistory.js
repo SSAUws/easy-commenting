@@ -15,7 +15,10 @@ function historyRefresh()
 			updateHistory(0,data);
 			localStorage.history = document.getElementById("commentdiv").innerHTML;
 			localStorage.lastHistoryDate = lastHistoryDate;
-		}
+		},
+		error: function(data){
+				   $.mobile.loading("hide");
+			   }
 	});
 }
 
@@ -31,6 +34,9 @@ function historyRefreshForMore()
 			console.log(data);
 			updateHistory(1,data);
 		},
+		error: function(data){
+				   $.mobile.loading("hide");
+			   }
 	});
 }
 
@@ -55,9 +61,9 @@ function updateHistory(flag,request)
 		'<div class="upgrade"><span class="commentdiff">'+request.number[index]+'</span>条更新</div>'+
 		'</div>'+
 		'</div>'+"<hr/>";
-		$(obj).append(comment);
-		if (flag == 0) lastHistoryDate = value.date;
-		templastHistoryDate = value.date;
+	$(obj).append(comment);
+	if (flag == 0) lastHistoryDate = value.date;
+	templastHistoryDate = value.date;
 	});
 	$.mobile.loading("hide");
 }
@@ -66,7 +72,6 @@ function passItemIdInHistory(newItemID)
 {
 	itemId = newItemID;
 	jumpto("view");
-	viewRefresh();
 }
 
 function checkHistoryMore(flag,more)

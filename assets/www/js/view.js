@@ -39,10 +39,11 @@ function updateComment(flag,archive)
 		'</div>' +
 		'<div class="left">' + value.content + '</div>' +
 		'</div>						</div>					</div>	<hr/>';
-		$(obj).append(news);
-		if (flag == 0) lastViewDate = value.date;
-		templastViewDate = value.date;
+	$(obj).append(news);
+	if (flag == 0) lastViewDate = value.date;
+	templastViewDate = value.date;
 	});
+	$.mobile.loading("hide");
 }
 
 function viewRefresh()
@@ -63,9 +64,11 @@ function viewRefresh()
 			localStorage.commentContainer = document.getElementById("commentContainer").innerHTML;
 			localStorage.itemId = json.id;
 			localStorage.lastViewDate = lastViewDate;
-		}
-		});
-	$.mobile.loading("hide");
+		},
+		error : function(data){
+					$.mobile.loading("hide");
+				}
+	});
 }
 
 function viewRefreshForMore()
@@ -82,6 +85,9 @@ function viewRefreshForMore()
 			checkViewMore(1,json.more);
 			updateComment(1,json.archive);
 		},
+		error : function(data){
+					$.mobile.loading("hide");
+				}
 	});
 }
 
